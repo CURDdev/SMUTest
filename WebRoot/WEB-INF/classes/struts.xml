@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="loginpac" extends="struts-default" namespace="/">
+ <action name="checkUser"        class="userAction" method="checkUser">
+<result name="success">/index.jsp</result>
+<result name="error">/relogin.jsp</result>   
+<interceptor-ref name="defaultStack"></interceptor-ref>     
+  
+</action>
+ </package>
+<package name="default" extends="struts-default">
+<interceptors>
+   <interceptor name="loginIniter" class="com.smu.util.loginIniter"></interceptor>
+   <interceptor-stack name="loginstack">
+   <interceptor-ref name="defaultStack"></interceptor-ref>
+   <interceptor-ref name="loginIniter"></interceptor-ref>
+   </interceptor-stack>
+   
+   </interceptors>
+<global-results>
+            <result name="login">/login.jsp</result>
+        </global-results>
+<action name="showAllStations" class="stationAction" method="showAllStations">
+<result name="success">/menu.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="showCases" class="caseAction" method="showCases">
+<result name="success">/case.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="adminshowCases" class="caseAction" method="showCases">
+<result name="success">/admin_case.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="showOneCase" class="caseAction" method="showOneCase">
+<result name="success">/caseMain.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="adminShowOneCase" class="caseAction" method="showOneCase">
+<result name="success">/admin_caseMain.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="browseAllRequirements" class="requirementAction" method="browseAllRequirements">
+<result name="success">/main.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="addScore" class="scoreAction" method="addScore">
+<result name="success" type="redirect">/browseAllRequirements.action?stc_id=${stc_id}</result>
+<result name="error">/main.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+ <action name="addScore1" class="scoreAction" method="addScore">
+<result name="success">/caseMain.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="addRequirement" class="requirementAction" method="addRequirement">
+<result name="success">/addRequire.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="logOut" class="userAction" method="logOut">
+<interceptor-ref name="defaultStack"></interceptor-ref>       
+<result name="success">/login.jsp</result>
+</action> 
+<action name="adminUpdateRequirement" class="requirementAction" method="updateRequirement">
+<interceptor-ref name="defaultStack"></interceptor-ref>       
+<result name="success">/admin_main.jsp</result>
+</action> 
+<action name="browseScores" class="scoreAction" method="browseScores">
+<interceptor-ref name="defaultStack"></interceptor-ref>       
+<result name="success">/classScore.jsp</result>
+</action> 
+</package>
+<package name="ajax_json" extends="json-default">
+<action name="checkStudent" class="studentAction">
+      <result name="success" type="json">
+      <param name="root">result</param>
+      </result>
+     
+</action>     
+</package>
+<constant name="struts.action.extension" value="action" />
+	<constant name="struts.devMode" value="true" />
+	<package name="platform-default" extends="struts-default" namespace="/" >
+		<action name="excel" class="excelAction">
+			<result name="excel" type="stream">
+				<param name="contentType"> application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="score.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+
+</struts>    

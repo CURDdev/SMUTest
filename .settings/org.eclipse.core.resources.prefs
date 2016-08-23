@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebRoot/header.jsp=UTF-8
+encoding//src/com/smu/action/ScoreAction.java=UTF-8
+encoding//src/com/smu/action/StudentAction.java=UTF-8
+encoding//src/com/smu/service/impl/ExcelServiceImpl.java=UTF-8
