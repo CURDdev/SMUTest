@@ -4,9 +4,9 @@
 <package name="loginpac" extends="struts-default" namespace="/">
  <action name="checkUser"        class="userAction" method="checkUser">
 <result name="success">/index.jsp</result>
+<result name="login">/admin_main.jsp</result>
 <result name="error">/relogin.jsp</result>   
 <interceptor-ref name="defaultStack"></interceptor-ref>     
-  
 </action>
  </package>
 <package name="default" extends="struts-default">
@@ -16,14 +16,22 @@
    <interceptor-ref name="defaultStack"></interceptor-ref>
    <interceptor-ref name="loginIniter"></interceptor-ref>
    </interceptor-stack>
-   
-   </interceptors>
+   <interceptor name="adminLoginIniter" class="com.smu.util.AdminLoginIniter"></interceptor>
+   <interceptor-stack name="adminLoginstack">
+   <interceptor-ref name="defaultStack"></interceptor-ref>
+   <interceptor-ref name="adminLoginIniter"></interceptor-ref>
+   </interceptor-stack>
+</interceptors>
 <global-results>
-            <result name="login">/login.jsp</result>
-        </global-results>
+   <result name="login">/login.jsp</result>
+</global-results>
 <action name="showAllStations" class="stationAction" method="showAllStations">
 <result name="success">/menu.jsp</result>
 <interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="adminShowAllStations" class="stationAction" method="showAllStations">
+<result name="success">/admin_main.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action>
 <action name="showCases" class="caseAction" method="showCases">
 <result name="success">/case.jsp</result>
@@ -31,7 +39,7 @@
 </action>
 <action name="adminshowCases" class="caseAction" method="showCases">
 <result name="success">/admin_case.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action>
 <action name="showOneCase" class="caseAction" method="showOneCase">
 <result name="success">/caseMain.jsp</result>
@@ -39,7 +47,7 @@
 </action>
 <action name="adminShowOneCase" class="caseAction" method="showOneCase">
 <result name="success">/admin_caseMain.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action>
 <action name="browseAllRequirements" class="requirementAction" method="browseAllRequirements">
 <result name="success">/main.jsp</result>
@@ -65,6 +73,7 @@
 <action name="adminUpdateRequirement" class="requirementAction" method="updateRequirement">
 <interceptor-ref name="defaultStack"></interceptor-ref>       
 <result name="success">/admin_main.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action> 
 <action name="browseScores" class="scoreAction" method="browseScores">
 <interceptor-ref name="defaultStack"></interceptor-ref>       

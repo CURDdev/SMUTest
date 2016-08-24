@@ -3,3 +3,5 @@ encoding//WebRoot/header.jsp=UTF-8
 encoding//src/com/smu/action/ScoreAction.java=UTF-8
 encoding//src/com/smu/action/StudentAction.java=UTF-8
 encoding//src/com/smu/service/impl/ExcelServiceImpl.java=UTF-8
+encoding//src/com/smu/util/AdminLoginIniter.java=UTF-8
+encoding//src/com/smu/util/loginIniter.java=UTF-8

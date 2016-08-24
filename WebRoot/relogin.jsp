@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body class="bg-darkTeal">
     <div class="login-form padding20 block-shadow">
-        <s:form action="login/checkUser" method="post" 	enctype="multipart/form-data" >
+        <s:form action="checkUser.action" method="post" 	enctype="multipart/form-data" >
             <h1 class="text-light">Login to service</h1>
             <hr class="thin"/>
             <br />

@@ -16,6 +16,7 @@ public class Teacher  implements java.io.Serializable {
      private String TId;
      private String TName;
      private String TPassword;
+     private String Role;
      private Set scores = new HashSet(0);
 
 
@@ -26,17 +27,19 @@ public class Teacher  implements java.io.Serializable {
     }
 
 	/** minimal constructor */
-    public Teacher(String TId,String TName, String TPassword) {
+    public Teacher(String TId,String TName, String TPassword,String Role) {
     	this.TId = TId;
         this.TName = TName;
         this.TPassword = TPassword;
+        this.Role = Role;
     }
     
     /** full constructor */
-    public Teacher(String TId,String TName, String TPassword, Set scores) {
+    public Teacher(String TId,String TName, String TPassword,String Role, Set scores) {
     	this.TId = TId;
         this.TName = TName;
         this.TPassword = TPassword;
+        this.Role = Role;
         this.scores = scores;
     }
 
@@ -47,7 +50,15 @@ public class Teacher  implements java.io.Serializable {
         return this.TId;
     }
     
-    public void setTId(String TId) {
+    public String getRole() {
+		return Role;
+	}
+
+	public void setRole(String role) {
+		Role = role;
+	}
+
+	public void setTId(String TId) {
         this.TId = TId;
     }
 

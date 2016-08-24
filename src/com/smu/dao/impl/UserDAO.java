@@ -1,12 +1,14 @@
 package com.smu.dao.impl;
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.smu.action.UserAction;
 import com.smu.dao.IUserDAO;
-
 import com.smu.model.Teacher;
 
 public class UserDAO implements IUserDAO{
@@ -31,6 +33,7 @@ public Teacher checkUser(Teacher teacher){
 	session.close();
 	if (list.size() != 0) {
 		user1 = (Teacher) list.get(0);
+		
 		return user1;
 	}
 	return null;

@@ -16,6 +16,9 @@
         <property name="TPassword" type="java.lang.String">
             <column name="t_password" not-null="true" />
         </property>
+         <property name="Role" type="java.lang.String">
+            <column name="role" not-null="true" />
+        </property>
         <set name="scores" inverse="true">
             <key>
                 <column name="t_id" not-null="true" />

@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
  
   	<jsp:include page="header.jsp"></jsp:include>
-<s:action name="showAllStations"></s:action>
+<s:action name="adminShowAllStations"></s:action>
   <table class="table striped hovered cell-hovered border bordered">
   <thead>
   <tr>
