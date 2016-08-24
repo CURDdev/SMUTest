@@ -94,6 +94,15 @@
 		
 		</bean>
 		
+		<bean id="systemDAO" class="com.smu.dao.impl.SystemDAO">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory"></ref>
+		</property>
+		</bean>
+		<bean id="systemService" class="com.smu.service.impl.SystemService">
+		<property name="systemDAO" ref="systemDAO"></property>
+		</bean>
+		
 		<bean id="studentDAO" class="com.smu.dao.impl.StudentDAO">
 		<property name="sessionFactory">
 		<ref bean="sessionFactory"></ref>
