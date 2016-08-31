@@ -51,6 +51,7 @@ public String checkUser() throws Exception
 	return ERROR;
 
 }
+
 public String logOut() throws Exception
 {
 	Map session=(Map) ActionContext.getContext().getSession();

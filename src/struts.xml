@@ -4,7 +4,7 @@
 <package name="loginpac" extends="struts-default" namespace="/">
  <action name="checkUser"        class="userAction" method="checkUser">
 <result name="success">/index.jsp</result>
-<result name="login">/admin_main.jsp</result>
+<result name="login">/admin.jsp</result>
 <result name="error">/relogin.jsp</result>   
 <interceptor-ref name="defaultStack"></interceptor-ref>     
 </action>
@@ -78,6 +78,7 @@
 <action name="browseScores" class="scoreAction" method="browseScores">
 <interceptor-ref name="defaultStack"></interceptor-ref>       
 <result name="success">/classScore.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action> 
 </package>
 <package name="ajax_json" extends="json-default">

@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="US-ASCII"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,6 +24,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <a href="browseScores.action">chakan</a>
+  <jsp:include page="admin_header.jsp"></jsp:include>
+  
+  <s:if test="#session.user==null">
+  <% response.sendRedirect("login.jsp");   %>
+  </s:if>
+  <s:if test="#session.user.Role!='admin'">
+  <% response.sendRedirect("login.jsp");   %>
+  </s:if> 
+  
+    <a href="showClasses.jsp">查看班级成绩</a>
+    <a href="">查看毎站成绩情况</a>
   </body>
 </html>
