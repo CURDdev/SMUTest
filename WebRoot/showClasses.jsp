@@ -25,9 +25,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <jsp:include page="header.jsp"></jsp:include>
+  <s:action name="showClasses"></s:action>
+   <s:iterator value="#request.classes" id="class">
     <s:form action="browseScores.action">
-    <input name="class_name" value="测试班级" type="hidden"/>
-    <input type="submit" value="测试班级"/>
+    <input name="class_name" value="<s:property value="#class.className"/>" type="hidden"/>
+    <input type="submit" value="<s:property value="#class.className"/>"/>
     </s:form>
+    </s:iterator>
   </body>
 </html>

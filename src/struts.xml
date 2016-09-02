@@ -33,6 +33,10 @@
 <result name="success">/admin_main.jsp</result>
 <interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action>
+<action name="adminShowAllStations1" class="stationAction" method="showAllStations">
+<result name="success">/admin_stationMain.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
+</action>
 <action name="showCases" class="caseAction" method="showCases">
 <result name="success">/case.jsp</result>
 <interceptor-ref name="loginstack"></interceptor-ref>
@@ -79,7 +83,15 @@
 <interceptor-ref name="defaultStack"></interceptor-ref>       
 <result name="success">/classScore.jsp</result>
 <interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action> 
+</action>
+<action name="showClasses" class="classAction" method="showClasses">
+<result name="success">/showClasses.jsp</result>
+</action>
+<action name="StationScores" class="scoreAction" method="browseStationScores">
+<interceptor-ref name="defaultStack"></interceptor-ref>   
+<result name="success">/stationScore.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref> 
+</action>
 </package>
 <package name="ajax_json" extends="json-default">
 <action name="checkStudent" class="studentAction">

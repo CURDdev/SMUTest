@@ -142,22 +142,26 @@ public class ScoreAction extends ActionSupport {
 				List<Score> scores = scoreService.gainScore(students.get(m).getSNo(),st_id[n]);
 				
 				if(scores.size()==1){
-					score = score + scores.get(0).getScTotalScore()/nums;
+					score = score + scores.get(0).getScTotalScore();
 				}
 				else if(scores.size()>1){
-					
+					Double average_score = 0.00;
 					for(int l = 0;l<=scores.size()-1;l++){
-						Double average_scroe = 0.00;
-						average_scroe = average_scroe + scores.get(l).getScTotalScore();	
-						average_scroe = average_scroe/scores.size();
-						score = score + average_scroe/nums;
+						
+						average_score = average_score + scores.get(l).getScTotalScore();	
+						
 					}
+					average_score = average_score/scores.size();
+					score = score + average_score;
+					System.out.println(score);
 				}
 				else{
 					score = score + 0.00;
 				}
 				
 			}
+			score = score/nums;
+			System.out.println(score);
 			if(90<=score&&score<=100)
 				score_nums[0]++;
 			else if(80<=score&&score<=90)
@@ -195,5 +199,73 @@ public class ScoreAction extends ActionSupport {
 		return SUCCESS;
 	}
 		
+	
+	
+	public String browseStationScores() throws Exception{
+		Double score; 
+		int[] score_nums = {30,40,20,50,80,70,40,30,10,5};
+		List<Student> students = studentService.getAllStudents();
+		System.out.print(students.get(0).getSNo());
+		System.out.print(stc_id);
+		List<StudentScore> studentScores = new ArrayList<StudentScore>();
+		for(int m = 0;m<=students.size()-1;m++){
+			score = 0.00;	
+				List<Score> scores = new ArrayList<Score>();
+			    scores = scoreService.gainScore(students.get(m).getSNo(), stc_id);
+			
+				System.out.print("is running");
+				if(scores.size()==1){
+					score = scores.get(0).getScTotalScore();
+				}
+				else if(scores.size()>1){
+					Double average_score = 0.00;
+					for(int l = 0;l<=scores.size()-1;l++){
+						
+						average_score = average_score + scores.get(l).getScTotalScore();	
+						
+					}
+					average_score = average_score/scores.size();
+					score = average_score;
+				}
+				else{
+					score = 0.00;
+				}
+				
+			
+			if(90<=score&&score<=100)
+				score_nums[0]++;
+			else if(80<=score&&score<=90)
+				score_nums[1]++;
+			else if(70<=score&&score<=80)
+				score_nums[2]++;
+			else if(60<=score&&score<=70)
+				score_nums[3]++;
+			else if(50<=score&&score<=60)
+				score_nums[4]++;
+			else if(40<=score&&score<=50)
+				score_nums[5]++;
+			else if(30<=score&&score<=40)
+				score_nums[6]++;
+			else if(20<=score&&score<=30)
+				score_nums[7]++;
+			else if(10<=score&&score<=20)
+				score_nums[8]++;
+			else if(0<=score&&score<=10)
+				score_nums[9]++;
+			StudentScore studentScore = new StudentScore();
+			studentScore.setS_no(students.get(m).getSNo());
+			studentScore.setS_name(students.get(m).getSName());
+			studentScore.setS_grade(students.get(m).getSGrade());
+			studentScore.setS_class(students.get(m).getClassName().getClassName());
+			studentScore.setScore(score);
+			studentScores.add(studentScore);
+		}
+		
+		
+		Map requestMap = (Map) ActionContext.getContext().get("request");
+		requestMap.put("score_nums", score_nums);
+		requestMap.put("studentScore", studentScores);
+		return SUCCESS;
+	}
 }
 

@@ -21,4 +21,7 @@ public boolean checkStudent(String s_no){
 public List getStudentsByClass(String class_name){
 	return studentDAO.getStudentsByClass(class_name);
 }
+public List getAllStudents(){
+	return studentDAO.getAllStudents();
+}
 }

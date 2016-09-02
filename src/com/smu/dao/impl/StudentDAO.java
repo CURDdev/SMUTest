@@ -49,4 +49,14 @@ public class StudentDAO implements IStudentDAO {
 		return students;
 		
 	}
+    public List getAllStudents(){
+    	
+    	Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		Query query = session.createQuery("from Student");
+		List students = query.list();
+		ts.commit();
+		session.close();
+		return students;
+    }
 }

@@ -47,5 +47,14 @@ public void setSessionFactory(SessionFactory sessionFactory) {
 		session.close();
 		return scores;
 	}
+	public List getStationScore(String st_id){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		Query query = session.createQuery("from Score as s where s.station.stId ='"+st_id+"'");
+		List scores = query.list();
+		ts.commit();
+		session.close();
+		return scores;
+	}
 	
 }

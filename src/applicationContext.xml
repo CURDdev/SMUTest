@@ -122,6 +122,19 @@
 		<property name="requirementService" ref="requirementService"></property>
 		</bean>
 		
+		<bean id="classDAO" class="com.smu.dao.impl.ClassDAO">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory"></ref>
+		</property>
+		</bean>
+		<bean id="classService" class="com.smu.service.impl.ClassService">
+		<property name="classDAO" ref="classDAO"></property>
+		</bean>
+		<bean id = "classAction" class="com.smu.action.ClassAction">
+		<property name="classService" ref="classService"></property>
+		</bean>
+		
+		
 	<!-- 	<bean id="excelService" class="com.smu.service.impl.ExcelServiceImpl">
 		<property name="requirementService" ref="requirementService"></property>
 		</bean> -->

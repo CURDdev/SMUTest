@@ -34,6 +34,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </s:if> 
   
     <a href="showClasses.jsp">查看班级成绩</a>
-    <a href="">查看毎站成绩情况</a>
+    <a href="admin_stationMain.jsp">查看毎站成绩情况</a>
   </body>
 </html>
