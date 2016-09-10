@@ -68,7 +68,7 @@
 </action>
 <action name="addRequirement" class="requirementAction" method="addRequirement">
 <result name="success">/addRequire.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action>
 <action name="logOut" class="userAction" method="logOut">
 <interceptor-ref name="defaultStack"></interceptor-ref>       

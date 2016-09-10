@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <th>
   <center>
   <h3>
-  请选择您负责的站目
+  请选择要查看的的站目
   </h3>
   </center>
   </th>

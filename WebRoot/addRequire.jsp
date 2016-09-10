@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="admin_header.jsp"></jsp:include>
 <center><h1>添加案例及要求</h1></center>
 <form action="addRequirement.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
 <center>

@@ -32,8 +32,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <s:if test="#session.user.Role!='admin'">
   <% response.sendRedirect("login.jsp");   %>
   </s:if> 
-  
+  <table class="table striped hovered cell-hovered border bordered">
+  <tr>
+  <td>
     <a href="showClasses.jsp">查看班级成绩</a>
+    </td>
+    </tr>
+    <tr>
+    <td>
     <a href="admin_stationMain.jsp">查看毎站成绩情况</a>
+    </td>
+    </tr>
+     <tr>
+    <td>
+    <a href="admin_main.jsp">查看站目信息</a>
+    </td>
+    </tr>
+     <tr>
+    <td>
+    <a href="addRequire.jsp">添加站目信息</a>
+    </td>
+    </tr>
+    </table>
   </body>
 </html>

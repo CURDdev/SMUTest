@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
    <div class="app-bar" data-role="appbar">
   <div class="container">
-        <a class="app-bar-element branding" href="index.jsp">
+        <a class="app-bar-element branding" href="admin.jsp">
 <img style="height: 28px; display: inline-block; margin-right: 10px;" src="image/band.png">
 南方医科大学临床技能测验系统管理员界面
 </a>

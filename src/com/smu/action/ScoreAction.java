@@ -111,7 +111,7 @@ public class ScoreAction extends ActionSupport {
 			r_list.add(require);
 		}
 		Map requestMap = (Map) ActionContext.getContext().get("request");
-		requestMap.put("stCId",stId);
+		requestMap.put("stId",stId);
 		requestMap.put("CId", c_id);
 		requestMap.put("require", r_list);
 		requestMap.put("RName",names[0]);
@@ -203,6 +203,10 @@ public class ScoreAction extends ActionSupport {
 	
 	public String browseStationScores() throws Exception{
 		Double score; 
+		Double max = 0.00;
+		Double min = 100.00;
+		Double ave = 0.00;
+		int stu_num = 0;
 		int[] score_nums = {30,40,20,50,80,70,40,30,10,5};
 		List<Student> students = studentService.getAllStudents();
 		System.out.print(students.get(0).getSNo());
@@ -252,6 +256,14 @@ public class ScoreAction extends ActionSupport {
 				score_nums[8]++;
 			else if(0<=score&&score<=10)
 				score_nums[9]++;
+			if(score>max){
+				max = score;
+			}
+			if(score<min){
+				min = score;
+			}
+			ave = ave + score;
+			stu_num++;
 			StudentScore studentScore = new StudentScore();
 			studentScore.setS_no(students.get(m).getSNo());
 			studentScore.setS_name(students.get(m).getSName());
@@ -260,11 +272,14 @@ public class ScoreAction extends ActionSupport {
 			studentScore.setScore(score);
 			studentScores.add(studentScore);
 		}
-		
+		ave = ave/stu_num;
 		
 		Map requestMap = (Map) ActionContext.getContext().get("request");
 		requestMap.put("score_nums", score_nums);
 		requestMap.put("studentScore", studentScores);
+		requestMap.put("max", max);
+		requestMap.put("min", min);
+		requestMap.put("ave", ave);
 		return SUCCESS;
 	}
 }

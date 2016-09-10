@@ -40,10 +40,12 @@ ul,li{list-style:none;}
 </head>
 
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="admin_header.jsp"></jsp:include>
 <center>
     <h1>该站成绩情况一览</h1>
-    
+    <h2>本站最高分=<s:property value="#request.max"/></h2>
+    <h2>本站最低分=<s:property value="#request.min"/></h2>
+    <h2>本站平均分=<s:property value="#request.ave"/></h2>
 	<hr>
 	</center>
 	<div class="histogram-container" id="histogram-container">
@@ -85,43 +87,43 @@ ul,li{list-style:none;}
         <ul>
             <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[0]"/>%;background:green;" title="<s:property value="#request.score_nums[0]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">100~90</span>
             </li>
             <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[1]"/>%;background:green;" title="<s:property value="#request.score_nums[1]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">90~80</span>
             </li>
              <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[2]"/>%;background:green;" title="<s:property value="#request.score_nums[2]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">80~70</span>
             </li>
              <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[3]"/>%;background:green;" title="<s:property value="#request.score_nums[3]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">70~60</span>
             </li>
              <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[4]"/>%;background:green;" title="<s:property value="#request.score_nums[4]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">60~50</span>
             </li>
              <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[5]"/>%;background:green;" title="<s:property value="#request.score_nums[5]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">50~40</span>
             </li>
             <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[6]"/>%;background:green;" title="<s:property value="#request.score_nums[6]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">40~30</span>
             </li>
              <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[7]"/>%;background:green;" title="<s:property value="#request.score_nums[7]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">30~20</span>
             </li>
              <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[8]"/>%;background:green;" title="<s:property value="#request.score_nums[8]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">20~10</span>
             </li>
              <li>
                 <span class="histogram-box"><a style="height:<s:property value="#request.score_nums[9]"/>%;background:green;" title="<s:property value="#request.score_nums[9]"/>"></a></span>
-                <span class="name">夜深风竹敲秋韵</span>
+                <span class="name">10~0</span>
             </li>
             
         </ul>

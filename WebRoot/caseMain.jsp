@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <center>
    <h2>案例内容</h2>
     <h4><s:property value="#request.case.CContent"/></h4>
-    <a href="showCases.action?stc_id=<s:property value="#request.stCId"/>">更换案例</a>
+    <a href="showCases.action?stc_id=<s:property value="#request.stId"/>">更换案例</a>
    </center>
   
 <div data-role="dialog" id="dialog" class="padding20" data-close-button="true" data-type="alert">
@@ -148,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
    <input type="hidden" id="score" name="score.scScore">
    <input type="hidden" id="totalScore" name="score.scTotalScore">
-   <input type="hidden" id="stId" name="score.station.stId" value="<s:property value="#request.stCId"/>">
+   <input type="hidden" id="stId" name="score.station.stId" value="<s:property value="#request.stId"/>">
    <input type="hidden" id="CId" name="c_id" value="<s:property value="#request.CId"/>">
    <input type="hidden" id="TId" name="score.teacher.TId" value="<s:property value="#session.user.TId"/>">
    <center>
