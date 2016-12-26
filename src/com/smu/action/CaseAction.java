@@ -3,9 +3,13 @@ package com.smu.action;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.LogManager;
 
+import org.apache.commons.logging.impl.Log4JLogger;
+import org.apache.log4j.*;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.util.logging.Logger;
 import com.smu.model.Case;
 import com.smu.model.Requirement;
 import com.smu.service.ICaseService;
@@ -17,7 +21,7 @@ public class CaseAction extends ActionSupport {
    private IRequirementService requirementService;
    private String stc_id;
    private String c_id;
-
+   private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(CaseAction.class);
 public IRequirementService getRequirementService() {
 	return requirementService;
 }
@@ -45,6 +49,7 @@ public void setC_id(String c_id) {
 public String showCases() throws Exception{
 	List cases = caseService.getCases(stc_id);
 	Map requestMap = (Map) ActionContext.getContext().get("request");
+	LOGGER.info(cases.toString());
 	requestMap.put("cases", cases);
 	return SUCCESS;
 }
