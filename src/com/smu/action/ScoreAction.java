@@ -28,10 +28,17 @@ public class ScoreAction extends ActionSupport {
 	private ICaseService caseService;
 	private IRequirementService requirementService;
 	private Score score;
-	private String stc_id;
-	private String c_id;
+	private int stc_id;
+	private int c_id;
 	private String class_name;
+	private int test_id;
 	
+	public int getTest_id() {
+		return test_id;
+	}
+	public void setTest_id(int test_id) {
+		this.test_id = test_id;
+	}
 	public ICaseService getCaseService() {
 		return caseService;
 	}
@@ -62,16 +69,16 @@ public class ScoreAction extends ActionSupport {
 	public void setStationService(IStationService stationService) {
 		this.stationService = stationService;
 	}
-	public String getC_id() {
+	public int getC_id() {
 		return c_id;
 	}
-	public void setC_id(String c_id) {
+	public void setC_id(int c_id) {
 		this.c_id = c_id;
 	}
-	public String getStc_id() {
+	public int getStc_id() {
 		return stc_id;
 	}
-	public void setStc_id(String stc_id) {
+	public void setStc_id(int stc_id) {
 		this.stc_id = stc_id;
 	}
 	public IScoreService getScoreService() {
@@ -92,15 +99,15 @@ public class ScoreAction extends ActionSupport {
 		scoreService.addScore(score);
 		Case cas = new Case();
 		cas = caseService.getOneCase(c_id);
-		Requirement r = requirementService.getAllRequirements(cas.getCName());
-		String stId = cas.getStation().getStId();
+		Requirement r = requirementService.getAllRequirements(cas.getCId());
+		int stId = cas.getStation().getStId();
 
 		String rcontent = r.getRContent();
 		String rscore = r.getRScore();
 		String name = r.getRName();
-		String[] contents = rcontent.split(",");
-		String[] scores = rscore.split(",");
-		String[] names = name.split(","); 
+		String[] contents = rcontent.split("/");
+		String[] scores = rscore.split("/");
+		String[] names = name.split("/"); 
 		List<Require> r_list = new ArrayList<Require>();
 		
 		for(int i = 1;i<= scores.length-1;i++){
@@ -128,8 +135,8 @@ public class ScoreAction extends ActionSupport {
 //		for(int i=0;i<=students.size()-1;i++){
 //			s_no[i] = students.get(i).getSNo();
 //		}
-		List<Station> stations = stationService.gainAllStations();
-		String[] st_id = new String[stations.size()];
+		List<Station> stations = stationService.gainAllStations(test_id);
+		int[] st_id = new int[stations.size()];
 		for(int j = 0;j<=stations.size()-1;j++){
 			st_id[j] = stations.get(j).getStId();
 		}
@@ -186,7 +193,7 @@ public class ScoreAction extends ActionSupport {
 			studentScore.setS_no(students.get(m).getSNo());
 			studentScore.setS_name(students.get(m).getSName());
 			studentScore.setS_grade(students.get(m).getSGrade());
-			studentScore.setS_class(students.get(m).getClassName().getClassName());
+			studentScore.setS_class(students.get(m).getMclass().getClassName());
 			studentScore.setScore(score);
 			studentScores.add(studentScore);
 		}
@@ -268,7 +275,7 @@ public class ScoreAction extends ActionSupport {
 			studentScore.setS_no(students.get(m).getSNo());
 			studentScore.setS_name(students.get(m).getSName());
 			studentScore.setS_grade(students.get(m).getSGrade());
-			studentScore.setS_class(students.get(m).getClassName().getClassName());
+			studentScore.setS_class(students.get(m).getMclass().getClassName());
 			studentScore.setScore(score);
 			studentScores.add(studentScore);
 		}

@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<link rel="stylesheet" type="text/css" href="css/metro.min.css">
+	<link rel="stylesheet" type="text/css" href="css/metro.css">
 	<link rel="stylesheet" href="css/metro-icons.css">
 <link rel="stylesheet" href="css/metro-responsive.css">
 <link rel="stylesheet" href="css/metro-schemes.css">

@@ -19,8 +19,8 @@ public void setRequirementDAO(IRequirementDAO requirementDAO) {
 	this.requirementDAO = requirementDAO;
 }
 @Override
-public Requirement getAllRequirements(String c_name){
-	return requirementDAO.getAllRequirements(c_name);	
+public Requirement getAllRequirements(int c_id){
+	return requirementDAO.getAllRequirements(c_id);	
 }
 public boolean addRequirement(Requirement r){
 	return requirementDAO.addRequirement(r);
@@ -28,7 +28,7 @@ public boolean addRequirement(Requirement r){
 public boolean updateRequirement(Requirement r){
 	return requirementDAO.updateRequirement(r);
 };
-public boolean deleteRequirement(String c_name){
-	return requirementDAO.deleteRequirement(c_name);
+public boolean deleteRequirement(int c_id){
+	return requirementDAO.deleteRequirement(c_id);
 };
 }

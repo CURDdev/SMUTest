@@ -12,10 +12,10 @@ public class Requirement  implements java.io.Serializable {
     // Fields    
 
      private Integer RId;
-     private Case CName;
+     private Case cas;
+     private String RName;
      private String RContent;
      private String RScore;
-     private String RName;
 
 
     // Constructors
@@ -26,12 +26,11 @@ public class Requirement  implements java.io.Serializable {
 
     
     /** full constructor */
-    public Requirement(Case CName,String RContent, String RScore,String RName) {
-    	
-        this.CName = CName;
+    public Requirement(Case cas, String RName, String RContent, String RScore) {
+        this.cas = cas;
+        this.RName = RName;
         this.RContent = RContent;
         this.RScore = RScore;
-        this.RName = RName;
     }
 
    
@@ -41,33 +40,27 @@ public class Requirement  implements java.io.Serializable {
         return this.RId;
     }
     
-    public String getRName() {
-		return RName;
-	}
-
-
-	public void setRName(String rName) {
-		RName = rName;
-	}
-
-
-	public void setRId(Integer RId) {
+    public void setRId(Integer RId) {
         this.RId = RId;
     }
 
-   
+    public Case getCas() {
+        return this.cas;
+    }
+    
+    public void setCas(Case cas) {
+        this.cas = cas;
+    }
 
-    public Case getCName() {
-		return CName;
-	}
+    public String getRName() {
+        return this.RName;
+    }
+    
+    public void setRName(String RName) {
+        this.RName = RName;
+    }
 
-
-	public void setCName(Case CName) {
-		this.CName = CName;
-	}
-
-
-	public String getRContent() {
+    public String getRContent() {
         return this.RContent;
     }
     

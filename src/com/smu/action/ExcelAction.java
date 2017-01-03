@@ -10,13 +10,13 @@ import com.smu.model.Requirement;
 import com.smu.model.Score;
 import com.smu.model.Station;
 import com.smu.model.Student;
-import com.smu.service.impl.ExcelServiceImpl;
 import com.smu.service.ICaseService;
-import com.smu.service.IExcelService;
+
 import com.smu.service.IRequirementService;
 import com.smu.service.IScoreService;
 import com.smu.service.IStationService;
 import com.smu.service.IStudentService;
+import com.smu.util.ExcelServiceImpl;
 import com.smu.util.StudentScore;
 public class ExcelAction {   
 	private IRequirementService requirementService;
@@ -27,8 +27,17 @@ public class ExcelAction {
     InputStream excelStream;   
     private String filename;
     private String class_name;
+    private int test_id;
     
-    public IScoreService getScoreService() {
+    public int getTest_id() {
+		return test_id;
+	}
+
+	public void setTest_id(int test_id) {
+		this.test_id = test_id;
+	}
+
+	public IScoreService getScoreService() {
 		return scoreService;
 	}
 
@@ -92,8 +101,8 @@ public class ExcelAction {
 //		for(int i=0;i<=students.size()-1;i++){
 //			s_no[i] = students.get(i).getSNo();
 //		}
-		List<Station> stations = stationService.gainAllStations();
-		String[] st_id = new String[stations.size()];
+		List<Station> stations = stationService.gainAllStations(test_id);
+		int[] st_id = new int[stations.size()];
 		for(int j = 0;j<=stations.size()-1;j++){
 			st_id[j] = stations.get(j).getStId();
 		}
@@ -127,12 +136,12 @@ public class ExcelAction {
 			studentScore.setS_no(students.get(m).getSNo());
 			studentScore.setS_name(students.get(m).getSName());
 			studentScore.setS_grade(students.get(m).getSGrade());
-			studentScore.setS_class(students.get(m).getClassName().getClassName());
+			studentScore.setS_class(students.get(m).getMclass().getClassName());
 			studentScore.setScore(score);
 			studentScores.add(studentScore);
 		}
 		
-        IExcelService es = new ExcelServiceImpl();   
+		ExcelServiceImpl es = new ExcelServiceImpl();   
         excelStream = es.getExcelInputStream(studentScores);   
         return "excel";   
     }   

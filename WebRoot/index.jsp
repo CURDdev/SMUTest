@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    
- <s:action name="showAllStations" executeResult="true"></s:action>
+ <s:action name="showTests" executeResult="true"></s:action>
   
   </body>
 </html>

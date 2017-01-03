@@ -38,7 +38,7 @@ public void setSessionFactory(SessionFactory sessionFactory) {
 		
 		return true;
 	}
-	public List getScore(String s_no,String st_id){
+	public List getScore(String s_no,int st_id){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
 		Query query = session.createQuery("from Score as s where s.station.stId ='"+st_id+"' and s.student.SNo='"+s_no+"'");

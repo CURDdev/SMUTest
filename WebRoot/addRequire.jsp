@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
     <title></title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="css/metro.min.css">
+    <link rel="stylesheet" type="text/css" href="css/metro.css">
 	<link rel="stylesheet" href="css/metro-icons.css">
 <link rel="stylesheet" href="css/metro-responsive.css">
 <link rel="stylesheet" href="css/metro-schemes.css">

@@ -30,6 +30,9 @@ public String checkUser() throws Exception
 	Map session=(Map) ActionContext.getContext().getSession();
 	Teacher user1 = new Teacher();
     user1 = userService.checkUser(teacher);
+    if(user1 == null){
+    	return ERROR;
+    }
 	String role = user1.getRole();
 	
 	if(role.equals("guest"))	
@@ -42,6 +45,7 @@ public String checkUser() throws Exception
 		session.put("user",user1);
 		return LOGIN;
 	}
+	
 //	else if(user1 == null)
 //	{
 //		session.put("error", error);

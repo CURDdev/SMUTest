@@ -6,31 +6,30 @@
 -->
 <hibernate-mapping>
     <class name="com.smu.model.Station" table="station" catalog="SMU">
-        <id name="stId" type="java.lang.String">
+        <id name="stId" type="java.lang.Integer">
             <column name="st_id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
+        <many-to-one name="test" class="com.smu.model.Test" fetch="select">
+            <column name="st_test" not-null="true" />
+        </many-to-one>
         <property name="stNumber" type="java.lang.Integer">
             <column name="st_number" not-null="true" />
         </property>
         <property name="stName" type="java.lang.String">
             <column name="st_name" not-null="true" />
         </property>
-        <property name="stType" type="java.lang.Integer">
-            <column name="st_type" not-null="true" />
-        </property>
-      
-        <set name="scores" inverse="true">
-            <key>
-                <column name="st_id" not-null="true" />
-            </key>
-            <one-to-many class="com.smu.model.Score" />
-        </set>
         <set name="cases" inverse="true">
             <key>
                 <column name="st_id" not-null="true" />
             </key>
             <one-to-many class="com.smu.model.Case" />
+        </set>
+        <set name="scores" inverse="true">
+            <key>
+                <column name="st_id" not-null="true" />
+            </key>
+            <one-to-many class="com.smu.model.Score" />
         </set>
     </class>
 </hibernate-mapping>

@@ -4,14 +4,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Class entity. @author MyEclipse Persistence Tools
+ * Mclass entity. @author MyEclipse Persistence Tools
  */
 
 public class Class implements java.io.Serializable {
 
 	// Fields
 
-	
 	private String className;
 	private Set students = new HashSet(0);
 
@@ -22,8 +21,7 @@ public class Class implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Class(String className, Set students) {
-		this.className = className;
+	public Class(Set students) {
 		this.students = students;
 	}
 

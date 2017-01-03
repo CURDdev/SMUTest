@@ -17,8 +17,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="css/metro.min.css">
+	<link rel="stylesheet" type="text/css" href="css/metro.css">
 	<link rel="stylesheet" href="css/metro-icons.css">
+	<link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+   
+    <link href="css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
+    
+  
+    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+ 
+    <link href="css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
+  
+    <link href="css/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+
+
+    <style type="text/css">
+    body {
+        padding: 1em;
+        margin: 0;
+        font-size: 16px;
+        font-family: arial, verdana, sans-serif;
+    }
+    
+    input,
+    select {
+        width: 100%;
+        padding: .625em;
+        margin: 0 0 .625em 0;
+        border: 1px solid #aaa;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+    }
+    </style>
 <link rel="stylesheet" href="css/metro-responsive.css">
 <link rel="stylesheet" href="css/metro-schemes.css">
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -61,6 +95,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    <jsp:include page="header.jsp"></jsp:include>
+   <div hidden="true">
+        <label for="theme">Theme</label>
+        <select name="theme" id="theme" class="settings" >
+            
+        </select>
+    </div>
    <center>
    <h2>案例内容</h2>
     <h4><s:property value="#request.case.CContent"/></h4>
@@ -182,5 +222,51 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	}
 	}
 	</script>
+	<script src="js/mobiscroll.dom.js"></script>
+    <script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.scrollview.js"></script>
+    <script src="js/mobiscroll.frame.js"></script>
+
+    <script src="js/mobiscroll.frame.ios.js"></script>
+
+    <script src="js/mobiscroll.scroller.js"></script>
+   
+
+ 
+    <script src="js/mobiscroll.i18n.zh.js"></script>
+
+    <script>
+    (function ($) {
+
+        function init() {
+
+            mobiscroll.scroller("input[name='part']", {
+                theme: theme,
+                display: display,
+                lang: lang,
+                wheels: [
+                    [{
+                        label: 'First wheel',
+                        data: ['0', '1', '2', '3', '4', '5', '6', '7','8','9','10']
+                    }
+                        
+                    ]
+                ]
+            });
+        }
+
+        var theme, display, lang;
+
+        $('.settings').on('change', function () {
+            theme = "ios";
+            display = "center";
+            lang = "zh";
+
+            init();
+        });
+
+        $('#theme').trigger('change');
+    })(mobiscroll.$);
+    </script>
   </body>
 </html>

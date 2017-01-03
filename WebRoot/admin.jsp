@@ -53,6 +53,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="addRequire.jsp">添加站目信息</a>
     </td>
     </tr>
+    <tr>
+    <td>
+    <a href="beginNewTest.action">开始一门新的考试</a>
+    </td>
+    </tr>
     </table>
   </body>
 </html>

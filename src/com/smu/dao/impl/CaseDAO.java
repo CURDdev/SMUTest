@@ -7,13 +7,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.smu.action.CaseAction;
 import com.smu.dao.ICaseDAO;
 import com.smu.model.Case;
 import com.smu.model.Requirement;
 
 public class CaseDAO implements ICaseDAO{
 	private SessionFactory sessionFactory;
-
+	private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(CaseDAO.class);
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
@@ -21,19 +22,19 @@ public class CaseDAO implements ICaseDAO{
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	public List getCases(String st_id){
+	public List getCases(int st_id){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
-		Query query = session.createQuery("from Case as c where c.station.stId ='"+st_id+"'");
+		Query query = session.createQuery("from Case as c where c.station.stId ="+st_id);
 		List cases = query.list();
 		ts.commit();
 		session.close();
 		return cases;
 	}
-	public Case getOneCase(String c_name){
+	public Case getOneCase(int c_id){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
-		String q = "from Case as c where c.CName ="+"'"+c_name+"'";
+		String q = "from Case as c where c.CId ="+c_id;
 		Query query = session.createQuery(q);
 		Case cas = (Case)query.uniqueResult();
 		
@@ -41,25 +42,37 @@ public class CaseDAO implements ICaseDAO{
 		session.close();
 		return cas;
 	}
-	public boolean deleteCase(String c_name){
+	public boolean deleteCase(int c_id){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
-		String q = "delete Case as c where c.CName ="+"'"+c_name+"'";
+		String q = "delete Case as c where c.CId ="+c_id;
 		Query query = session.createQuery(q);
 		query.executeUpdate();
 		ts.commit();
 		session.close();
 		return true;
 	}
-    public boolean addCase(Case c){
+    public int addCase(Case c){
     	Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
-		session.save(c);	
-		session.flush();
+		LOGGER.warn("1");
+	    session.save(c);
+	    LOGGER.warn("2");
+	    try {
+	    	session.flush();
+		} catch (Exception e) {
+			// TODO: handle exception
+			session.close();
+		}
+		int id = c.getCId();
+		LOGGER.warn("4");
 		session.clear();
 		ts.commit();
+		LOGGER.warn("5");
 		session.close();
-		return true;
+		LOGGER.warn("8");
+		
+		return id;
     }
 
 }

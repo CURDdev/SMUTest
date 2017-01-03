@@ -5,8 +5,8 @@ import java.util.List;
 import com.smu.model.Case;
 
 public interface ICaseService {
-public List getCases(String st_id);
-public Case getOneCase(String c_id);
-public boolean addCase(Case c);
-public boolean deleteCase(String c_name);
+public List getCases(int st_id);
+public Case getOneCase(int c_id);
+public int addCase(Case c);
+public boolean deleteCase(int c_id);
 }

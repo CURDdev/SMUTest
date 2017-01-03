@@ -16,10 +16,10 @@ public class RequirementDAO implements IRequirementDAO {
 		this.sessionFactory = sessionFactory;
 	}
 	@Override
-    public Requirement getAllRequirements(String c_name){
+    public Requirement getAllRequirements(int c_id){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
-		String q = "from Requirement as r where r.CName ="+"'"+c_name+"'";
+		String q = "from Requirement as r where r.cas.CId ="+c_id;
 		Query query = session.createQuery(q);
 		Requirement requirement = (Requirement)query.uniqueResult();
 		
@@ -47,7 +47,7 @@ public class RequirementDAO implements IRequirementDAO {
 		session.close();
 		return true;
 	}
-	public boolean deleteRequirement(String c_name){
+	public boolean deleteRequirement(int c_id){
 		return true;
 	}
 }

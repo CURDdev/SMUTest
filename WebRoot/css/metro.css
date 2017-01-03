@@ -161,7 +161,7 @@ a {
     page-break-after: avoid;
   }
 }
-@font-face {
+/* @font-face {
   font-family: "PT Serif Caption";
   font-style: normal;
   font-weight: 400;
@@ -184,7 +184,7 @@ a {
   font-style: normal;
   font-weight: 700;
   src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzJ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
-}
+} */
 html {
   font-size: 100%;
 }

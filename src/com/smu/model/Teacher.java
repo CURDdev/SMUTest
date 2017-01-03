@@ -3,95 +3,81 @@ package com.smu.model;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * Teacher entity. @author MyEclipse Persistence Tools
  */
 
-public class Teacher  implements java.io.Serializable {
+public class Teacher implements java.io.Serializable {
 
+	// Fields
 
-    // Fields    
+	private String TId;
+	private String TName;
+	private String TPassword;
+	private String role;
+	private Set scores = new HashSet(0);
 
-     private String TId;
-     private String TName;
-     private String TPassword;
-     private String Role;
-     private Set scores = new HashSet(0);
+	// Constructors
 
-
-    // Constructors
-
-    /** default constructor */
-    public Teacher() {
-    }
-
-	/** minimal constructor */
-    public Teacher(String TId,String TName, String TPassword,String Role) {
-    	this.TId = TId;
-        this.TName = TName;
-        this.TPassword = TPassword;
-        this.Role = Role;
-    }
-    
-    /** full constructor */
-    public Teacher(String TId,String TName, String TPassword,String Role, Set scores) {
-    	this.TId = TId;
-        this.TName = TName;
-        this.TPassword = TPassword;
-        this.Role = Role;
-        this.scores = scores;
-    }
-
-   
-    // Property accessors
-
-    public String getTId() {
-        return this.TId;
-    }
-    
-    public String getRole() {
-		return Role;
+	/** default constructor */
+	public Teacher() {
 	}
 
-	public void setRole(String role) {
-		Role = role;
+	/** minimal constructor */
+	public Teacher(String TName, String TPassword, String role) {
+		this.TName = TName;
+		this.TPassword = TPassword;
+		this.role = role;
+	}
+
+	/** full constructor */
+	public Teacher(String TName, String TPassword, String role, Set scores) {
+		this.TName = TName;
+		this.TPassword = TPassword;
+		this.role = role;
+		this.scores = scores;
+	}
+
+	// Property accessors
+
+	public String getTId() {
+		return this.TId;
 	}
 
 	public void setTId(String TId) {
-        this.TId = TId;
-    }
+		this.TId = TId;
+	}
 
-    public String getTName() {
-        return this.TName;
-    }
-    
-    public void setTName(String TName) {
-        this.TName = TName;
-    }
+	public String getTName() {
+		return this.TName;
+	}
 
-    public String getTPassword() {
-        return this.TPassword;
-    }
-    
-    public void setTPassword(String TPassword) {
-        this.TPassword = TPassword;
-    }
+	public void setTName(String TName) {
+		this.TName = TName;
+	}
 
-    public Set getScores() {
-        return this.scores;
-    }
-    
-    public void setScores(Set scores) {
-        this.scores = scores;
-    }
-   
+	public String getTPassword() {
+		return this.TPassword;
+	}
 
+	public void setTPassword(String TPassword) {
+		this.TPassword = TPassword;
+	}
 
+	public String getRole() {
+		return this.role;
+	}
 
+	public void setRole(String role) {
+		this.role = role;
+	}
 
+	public Set getScores() {
+		return this.scores;
+	}
 
-
-
+	public void setScores(Set scores) {
+		this.scores = scores;
+	}
 
 }

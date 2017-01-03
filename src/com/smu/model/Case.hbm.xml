@@ -6,23 +6,24 @@
 -->
 <hibernate-mapping>
     <class name="com.smu.model.Case" table="case" catalog="SMU">
-        <id name="CName" type="java.lang.String">
-            <column name="c_name" not-null="true" />
-            <generator class="assigned" />
+        <id name="CId" type="java.lang.Integer">
+            <column name="c_id" />
+            <generator class="identity" />
         </id>
-        <set name="requirements" inverse="true">
-            <key>
-                <column name="c_name" not-null="true" />
-            </key>
-            <one-to-many class="com.smu.model.Requirement" />
-        </set>
         <many-to-one name="station" class="com.smu.model.Station" fetch="select">
             <column name="st_id" not-null="true" />
         </many-to-one>
-        
+        <property name="CName" type="java.lang.String">
+            <column name="c_name" not-null="true" />
+        </property>
         <property name="CContent" type="java.lang.String">
             <column name="c_content" length="1000" not-null="true" />
         </property>
-       
+        <set name="requirements" inverse="true">
+            <key>
+                <column name="c_id" not-null="true" />
+            </key>
+            <one-to-many class="com.smu.model.Requirement" />
+        </set>
     </class>
 </hibernate-mapping>

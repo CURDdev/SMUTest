@@ -42,7 +42,7 @@ public class StudentDAO implements IStudentDAO {
     public List getStudentsByClass(String class_name) {
     	Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
-		Query query = session.createQuery("from Student as s where s.className.className ="+"'"+class_name+"'");
+		Query query = session.createQuery("from Student as s where s.mclass.className ="+"'"+class_name+"'");
 		List students = query.list();
 		ts.commit();
 		session.close();

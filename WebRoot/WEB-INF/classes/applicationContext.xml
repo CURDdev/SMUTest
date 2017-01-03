@@ -36,6 +36,11 @@
 				<value>com/smu/model/Student.hbm.xml</value>
 				<value>com/smu/model/Score.hbm.xml</value>
 				
+				
+				<value>com/smu/model/Test.hbm.xml</value>
+				<value>com/smu/model/CaseStore.hbm.xml</value>
+				<value>com/smu/model/RequirementStore.hbm.xml</value>
+				
 				<value>com/smu/model/Class.hbm.xml</value></list>
 		</property></bean>
 		<bean id="stationDAO" class="com.smu.dao.impl.StationDAO">
@@ -49,7 +54,17 @@
 		<bean id = "stationAction" class="com.smu.action.StationAction">
 		<property name="stationService" ref="stationService"></property>
 		</bean>
-		
+		<bean id="testDAO" class="com.smu.dao.impl.TestDAO">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory"></ref>
+		</property>
+		</bean>
+		<bean id="testService" class="com.smu.service.impl.TestService">
+		<property name="testDAO" ref="testDAO"></property>
+		</bean>
+		<bean id = "testAction" class="com.smu.action.TestAction">
+		<property name="testService" ref="testService"></property>
+		</bean>
 			<bean id="requirementDAO" class="com.smu.dao.impl.RequirementDAO">
 		<property name="sessionFactory">
 		<ref bean="sessionFactory"></ref>
@@ -61,6 +76,10 @@
 		<bean id = "requirementAction" class="com.smu.action.RequirementAction">
 		<property name="requirementService" ref="requirementService"></property>
 		<property name="caseService" ref="caseService"></property>
+		<property name="testService" ref="testService"></property>
+		<property name="caseStoreService" ref="caseStoreService"></property>
+		<property name="requirementStoreService" ref="requirementStoreService"></property>
+		<property name="stationService" ref="stationService"></property>
 		</bean>
 		
 		
@@ -121,6 +140,27 @@
 		<property name="caseService" ref="caseService"></property>
 		<property name="requirementService" ref="requirementService"></property>
 		</bean>
+		<bean id="caseStoreDAO" class="com.smu.dao.impl.CaseStoreDAO">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory"></ref>
+		</property>
+		</bean>
+		<bean id="caseStoreService" class="com.smu.service.impl.CaseStoreService">
+		<property name="caseStoreDAO" ref="caseStoreDAO"></property>
+		</bean>
+		<bean id = "caseStoreAction" class="com.smu.action.CaseStoreAction">
+		<property name="caseStoreService" ref="caseStoreService"></property>
+		<property name="requirementStoreService" ref="requirementStoreService"></property>
+		</bean>
+		<bean id="requirementStoreDAO" class="com.smu.dao.impl.RequirementStoreDAO">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory"></ref>
+		</property>
+		</bean>
+		<bean id="requirementStoreService" class="com.smu.service.impl.RequirementStoreService">
+		<property name="requirementStoreDAO" ref="requirementStoreDAO"></property>
+		</bean>
+		
 		
 		<bean id="classDAO" class="com.smu.dao.impl.ClassDAO">
 		<property name="sessionFactory">

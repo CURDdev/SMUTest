@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="css/metro.min.css">
+	<link rel="stylesheet" type="text/css" href="css/metro.css">
 	<link rel="stylesheet" href="css/metro-icons.css">
 <link rel="stylesheet" href="css/metro-responsive.css">
 <link rel="stylesheet" href="css/metro-schemes.css">
@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <th>
   <center>
   <h3>
-  请选择您负责的站目
+  请选择案例
   </h3>
   </center>
   </th>
@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
   <%--  <s:a href="showOneCase.action?c_id=<s:property value="#case.CName"/>"><s:property value="#case.CName"/></s:a> --%>
    <s:form action="showOneCase.action">
-   <input name="c_id" type="hidden" value="<s:property value="#case.CName"/>">
+   <input name="c_id" type="hidden" value="<s:property value="#case.CId"/>">
    <input type="submit" value="<s:property value="#case.CName"/>">
    </s:form>
    

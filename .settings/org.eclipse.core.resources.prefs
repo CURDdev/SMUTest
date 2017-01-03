@@ -1,8 +1,11 @@
 eclipse.preferences.version=1
 encoding//WebRoot/admin.jsp=UTF-8
 encoding//WebRoot/header.jsp=UTF-8
+encoding//src/com/smu/action/RequirementAction.java=UTF-8
 encoding//src/com/smu/action/ScoreAction.java=UTF-8
 encoding//src/com/smu/action/StudentAction.java=UTF-8
-encoding//src/com/smu/service/impl/ExcelServiceImpl.java=UTF-8
+encoding//src/com/smu/dao/impl/CaseDAO.java=UTF-8
+encoding//src/com/smu/dao/impl/TestDAO.java=UTF-8
 encoding//src/com/smu/util/AdminLoginIniter.java=UTF-8
+encoding//src/com/smu/util/ExcelServiceImpl.java=UTF-8
 encoding//src/com/smu/util/loginIniter.java=UTF-8

@@ -16,16 +16,16 @@ public ICaseDAO getCaseDAO() {
 public void setCaseDAO(ICaseDAO caseDAO) {
 	this.caseDAO = caseDAO;
 }
-public List getCases(String st_id){
+public List getCases(int st_id){
 	return caseDAO.getCases(st_id);
 }
-public Case getOneCase(String c_id){
+public Case getOneCase(int c_id){
 	return caseDAO.getOneCase(c_id);
 }
-public boolean deleteCase(String c_name){
-	return caseDAO.deleteCase(c_name);
+public boolean deleteCase(int c_id){
+	return caseDAO.deleteCase(c_id);
 }
-public boolean addCase(Case c){
+public int addCase(Case c){
 	return caseDAO.addCase(c);
 };
 }

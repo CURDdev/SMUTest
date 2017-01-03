@@ -8,6 +8,15 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 public class StationAction extends ActionSupport{
 	private IStationService stationService;
+    private int test_id;
+    
+	public int getTest_id() {
+		return test_id;
+	}
+
+	public void setTest_id(int test_id) {
+		this.test_id = test_id;
+	}
 
 	public IStationService getStationService() {
 		return stationService;
@@ -17,7 +26,7 @@ public class StationAction extends ActionSupport{
 		this.stationService = stationService;
 	}
 	public String showAllStations() throws Exception{
-		List stations = stationService.gainAllStations();
+		List stations = stationService.gainAllStations(test_id);
 		Map requestMap = (Map) ActionContext.getContext().get("request");
 		requestMap.put("stations", stations);
 		return SUCCESS;

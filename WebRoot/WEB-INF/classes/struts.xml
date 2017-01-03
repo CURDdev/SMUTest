@@ -24,9 +24,15 @@
 </interceptors>
 <global-results>
    <result name="login">/login.jsp</result>
+   
+   <result name="primaryError">/error.jsp</result>
 </global-results>
 <action name="showAllStations" class="stationAction" method="showAllStations">
 <result name="success">/menu.jsp</result>
+<interceptor-ref name="loginstack"></interceptor-ref>
+</action>
+<action name="showTests" class="testAction" method="showTests">
+<result name="success">/Tests.jsp</result>
 <interceptor-ref name="loginstack"></interceptor-ref>
 </action>
 <action name="adminShowAllStations" class="stationAction" method="showAllStations">
@@ -70,6 +76,10 @@
 <result name="success">/addRequire.jsp</result>
 <interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action>
+<action name="addTest" class="requirementAction" method="addTest">
+<result name="success">/admin.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref>
+</action>
 <action name="logOut" class="userAction" method="logOut">
 <interceptor-ref name="defaultStack"></interceptor-ref>       
 <result name="success">/login.jsp</result>
@@ -90,6 +100,16 @@
 <action name="StationScores" class="scoreAction" method="browseStationScores">
 <interceptor-ref name="defaultStack"></interceptor-ref>   
 <result name="success">/stationScore.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref> 
+</action>
+<action name="beginNewTest" class="caseStoreAction" method="showCases">
+<interceptor-ref name="defaultStack"></interceptor-ref>   
+<result name="success">/NewTest.jsp</result>
+<interceptor-ref name="adminLoginstack"></interceptor-ref> 
+</action>
+<action name="previewCase" class="caseStoreAction" method="showOneCase">
+<interceptor-ref name="defaultStack"></interceptor-ref>   
+<result name="success">/PreviewCase.jsp</result>
 <interceptor-ref name="adminLoginstack"></interceptor-ref> 
 </action>
 </package>

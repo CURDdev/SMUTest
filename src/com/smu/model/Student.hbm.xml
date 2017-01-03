@@ -10,18 +10,15 @@
             <column name="s_no" />
             <generator class="assigned" />
         </id>
+        <many-to-one name="mclass" class="com.smu.model.Class" fetch="select">
+            <column name="class_name" not-null="true" />
+        </many-to-one>
         <property name="SName" type="java.lang.String">
             <column name="s_name" not-null="true" />
         </property>
         <property name="SGrade" type="java.lang.String">
             <column name="s_grade" not-null="true" />
         </property>
-          <many-to-one name="className" class="com.smu.model.Class" fetch="select">
-              <column name="class_name" not-null="true" />
-        </many-to-one>
-       
-          
-        
         <set name="scores" inverse="true">
             <key>
                 <column name="s_no" not-null="true" />

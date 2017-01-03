@@ -19,6 +19,7 @@ public class loginIniter extends AbstractInterceptor{
 			if(user!=null&&user.getRole().equals("guest")){
 				System.out.println("登录身份loginIniter为客户");
 				return arg0.invoke();
+				
 			}
 				System.out.println("登录身份loginIniter为管理员");
 			return Action.LOGIN;
