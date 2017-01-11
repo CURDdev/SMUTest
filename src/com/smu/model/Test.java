@@ -14,6 +14,7 @@ public class Test implements java.io.Serializable {
 
 	private Integer testId;
 	private String testName;
+	private String className;
 	private Timestamp testCreateTime;
 	private Timestamp testBeginTime;
 	private Timestamp testEndTime;
@@ -27,21 +28,23 @@ public class Test implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Test(String testName, Timestamp testCreateTime,
-			Timestamp testBeginTime,Timestamp testEndTime) {
+			Timestamp testBeginTime,Timestamp testEndTime,String className) {
 		this.testName = testName;
 		this.testCreateTime = testCreateTime;
 		this.testBeginTime = testBeginTime;
 		this.testEndTime = testEndTime;
+		this.className = className;
 	}
 
 	/** full constructor */
 	public Test(String testName, Timestamp testCreateTime,
-			Timestamp testBeginTime, Timestamp testEndTime,Set stations) {
+			Timestamp testBeginTime, Timestamp testEndTime,Set stations,String className) {
 		this.testName = testName;
 		this.testCreateTime = testCreateTime;
 		this.testBeginTime = testBeginTime;
 		this.testEndTime = testEndTime;
 		this.stations = stations;
+		this.className = className;
 	}
 
 	// Property accessors
@@ -94,4 +97,11 @@ public class Test implements java.io.Serializable {
 		this.stations = stations;
 	}
 
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
 }

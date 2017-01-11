@@ -1,17 +1,18 @@
 package com.smu.action;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.LogManager;
 
-
+import com.smu.model.*;
+import com.smu.service.IStudentService;
+import com.smu.service.ITestService;
 import org.apache.log4j.*;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.util.logging.Logger;
-import com.smu.model.Case;
-import com.smu.model.Requirement;
 import com.smu.service.ICaseService;
 import com.smu.service.IRequirementService;
 import com.smu.util.Require;
@@ -21,8 +22,36 @@ public class CaseAction extends ActionSupport {
    private IRequirementService requirementService;
    private int stc_id;
    private int c_id;
+   private  int t_id;
+   private IStudentService studentService;
+   private ITestService iTestService;
    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(CaseAction.class);
-public IRequirementService getRequirementService() {
+
+	public ITestService getiTestService() {
+		return iTestService;
+	}
+
+	public void setiTestService(ITestService iTestService) {
+		this.iTestService = iTestService;
+	}
+
+	public int getT_id() {
+		return t_id;
+	}
+
+	public void setT_id(int t_id) {
+		this.t_id = t_id;
+	}
+
+	public IStudentService getStudentService() {
+		return studentService;
+	}
+
+	public void setStudentService(IStudentService studentService) {
+		this.studentService = studentService;
+	}
+
+	public IRequirementService getRequirementService() {
 	return requirementService;
 }
 public void setRequirementService(IRequirementService requirementService) {
@@ -51,6 +80,7 @@ public String showCases() throws Exception{
 	Map requestMap = (Map) ActionContext.getContext().get("request");
 	LOGGER.info(cases.toString());
 	requestMap.put("cases", cases);
+	requestMap.put("t_id",t_id);
 	return SUCCESS;
 }
 public String showOneCase() throws Exception{
@@ -58,6 +88,29 @@ public String showOneCase() throws Exception{
 	cas = caseService.getOneCase(c_id);
 	Requirement r = requirementService.getAllRequirements(cas.getCId());
 	int stId = cas.getStation().getStId();
+	Test ttt = new Test();
+	ttt = iTestService.getOneTest(t_id);
+	String gradeClassName = ttt.getClassName();
+	String[] className = gradeClassName.split(",");
+
+
+
+
+	List<Student> students = new ArrayList<Student>();
+	for(int m = 0;m<=className.length-1;m++) {
+
+	 students.addAll(studentService.getStudentsByClass(className[m]));
+	}
+	Map map = new HashMap<>();
+	for(int i = 0;i<students.size();i++){
+		map.put(students.get(i).getSNo(), students.get(i).getSName()+students.get(i).getSNo());
+	}
+
+
+
+
+
+
 
 	String rcontent = r.getRContent();
 	String rscore = r.getRScore();
@@ -82,6 +135,7 @@ public String showOneCase() throws Exception{
 	requestMap.put("RContent",contents[0]);
 	requestMap.put("RScore",scores[0]);
 	requestMap.put("case", cas);
+	requestMap.put("students", map);
 	return SUCCESS;
 }
 }

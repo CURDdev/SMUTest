@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 
 import com.smu.dao.IScoreDAO;
 import com.smu.dao.IStudentDAO;
+import com.smu.model.Case;
 import com.smu.model.Requirement;
 import com.smu.model.Student;
 import com.smu.model.Teacher;
@@ -23,26 +24,22 @@ public class StudentDAO implements IStudentDAO {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-    public boolean checkStudent(String s_no){
+    public Student checkStudent(String s_no){
     	Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
 		String q = "from Student as s where s.SNo ="+"'"+s_no+"'";
 		Query query = session.createQuery(q);
-	    List list = query.list();
-			ts.commit();
-			session.clear();
-			session.close();
-			if (list.size() != 0) {
-				
-				return true;
-			}
-			return false;
+		Student s = (Student)query.uniqueResult();
+		
+		ts.commit();
+		session.close();
+		return s;
     	
     }
     public List getStudentsByClass(String class_name) {
     	Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
-		Query query = session.createQuery("from Student as s where s.mclass.className ="+"'"+class_name+"'");
+		Query query = session.createQuery("from Student as s where s.mclass.className ='"+class_name+"' order by (s.SNo+0)");
 		List students = query.list();
 		ts.commit();
 		session.close();

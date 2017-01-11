@@ -42,8 +42,27 @@ public class RequirementAction extends ActionSupport{
     private String[] stName;
     private Case c0;
     private Requirement r0;
+    private String[] grade;
+    private String[] className;
+
     private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(CaseAction.class);
-    
+
+	public String[] getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String[] grade) {
+		this.grade = grade;
+	}
+
+	public String[] getClassName() {
+		return className;
+	}
+
+	public void setClassName(String[] className) {
+		this.className = className;
+	}
+
 	public Case getC0() {
 		return c0;
 	}
@@ -200,6 +219,11 @@ public class RequirementAction extends ActionSupport{
     	LOGGER.warn(caseId[0]);
     	LOGGER.warn(stName[0]);
     	t.setTestCreateTime(new Timestamp(System.currentTimeMillis()));
+    	String gradeClassName = grade[0]+className[0];
+    	for(int location = 1;location<=grade.length-1;location++){
+    		gradeClassName += ","+ grade[location] + className[location];
+		}
+        t.setClassName(gradeClassName);
     	int t_id = testService.addTest(t);
     	Test test = new Test();
     	test = testService.getOneTest(t_id);
@@ -227,7 +251,7 @@ public class RequirementAction extends ActionSupport{
     	        requirement.setCas(caseService.getOneCase(cId));
     	        requirement.setRName(requirementStore.getRName());
     	        requirement.setRContent(requirementStore.getRContent());
-    	        requirement.setRScore(requirementStore.getRSocre()); 	
+    	        requirement.setRScore(requirementStore.getRScore());
     	    	requirementService.addRequirement(requirement);
     	    	flag++;
     		}

@@ -53,20 +53,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	//part0
 	$("input[name='0']").each(function(){
 	if($(this).val()==""){
-	part0 = part0+"," + " ";
+	part0 = part0+"/" + " ";
 	}
 	else{
-	part0 = part0+"," + $(this).val();
+	part0 = part0+"/" + $(this).val();
 	}
 	});
 	part0 = part0.substring(4,part0.length);
 	//part1
 	$("input[name='1']").each(function(){
 	if($(this).val()==""){
-	part1 = part1+"," + " ";
+	part1 = part1+"/" + " ";
 	}
 	else{
-	part1 = part1+"," + $(this).val();
+	part1 = part1+"/" + $(this).val();
 	}
 	});
 	part1 = part1.substring(4,part1.length);
@@ -74,18 +74,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	$("input[name='2']").each(function(){
 	if($(this).val()==""){
-	part2 = part2+"," + " ";
+	part2 = part2+"/" + " ";
 	}
 	else{
-	part2 = part2+"," + $(this).val();
+	part2 = part2+"/" + $(this).val();
 	}
 	});
 	part2 = part2.substring(4,part2.length);
 	$('#part0').val(part0);
 	$('#part1').val(part1);
 	$('#part2').val(part2);
-	var v = document.getElementById("cName").value;
-	$('#CName').val(v);
 	return true;
 	}
     </script>
@@ -96,16 +94,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <jsp:include page="admin_header.jsp"></jsp:include>
 <center><h1>添加案例及要求</h1></center>
-<form action="addRequirement.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
+<form action="addCaseStore.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
 <center>
-<label>考试名称</label>
-<input type="text" name="c.CName" id="cName"/>
-<label>所属站号</label>
-<input type="text" name="c.station.stId" placeholder="请输入数字" id="stId"/>
+<label>案例名称</label>
+<input type="text" name="caseStore.CName" id="cName"/>
+
 <br>
 <h2>案例内容</h2>
 
-<textarea rows="5" cols="40" name="c.CContent" placeholder="如果没有请留空" id="content"></textarea>
+<textarea rows="5" cols="40" name="caseStore.CContent" placeholder="如果没有请留空" id="content"></textarea>
 </center>
 <table id="viewTabs" class="table striped hovered cell-hovered border bordered">
 <tbody>
@@ -119,10 +116,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <button onclick="addHtml()" type="button">增加一行</button>
 <button onclick="deleteHtml()" type="button">减少一行</button>
 <hr>
-<input type="hidden" id="CName" name="requirement.CName.CName"/>
-<input type="hidden" id="part0" name="requirement.RName"/>
-<input type="hidden" id="part1" name="requirement.RContent"/>
-<input type="hidden" id="part2" name="requirement.RScore"/>
+<input type="hidden" id="part0" name="requirementStore.RName"/>
+<input type="hidden" id="part1" name="requirementStore.RContent"/>
+<input type="hidden" id="part2" name="requirementStore.RScore"/>
 
 <center><button type="submit">确认无误，提交</button></center>
 </form>

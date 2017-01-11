@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <center><h4>
    
    <a href="showAllStations.action?test_id=<s:property value="#tests.testId"/>"><s:property value="#tests.testName"/></a>
-   
+   <h5>(适用于<s:property value="#tests.className"/>)</h5>
    </h4>
    </center>
    </td>

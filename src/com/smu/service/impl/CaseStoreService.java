@@ -25,7 +25,7 @@ public CaseStore getOneCase(int c_id){
 public boolean deleteCase(int c_id){
 	return caseStoreDAO.deleteCase(c_id);
 }
-public boolean addCase(CaseStore c){
+public int addCase(CaseStore c){
 	return caseStoreDAO.addCase(c);
 };
 }

@@ -5,7 +5,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
   <head>
     <base href="<%=basePath%>">
@@ -22,7 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
     <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
     <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
-   
+      <link rel="stylesheet" href="css/bootstrap-select.css"/>
+<link rel="stylesheet" href="css/bootstrap.css">
     <link href="css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
     
   
@@ -57,6 +58,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="css/metro-schemes.css">
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 	<script type="text/javascript" src="js/metro.min.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="js/bootstrap-select.js"></script>
 	<script type="text/javascript">
 	
 	 function showDialog(id){
@@ -67,38 +70,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 dialog.close();
             }
         }
-        
-	function check(){
-	var no = $("#student").val();
-	
-	$.ajax({ 
+
+	function check(value){
+
+
+	$.ajax({
         //这里的需要Struts.xml的<action/>的name属性一致。
        url:'checkStudent.action',
        //提交类型
-       type:'POST', 
-       //提交数据给Action传入数据 
-       data:{'s_no':no}, 
+       type:'POST',
+       //提交数据给Action传入数据
+       data:{'s_no':value},
        //返回的数据类型
-       dataType:'json', 
+       dataType:'json',
        //成功是调用的方法
-       success:function(data){ 
+       success:function(data){
        //获取Action返回的数据用  data.Action中的属性名 获取
-          if(data =="false")
-          {
-          showDialog(dialog);
-          }
-          }  
+           var studentInfo = eval("("+data+")");
+           var name = document.getElementById("name");
+           var className = document.getElementById("class");
+           var grade = document.getElementById("grade");
+           var no = document.getElementById("no");
+           name.textContent = studentInfo.name;
+           className.textContent = studentInfo.class;
+           grade.textContent = studentInfo.grade;
+           no.textContent = studentInfo.no;
+          },
+        error:function () {
+            alert("错误")
+        }
      });
-	
-	}</script>
+
+	}
+
+
+    </script>
   </head>
-  
+
   <body>
    <jsp:include page="header.jsp"></jsp:include>
    <div hidden="true">
         <label for="theme">Theme</label>
         <select name="theme" id="theme" class="settings" >
-            
+
         </select>
     </div>
    <center>
@@ -106,7 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h4><s:property value="#request.case.CContent"/></h4>
     <a href="showCases.action?stc_id=<s:property value="#request.stId"/>">更换案例</a>
    </center>
-  
+
 <div data-role="dialog" id="dialog" class="padding20" data-close-button="true" data-type="alert">
             <h1>提示信息</h1>
             <p>
@@ -125,15 +139,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         dialog.open();
     }
 </script>
-<s:form action="addScore1.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
+<s:form  action="addScore1.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
 <center>
- <h3 style="color:red">请输入考生学号</h3>
- <div class="input-control text error" style="width:30%" >
-   <input type="text"  class="input" id="student" onblur="check()" name="score.student.SNo"/>
-  </div>
- 
-    </center>
-    <table class="table striped hovered cell-hovered border bordered">
+ <h3 style="color:red">请选择考生</h3>
+</center>
+   <%--<input type="text"  class="input" id="student" onblur="check()" name="score.student.SNo"/>--%>
+
+    <div class="col-lg-4 col-lg-offset-4  col-lg-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+     <s:select id="basic" cssClass="selectpicker show-tick form-control" data-live-search="true" list="#request.students" listKey="key" listValue="value" theme="simple" name="score.student.SNo" onchange="check(this.value)"/>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+   <div class="col-lg-7 col-lg-offset-4  col-lg-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+    <label>学号:</label>
+    <span id="no"></span>
+    <label>姓名:</label>
+    <span id="name"></span>
+    <label>年级:</label>
+    <span id="grade"></span>
+    <label>班级:</label>
+    <span id="class"></span>
+   </div>
+    <table class="table striped hovered cell-hovered border bordered" id="t">
   <thead>
   <tr>
  <th class="sortable-column">
@@ -150,7 +180,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </h3>
   </center>
   </th>
-  
+
  <th class="sortable-column">
   <h3>
   <s:property value="#request.RScore"/>
@@ -161,10 +191,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   打分
   </h3>
   </th>
+
+
+      <th class="sortable-column">
+          <h3>
+              考生所犯错误
+          </h3>
+      </th>
   </tr>
   </thead>
-  
-    
+
+
    <s:iterator value="#request.require" id="require" status="st">
    <tr>
    <td>
@@ -174,18 +211,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <s:property value="#require.content"/>
    </td>
    <td>
-   <s:property value="#require.score"/>
+   <h4 id="<s:property value="#st.index"/>"><s:property value="#require.score"/></h4>
    </td>
    <td>
    <div class="input-control text info">
-   <input type="number" name="part"/>
+   <input type="number"  max="<s:property value="#require.score"/>" id="number<s:property value="#st.index"/>"/>
    </div>
    </td>
    </tr>
    </s:iterator>
-  
+
     </table>
-    
+<button onclick="test()" type="button">dweded</button>
+    <script>
+       function test() {
+           alert($("#xxx").attr("max"));
+       }
+    </script>
    <input type="hidden" id="score" name="score.scScore">
    <input type="hidden" id="totalScore" name="score.scTotalScore">
    <input type="hidden" id="stId" name="score.station.stId" value="<s:property value="#request.stId"/>">
@@ -230,29 +272,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="js/mobiscroll.frame.ios.js"></script>
 
     <script src="js/mobiscroll.scroller.js"></script>
-   
 
- 
+
+
     <script src="js/mobiscroll.i18n.zh.js"></script>
 
     <script>
     (function ($) {
-
+        var t = document.getElementById("t");
+       var l = t.rows.length;
         function init() {
+            for(var j = 0;j<=l-2;j++) {
+                var maxNum = Number($("#number"+j).attr("max"));
+                var d = new Array;
+                for (var i = 0; i <= maxNum; i++) {
+                    d.push(i);
+                }
+                console.log(maxNum);
+                mobiscroll.scroller("#number"+j, {
+                    theme: theme,
+                    display: display,
+                    lang: lang,
+                    wheels: [
+                        [{
+                            label: 'First wheel',
+//                        data: ['0', '1', '2', '3', '4', '5', '6', '7','8','9','10']
+                            data: d
+                        }
 
-            mobiscroll.scroller("input[name='part']", {
-                theme: theme,
-                display: display,
-                lang: lang,
-                wheels: [
-                    [{
-                        label: 'First wheel',
-                        data: ['0', '1', '2', '3', '4', '5', '6', '7','8','9','10']
-                    }
-                        
+                        ]
                     ]
-                ]
-            });
+                });
+            }
         }
 
         var theme, display, lang;

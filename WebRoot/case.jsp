@@ -52,6 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <%--  <s:a href="showOneCase.action?c_id=<s:property value="#case.CName"/>"><s:property value="#case.CName"/></s:a> --%>
    <s:form action="showOneCase.action">
    <input name="c_id" type="hidden" value="<s:property value="#case.CId"/>">
+       <input name="t_id" type="hidden" value="<s:property value="#request.t_id"/>">
    <input type="submit" value="<s:property value="#case.CName"/>">
    </s:form>
    

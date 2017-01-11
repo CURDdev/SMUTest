@@ -50,7 +50,7 @@ public class CaseStoreDAO implements ICaseStoreDAO{
 		session.close();
 		return true;
 	}
-    public boolean addCase(CaseStore c){
+    public int addCase(CaseStore c){
     	Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
 		LOGGER.warn("1");
@@ -62,14 +62,14 @@ public class CaseStoreDAO implements ICaseStoreDAO{
 			// TODO: handle exception
 			session.close();
 		}
-		
+		int id = c.getCId();
 		LOGGER.warn("4");
 		session.clear();
 		ts.commit();
 		LOGGER.warn("5");
 		session.close();
 		LOGGER.warn("8");
-		return true;
+		return id;
     }
 
 }

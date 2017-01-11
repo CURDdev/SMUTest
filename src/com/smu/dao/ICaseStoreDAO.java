@@ -7,6 +7,6 @@ import com.smu.model.CaseStore;
 public interface ICaseStoreDAO {
 public List getCases();
 public CaseStore getOneCase(int c_id);
-public boolean addCase(CaseStore c);
+public int addCase(CaseStore c);
 public boolean deleteCase(int c_id);
 }

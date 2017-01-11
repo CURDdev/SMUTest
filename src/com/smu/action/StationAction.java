@@ -29,6 +29,7 @@ public class StationAction extends ActionSupport{
 		List stations = stationService.gainAllStations(test_id);
 		Map requestMap = (Map) ActionContext.getContext().get("request");
 		requestMap.put("stations", stations);
+		requestMap.put("t_id", test_id);
 		return SUCCESS;
 	}
 

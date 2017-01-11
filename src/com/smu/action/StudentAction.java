@@ -1,16 +1,24 @@
 package com.smu.action;
 
 import javax.servlet.http.HttpServletRequest;
-
+import java.util.*;
 import org.apache.struts2.ServletActionContext;
-
+import com.alibaba.fastjson.*;
 import com.opensymphony.xwork2.ActionSupport;
 import com.smu.service.IStudentService;
+import com.smu.model.Student;
 
 public class StudentAction extends ActionSupport {
 private IStudentService studentService;
 private String s_no;
 private String result;
+private Student s;
+public Student getS() {
+	return s;
+}
+public void setS(Student s) {
+	this.s = s;
+}
 public String getResult() {
 	return result;
 }
@@ -31,15 +39,15 @@ public void setS_no(String s_no) {
 }
 public String execute() throws Exception {
     HttpServletRequest request = ServletActionContext.getRequest();
-    //获取ajax传过来的数据直接使用前台的属性名即可获取。
-   
-   
-    if(studentService.checkStudent(s_no)){
-      //返回给ajax的数据
-      this.result = "true";
-    }else{
-      this.result = "false";
-    }
-    return SUCCESS;
+	Student student = new Student();
+	student = studentService.checkStudent(s_no);
+	Map<String,String > map = new HashMap<String,String>();
+	map.put("class",student.getMclass().getClassName());
+	map.put("name",student.getSName());
+	map.put("no",student.getSNo());
+	map.put("grade",student.getSGrade());
+	result  = JSON.toJSONString(map);
+//	result = "{'name':'"+student.getSName()+"','className':'"+student.getMclass().getClassName()+"','no':'"+student.getSNo()+"'}";
+	return SUCCESS;
   }
 }

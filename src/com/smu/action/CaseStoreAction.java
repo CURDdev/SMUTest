@@ -21,6 +21,8 @@ public class CaseStoreAction extends ActionSupport {
    private ICaseStoreService caseStoreService;
    private IRequirementStoreService requirementStoreService;
    private int c_id;
+   private CaseStore caseStore;
+   private RequirementStore requirementStore;
    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(CaseAction.class);
 public IRequirementStoreService getRequirementService() {
 	return requirementStoreService;
@@ -28,7 +30,24 @@ public IRequirementStoreService getRequirementService() {
 public void setRequirementStoreService(IRequirementStoreService requirementService) {
 	this.requirementStoreService = requirementService;
 }
-public ICaseStoreService getCaseService() {
+
+	public RequirementStore getRequirementStore() {
+		return requirementStore;
+	}
+
+	public void setRequirementStore(RequirementStore requirementStore) {
+		this.requirementStore = requirementStore;
+	}
+
+	public CaseStore getCaseStore() {
+		return caseStore;
+	}
+
+	public void setCaseStore(CaseStore caseStore) {
+		this.caseStore = caseStore;
+	}
+
+	public ICaseStoreService getCaseService() {
 	return caseStoreService;
 }
 public void setCaseStoreService(ICaseStoreService caseService) {
@@ -60,7 +79,7 @@ public String showOneCase() throws Exception{
 	
 
 	String rcontent = r.getRContent();
-	String rscore = r.getRSocre();
+	String rscore = r.getRScore();
 	String name = r.getRName();
 	String[] contents = rcontent.split("/");
 	String[] scores = rscore.split("/");
@@ -81,6 +100,13 @@ public String showOneCase() throws Exception{
 	requestMap.put("RContent",contents[0]);
 	requestMap.put("RScore",scores[0]);
 	requestMap.put("case", cas);
+	return SUCCESS;
+}
+//向题库中增加一个案例
+public String addCaseStore() throws Exception{
+	int id = caseStoreService.addCase(caseStore);
+	requirementStore.setCaseStore(caseStoreService.getOneCase(id));
+	requirementStoreService.addRequirement(requirementStore);
 	return SUCCESS;
 }
 }

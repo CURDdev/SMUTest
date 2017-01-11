@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <td>
    <center><h4>
    
-   <a href="showCases.action?stc_id=<s:property value="#station.stId"/>"><s:property value="#station.stName"/></a>
+   <a href="showCases.action?stc_id=<s:property value="#station.stId"/>&t_id=<s:property value="#request.t_id"/>"><s:property value="#station.stName"/></a>
    
    </h4>
    </center>

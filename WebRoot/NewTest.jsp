@@ -52,25 +52,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 }
             }
         }
+
+        function createNewClass() {
+            var selectGrade = document.getElementById("selectGrade");
+            var selectClass = document.getElementById("selectClass");
+            var newNode = document.createElement("div");
+            var front = document.getElementById("selectClass");
+            var str = "<select name='grade'>";
+            for(var j = 0;j<selectGrade.options.length;j++)
+                str+= "<option value='"+selectGrade.options[j].value+"'>"+selectGrade.options[j].text;
+
+            str += "</select><select name='className'>";
+            for(var k = 0;k<selectClass.options.length;k++)
+                str+= "<option value='"+selectClass.options[k].value+"'>"+selectClass.options[k].text;
+            str += "</select>";
+            newNode.innerHTML=str;
+            var reforeNode = document.getElementById("first");
+            reforeNode.insertBefore(newNode,front.nextSibling);
+        }
         function createSelect(id){
-       var oTest = document.getElementById("viewTabs"); 
-        var h = document.getElementById("h"+id);
-    var newNode = document.createElement("div"); 
-    newNode.style.float="left"; 
-    var reforeNode = document.getElementById(id.toString()+h.value.toString()); 
-     var s = document.getElementById("11v");
-     var hh = Number(h.value)+1;
-     alert(hh);
-     var str= "<input type=\"hidden\" name=\"stations\" value=\""+id+"\"/>";
-    str +="<select id='"+id.toString()+hh.toString()+"v' name=\"caseId\">";
-    for(var j = 0;j<s.options.length;j++)
+            var oTest = document.getElementById("viewTabs");
+            var h = document.getElementById("h"+id);
+            var newNode = document.createElement("div");
+            newNode.style.float="left";
+            var reforeNode = document.getElementById(id.toString()+h.value.toString());
+            var s = document.getElementById("11v");
+            var hh = Number(h.value)+1;
+            /*  alert(hh); */
+            var str= "<input type=\"hidden\" name=\"stations\" value=\""+id+"\"/>";
+            str +="<select id='"+id.toString()+hh.toString()+"v' name=\"caseId\">";
+            for(var j = 0;j<s.options.length;j++)
                 str+= "<option value='"+s.options[j].value+"'>"+s.options[j].text;
                
                 str+= "</select><a href=# id=\""+id.toString()+hh.toString()+"\" onClick=\"javascript:window.open('previewCase.action?c_id='+document.getElementById('"+id.toString()+hh.toString()+"v').value,'','width=632,height=388,toolbar=no, status=no, menubar=no, resizable=yes, scrollbars=yes');return false;\">预览</a>";
                
-    newNode.innerHTML = str; 
-    oTest.rows[id].cells[2].insertBefore(newNode,reforeNode.nextSibling);//新建的元素节点插入id为P1节点元素的后面
-    h.value = Number(h.value)+1;
+            newNode.innerHTML = str;
+            oTest.rows[id].cells[2].insertBefore(newNode,reforeNode.nextSibling);//新建的元素节点插入id为P1节点元素的后面
+            h.value = Number(h.value)+1;
         }
         function deleteHtml( )
         {
@@ -99,6 +117,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <label>结束时间</label>
 <input size="20" type="text"  name="t.testEndTime" readonly class="form_datetime">
 <br>
+    <div id="first">
+<span>考试班级</span>
+    <select name="grade" id="selectGrade">
+        <option value="2012级">2012级</option>
+        <option value="2013级">2013级</option>
+        <option value="2014级">2014级</option>
+        <option value="2015级">2015级</option>
+        <option value="2016级">2016级</option>
+        <option value="2017级">2017级</option>
+        <option value="2018级">2018级</option>
+    </select>
+    <select name="className" id="selectClass">
+        <option value="临床医学一">临床医学一</option>
+        <option value="临床医学二">临床医学二</option>
+        <option value="临床心理">临床心理</option>
+        <option value="中西医临床医学">中西医临床医学</option>
+        <option value="法医学">法医学</option>
+    </select>
+    </div>
+    <button type="button" onclick="createNewClass()">增加一个考试班级</button>
 </center>
 <table id="viewTabs" class="table striped hovered cell-hovered border bordered">
 <thead>
