@@ -117,14 +117,23 @@ public String showOneCase() throws Exception{
 	String name = r.getRName();
 	String[] contents = rcontent.split("/");
 	String[] scores = rscore.split("/");
-	String[] names = name.split("/"); 
+	String[] names = name.split("/");
+	String[] errors = r.getErrors().split("/");
 	List<Require> r_list = new ArrayList<Require>();
-	
+
 	for(int i = 1;i<= scores.length-1;i++){
 		Require require = new Require();
 		require.setContent(contents[i]);
 		require.setScore(scores[i]);
 		require.setName(names[i]);
+		String[] error = errors[i-1].split(",");
+		Map<String,String> errorsMap= new HashMap<String,String>();
+
+		for(int j = 0;j<= error.length-2;j++){
+			errorsMap.put(error[j+1],error[j+1]);
+			LOGGER.warn(error[j+1]);
+		}
+		require.setMap(errorsMap);
 		r_list.add(require);
 	}
 	Map requestMap = (Map) ActionContext.getContext().get("request");
@@ -136,6 +145,8 @@ public String showOneCase() throws Exception{
 	requestMap.put("RScore",scores[0]);
 	requestMap.put("case", cas);
 	requestMap.put("students", map);
+	requestMap.put("TId", t_id);
+	requestMap.put("RId",r.getRId());
 	return SUCCESS;
 }
 }

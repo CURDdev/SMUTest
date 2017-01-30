@@ -38,6 +38,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             -webkit-transform: scale(.8);
             transform: scale(.8);
         }
+        body
+        {background:url(image/background.jpeg);background-repeat: no-repeat; background-size:cover;}
+
     </style>
 
     <script>
@@ -57,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         });
     </script>
 </head>
-<body class="bg-darkTeal">
+<body>
     <div class="login-form padding20 block-shadow">
         <s:form action="checkUser.action" method="post" 	enctype="multipart/form-data" >
             <h1 class="text-light">Login to service</h1>

@@ -16,92 +16,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" href="css/metro-responsive.css">
 <link rel="stylesheet" href="css/metro-schemes.css">
-
-	
-	
-    <script language="javascript" type="text/javascript">
-    
-        //动态添加行与列
-
-        function addHtml( )
-        {
-            var tab=document.getElementById("viewTabs"); //获得表格
-            var colsNum=tab.rows.item(0).cells.length;   //表格的列数
-            var num=tab.rows.length;//表格当前的行数
-            var rownum=num;
-            tab.insertRow(rownum);
-            var s = document.getElementById("11v");
-            for(var i=0;i < colsNum; i++)
-            {
-                tab.rows[rownum].insertCell(i);//插入列
-                if(i==0){
-                tab.rows[rownum].cells[i].innerHTML = num+"<input type=\"hidden\" name=\"stNum\" value=\""+num+"\"/>";
-                }
-                else if(i==1){
-                tab.rows[rownum].cells[i].innerHTML="<input type='text' name=\"stName\"/>";
-                }
-                else if(i==2){
-                
-                var str ="<select id='"+num+"1v' name='caseId'>";
-                for(var j = 0;j<s.options.length;j++)
-                str+= "<option value='"+s.options[j].value+"'>"+s.options[j].text;
-               
-                str+= "</select><a href=# id=\""+rownum+"1\" onClick=\"javascript:window.open('previewCase.action?c_id='+document.getElementById('"+num+"1v').value,'','width=632,height=388,toolbar=no, status=no, menubar=no, resizable=yes, scrollbars=yes');return false;\">预览</a><button id=\""+num+"\" onclick=\"createSelect(this.id)\" type=\"button\">增加一个案例</button><input id=\"h"+num+"\" type=\"hidden\" value=\"1\">"
-                str+="<input type=\"hidden\" name=\"stations\" value=\""+rownum+"\"/>";
-                tab.rows[rownum].cells[i].innerHTML = str;
-                }
-            }
-        }
-
-        function createNewClass() {
-            var selectGrade = document.getElementById("selectGrade");
-            var selectClass = document.getElementById("selectClass");
-            var newNode = document.createElement("div");
-            var front = document.getElementById("selectClass");
-            var str = "<select name='grade'>";
-            for(var j = 0;j<selectGrade.options.length;j++)
-                str+= "<option value='"+selectGrade.options[j].value+"'>"+selectGrade.options[j].text;
-
-            str += "</select><select name='className'>";
-            for(var k = 0;k<selectClass.options.length;k++)
-                str+= "<option value='"+selectClass.options[k].value+"'>"+selectClass.options[k].text;
-            str += "</select>";
-            newNode.innerHTML=str;
-            var reforeNode = document.getElementById("first");
-            reforeNode.insertBefore(newNode,front.nextSibling);
-        }
-        function createSelect(id){
-            var oTest = document.getElementById("viewTabs");
-            var h = document.getElementById("h"+id);
-            var newNode = document.createElement("div");
-            newNode.style.float="left";
-            var reforeNode = document.getElementById(id.toString()+h.value.toString());
-            var s = document.getElementById("11v");
-            var hh = Number(h.value)+1;
-            /*  alert(hh); */
-            var str= "<input type=\"hidden\" name=\"stations\" value=\""+id+"\"/>";
-            str +="<select id='"+id.toString()+hh.toString()+"v' name=\"caseId\">";
-            for(var j = 0;j<s.options.length;j++)
-                str+= "<option value='"+s.options[j].value+"'>"+s.options[j].text;
-               
-                str+= "</select><a href=# id=\""+id.toString()+hh.toString()+"\" onClick=\"javascript:window.open('previewCase.action?c_id='+document.getElementById('"+id.toString()+hh.toString()+"v').value,'','width=632,height=388,toolbar=no, status=no, menubar=no, resizable=yes, scrollbars=yes');return false;\">预览</a>";
-               
-            newNode.innerHTML = str;
-            oTest.rows[id].cells[2].insertBefore(newNode,reforeNode.nextSibling);//新建的元素节点插入id为P1节点元素的后面
-            h.value = Number(h.value)+1;
-        }
-        function deleteHtml( )
-        {
-            var tab=document.getElementById("viewTabs"); //获得表格
-            var colsNum=tab.rows.item(0).cells.length;   //表格的列数
-            var num=tab.rows.length;//表格当前的行数
-            var rownum=num-1;
-            tab.deleteRow(rownum);
-        }
-        
-    </script>
     <s:head />
-<sx:head />
+    <%--<sx:head />--%>
+
 </head>
 <body>
 <jsp:include page="admin_header.jsp"></jsp:include>
@@ -168,14 +85,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </s:iterator>
 </tbody>
 </table>
-<button onclick="addHtml()" type="button">增加一行</button>
-<button onclick="deleteHtml()" type="button">减少一行</button>
+<button onclick="addHtml()" type="button" class="button">增加一行</button>
+<button onclick="deleteHtml()" type="button" class="button">减少一行</button>
 <hr>
 <center><button type="submit">确认无误，提交</button></center>
 </form>
-
-<!-- <div id="right" style="float:left; width:50%; height:100%;border-left:2px solid #0000FF;">
-</div> -->
 <script type="text/javascript" src="js/jquery-3.0.0.min.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="js/metro.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -183,6 +97,84 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
     <script type="text/javascript">
     $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii:00'});
-</script>   
+
+</script>
+<script language="javascript" type="text/javascript">
+    //动态添加行与列
+    function addHtml( )
+    {
+        var tab=document.getElementById("viewTabs"); //获得表格
+        var colsNum=tab.rows.item(0).cells.length;   //表格的列数
+        var num=tab.rows.length;//表格当前的行数
+        var rownum=num;
+        tab.insertRow(rownum);
+        var s = document.getElementById("11v");
+        for(var i=0;i < colsNum; i++)
+        {
+            tab.rows[rownum].insertCell(i);//插入列
+            if(i==0){
+                tab.rows[rownum].cells[i].innerHTML = num+"<input type=\"hidden\" name=\"stNum\" value=\""+num+"\"/>";
+            }
+            else if(i==1){
+                tab.rows[rownum].cells[i].innerHTML="<input type='text' name=\"stName\"/>";
+            }
+            else if(i==2){
+
+                var str ="<select id='"+num+"1v' name='caseId'>";
+                for(var j = 0;j<s.options.length;j++)
+                    str+= "<option value='"+s.options[j].value+"'>"+s.options[j].text;
+
+                str+= "</select><a href=# id=\""+rownum+"1\" onClick=\"javascript:window.open('previewCase.action?c_id='+document.getElementById('"+num+"1v').value,'','width=632,height=388,toolbar=no, status=no, menubar=no, resizable=yes, scrollbars=yes');return false;\">预览</a><button id=\""+num+"\" onclick=\"createSelect(this.id)\" type=\"button\">增加一个案例</button><input id=\"h"+num+"\" type=\"hidden\" value=\"1\">"
+                str+="<input type=\"hidden\" name=\"stations\" value=\""+rownum+"\"/>";
+                tab.rows[rownum].cells[i].innerHTML = str;
+            }
+        }
+    }
+    function createNewClass() {
+        var selectGrade = document.getElementById("selectGrade");
+        var selectClass = document.getElementById("selectClass");
+        var newNode = document.createElement("div");
+        var front = document.getElementById("selectClass");
+        var str = "<select name='grade'>";
+        for(var j = 0;j<selectGrade.options.length;j++)
+            str+= "<option value='"+selectGrade.options[j].value+"'>"+selectGrade.options[j].text;
+
+        str += "</select><select name='className'>";
+        for(var k = 0;k<selectClass.options.length;k++)
+            str+= "<option value='"+selectClass.options[k].value+"'>"+selectClass.options[k].text;
+        str += "</select>";
+        newNode.innerHTML=str;
+        var reforeNode = document.getElementById("first");
+        reforeNode.insertBefore(newNode,front.nextSibling);
+    }
+    function createSelect(id){
+        var oTest = document.getElementById("viewTabs");
+        var h = document.getElementById("h"+id);
+        var newNode = document.createElement("div");
+        newNode.style.float="left";
+        var reforeNode = document.getElementById(id.toString()+h.value.toString());
+        var s = document.getElementById("11v");
+        var hh = Number(h.value)+1;
+        /*  alert(hh); */
+        var str= "<input type=\"hidden\" name=\"stations\" value=\""+id+"\"/>";
+        str +="<select id='"+id.toString()+hh.toString()+"v' name=\"caseId\">";
+        for(var j = 0;j<s.options.length;j++)
+            str+= "<option value='"+s.options[j].value+"'>"+s.options[j].text;
+
+        str+= "</select><a href=# id=\""+id.toString()+hh.toString()+"\" onClick=\"javascript:window.open('previewCase.action?c_id='+document.getElementById('"+id.toString()+hh.toString()+"v').value,'','width=632,height=388,toolbar=no, status=no, menubar=no, resizable=yes, scrollbars=yes');return false;\">预览</a>";
+
+        newNode.innerHTML = str;
+        oTest.rows[id].cells[2].insertBefore(newNode,reforeNode.nextSibling);//新建的元素节点插入id为P1节点元素的后面
+        h.value = Number(h.value)+1;
+    }
+    function deleteHtml( )
+    {
+        var tab=document.getElementById("viewTabs"); //获得表格
+        var colsNum=tab.rows.item(0).cells.length;   //表格的列数
+        var num=tab.rows.length;//表格当前的行数
+        var rownum=num-1;
+        tab.deleteRow(rownum);
+    }
+</script>
 </body>
 </html>

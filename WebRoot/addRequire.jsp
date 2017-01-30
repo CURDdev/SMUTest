@@ -84,6 +84,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	$('#part0').val(part0);
 	$('#part1').val(part1);
 	$('#part2').val(part2);
+        var tab=document.getElementById("viewTabs"); //获得表格
+        var num = tab.rows.length;
+        var errorString = "air";
+        for(var n = 1;n<=num-2;n++){
+            errorString = errorString + "/" + "air";
+        }
+    $("#part3").val(errorString);
 	return true;
 	}
     </script>
@@ -119,6 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <input type="hidden" id="part0" name="requirementStore.RName"/>
 <input type="hidden" id="part1" name="requirementStore.RContent"/>
 <input type="hidden" id="part2" name="requirementStore.RScore"/>
+    <input type="hidden" id="part3" name="requirementStore.errors"/>
 
 <center><button type="submit">确认无误，提交</button></center>
 </form>

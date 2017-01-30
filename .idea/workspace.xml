@@ -2,170 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33c862bc-6c22-43a3-b6e0-79b7f3d3300e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/fastjson-1.2.23 2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebRoot/css/bootstrap-select.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebRoot/js/bootstrap-select.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/SMU_ear_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_2_3_5_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Struts_2_2_3_20_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_spring3_Release.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_spring4_Release.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/applicationContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/CaseAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/ClassAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/ExcelAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/RequirementAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/ScoreAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/StationAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/StudentAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/action/UserAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/ICaseDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/IClassDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/IRequirementDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/IScoreDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/IStationDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/IStudentDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/IUserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/impl/CaseDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/impl/ClassDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/impl/RequirementDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/impl/ScoreDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/impl/StationDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/impl/StudentDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/dao/impl/UserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Case.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Case.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Class.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Class.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Requirement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Requirement.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Score.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Score.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Station.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Station.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Student.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Student.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Teacher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/model/Teacher.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/ICaseService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/IClassService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/IRequirementService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/IScoreService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/IStationService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/IStudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/IUserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/impl/CaseService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/impl/ClassService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/impl/RequirementService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/impl/ScoreService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/impl/StationService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/impl/StudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/service/impl/UserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/util/AdminLoginIniter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/util/Require.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/util/StudentScore.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/smu/util/loginIniter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/hibernate.cfg.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/struts.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/antlr-2.7.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/antlr-2.7.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/antlr-2.7.7.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/antlr-2.7.7.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/aopalliance-1.0.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/aopalliance-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/aspectjweaver-1.6.9.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/aspectjweaver-1.6.9.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/c3p0-0.9.1.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/c3p0-0.9.1.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/cglib-nodep-2.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/cglib-nodep-2.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/classworlds-1.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/classworlds-1.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-beanutils-1.7.0.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-beanutils-1.7.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-chain-1.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-chain-1.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-collections-3.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-collections-3.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-dbcp-1.4.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-dbcp-1.4.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-digester-2.0.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-digester-2.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-fileupload-1.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-fileupload-1.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-fileupload-1.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-fileupload-1.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-httpclient-3.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-httpclient-3.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-io-1.3.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-io-1.3.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-lang-2.3.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-lang-2.3.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-lang-2.5.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-lang-2.5.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.0.4.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.0.4.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-api-1.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-api-1.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-pool-1.5.3.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-pool-1.5.3.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-validator-1.3.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-validator-1.3.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/dwr-1.1.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/dwr-1.1.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/freemarker-2.3.16.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/freemarker-2.3.16.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-commons-annotations-4.0.1.Final.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-commons-annotations-4.0.1.Final.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-core-4.1.4.Final.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-core-4.1.4.Final.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-entitymanager-4.1.4.Final.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-entitymanager-4.1.4.Final.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javassist-3.15.0-GA.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javassist-3.15.0-GA.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javassist-3.7.ga.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javassist-3.7.ga.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.servlet.jsp.jstl.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.servlet.jsp.jstl.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/json-lib-2.1-jdk15.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/json-lib-2.1-jdk15.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jstl-impl-1.2.2.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jstl-impl-1.2.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/log4j-1.2.16.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/log4j-1.2.16.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/ognl-3.0.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/ognl-3.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.aop-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.aop-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.asm-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.asm-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.aspects-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.aspects-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.beans-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.beans-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.context-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.context-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.context.support-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.context.support-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.core-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.core-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.expression-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.expression-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.instrument-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.instrument-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.instrument.tomcat-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.instrument.tomcat-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.jdbc-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.jdbc-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.jms-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.jms-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.orm-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.orm-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.oxm-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.oxm-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.transaction-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.transaction-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.portlet-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.portlet-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.servlet-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.servlet-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.struts-3.1.1.RELEASE.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.struts-3.1.1.RELEASE.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/oro-2.0.8.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/oro-2.0.8.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-api-1.6.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-api-1.6.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/sslext-1.2-0.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/sslext-1.2-0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-convention-plugin-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-convention-plugin-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-core-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-core-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-dojo-plugin-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-dojo-plugin-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-dwr-plugin-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-dwr-plugin-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-embeddedjsp-plugin-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-embeddedjsp-plugin-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-json-plugin-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-json-plugin-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-spring-plugin-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-spring-plugin-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/xwork-core-2.2.1.jar" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/xwork-core-2.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SMU_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SMU_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebRoot/image/background.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebRoot/js/bootstrap2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebRoot/privateCenter.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/action/CaseAction.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/action/CaseAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/action/RequirementAction.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/action/RequirementAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/action/ScoreAction.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/action/ScoreAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/IRequirementDAO.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/IRequirementDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/IRequirementStoreDAO.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/IRequirementStoreDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/impl/RequirementDAO.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/impl/RequirementDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/impl/RequirementStoreDAO.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/dao/impl/RequirementStoreDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Requirement.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Requirement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/model/RequirementStore.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/model/RequirementStore.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Score.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Score.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/service/IRequirementService.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/service/IRequirementService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/service/IRequirementStoreService.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/service/IRequirementStoreService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/service/impl/RequirementService.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/service/impl/RequirementService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/service/impl/RequirementStoreService.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/service/impl/RequirementStoreService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/util/Require.class" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/util/Require.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/NewTest.jsp" afterPath="$PROJECT_DIR$/WebRoot/NewTest.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/Tests.jsp" afterPath="$PROJECT_DIR$/WebRoot/Tests.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/addRequire.jsp" afterPath="$PROJECT_DIR$/WebRoot/addRequire.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/case.jsp" afterPath="$PROJECT_DIR$/WebRoot/case.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/admin.jsp" afterPath="$PROJECT_DIR$/WebRoot/admin.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/caseMain.jsp" afterPath="$PROJECT_DIR$/WebRoot/caseMain.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/menu.jsp" afterPath="$PROJECT_DIR$/WebRoot/menu.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/header.jsp" afterPath="$PROJECT_DIR$/WebRoot/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/WebRoot/js/bootstrap-select.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/login.jsp" afterPath="$PROJECT_DIR$/WebRoot/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/applicationContext.xml" afterPath="$PROJECT_DIR$/out/production/SMU/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Requirement.hbm.xml" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Requirement.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/model/RequirementStore.hbm.xml" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/model/RequirementStore.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Score.hbm.xml" afterPath="$PROJECT_DIR$/out/production/SMU/com/smu/model/Score.hbm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/applicationContext.xml" afterPath="$PROJECT_DIR$/src/applicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/action/CaseAction.java" afterPath="$PROJECT_DIR$/src/com/smu/action/CaseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/action/CaseStoreAction.java" afterPath="$PROJECT_DIR$/src/com/smu/action/CaseStoreAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/action/RequirementAction.java" afterPath="$PROJECT_DIR$/src/com/smu/action/RequirementAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/action/StationAction.java" afterPath="$PROJECT_DIR$/src/com/smu/action/StationAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/action/StudentAction.java" afterPath="$PROJECT_DIR$/src/com/smu/action/StudentAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/ICaseStoreDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/ICaseStoreDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/IStudentDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/IStudentDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/impl/CaseStoreDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/impl/CaseStoreDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/impl/StudentDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/impl/StudentDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/action/ScoreAction.java" afterPath="$PROJECT_DIR$/src/com/smu/action/ScoreAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/IRequirementDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/IRequirementDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/IRequirementStoreDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/IRequirementStoreDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/impl/RequirementDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/impl/RequirementDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/dao/impl/RequirementStoreDAO.java" afterPath="$PROJECT_DIR$/src/com/smu/dao/impl/RequirementStoreDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/Requirement.hbm.xml" afterPath="$PROJECT_DIR$/src/com/smu/model/Requirement.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/Requirement.java" afterPath="$PROJECT_DIR$/src/com/smu/model/Requirement.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/RequirementStore.hbm.xml" afterPath="$PROJECT_DIR$/src/com/smu/model/RequirementStore.hbm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/RequirementStore.java" afterPath="$PROJECT_DIR$/src/com/smu/model/RequirementStore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/Test.hbm.xml" afterPath="$PROJECT_DIR$/src/com/smu/model/Test.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/Test.java" afterPath="$PROJECT_DIR$/src/com/smu/model/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/ICaseStoreService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/ICaseStoreService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/IStudentService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/IStudentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/impl/CaseStoreService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/impl/CaseStoreService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/impl/StudentService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/impl/StudentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/Score.hbm.xml" afterPath="$PROJECT_DIR$/src/com/smu/model/Score.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/model/Score.java" afterPath="$PROJECT_DIR$/src/com/smu/model/Score.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/IRequirementService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/IRequirementService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/IRequirementStoreService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/IRequirementStoreService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/impl/RequirementService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/impl/RequirementService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/service/impl/RequirementStoreService.java" afterPath="$PROJECT_DIR$/src/com/smu/service/impl/RequirementStoreService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/smu/util/Require.java" afterPath="$PROJECT_DIR$/src/com/smu/util/Require.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -192,11 +77,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="caseMain.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebRoot/caseMain.jsp">
+      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/header.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="privateCenter.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/privateCenter.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="155" column="23" lean-forward="false" selection-start-line="155" selection-start-column="23" selection-end-line="155" selection-end-column="23" />
+              <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -208,8 +103,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>nothing</find>
+      <find>done</find>
+      <find>selectpicker</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -227,24 +130,43 @@
         <option value="$PROJECT_DIR$/src/com/smu/model/Test.java" />
         <option value="$PROJECT_DIR$/src/com/smu/model/Test.hbm.xml" />
         <option value="$PROJECT_DIR$/WebRoot/Tests.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/NewTest.jsp" />
         <option value="$PROJECT_DIR$/src/com/smu/dao/impl/StudentDAO.java" />
         <option value="$PROJECT_DIR$/src/com/smu/action/StationAction.java" />
-        <option value="$PROJECT_DIR$/src/applicationContext.xml" />
         <option value="$PROJECT_DIR$/WebRoot/case.jsp" />
-        <option value="$PROJECT_DIR$/src/com/smu/action/CaseAction.java" />
         <option value="$PROJECT_DIR$/WebRoot/menu.jsp" />
         <option value="$PROJECT_DIR$/src/com/smu/dao/ICaseStoreDAO.java" />
         <option value="$PROJECT_DIR$/src/com/smu/dao/impl/CaseStoreDAO.java" />
         <option value="$PROJECT_DIR$/src/com/smu/service/ICaseStoreService.java" />
         <option value="$PROJECT_DIR$/src/com/smu/service/impl/CaseStoreService.java" />
         <option value="$PROJECT_DIR$/src/struts.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/addRequire.jsp" />
-        <option value="$PROJECT_DIR$/src/com/smu/model/RequirementStore.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/smu/model/RequirementStore.java" />
         <option value="$PROJECT_DIR$/src/com/smu/action/CaseStoreAction.java" />
+        <option value="$PROJECT_DIR$/WebRoot/login.jsp" />
+        <option value="$PROJECT_DIR$/src/com/smu/model/RequirementStore.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/model/RequirementStore.hbm.xml" />
         <option value="$PROJECT_DIR$/src/com/smu/action/RequirementAction.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/model/Requirement.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/model/Requirement.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/com/smu/model/Score.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/com/smu/util/Require.java" />
+        <option value="$PROJECT_DIR$/WebRoot/js/bootstrap-select.js" />
+        <option value="$PROJECT_DIR$/WebRoot/admin.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/NewTest.jsp" />
+        <option value="$PROJECT_DIR$/src/com/smu/model/Score.java" />
+        <option value="$PROJECT_DIR$/WebRoot/addRequire.jsp" />
+        <option value="$PROJECT_DIR$/src/com/smu/action/CaseAction.java" />
+        <option value="$PROJECT_DIR$/src/applicationContext.xml" />
         <option value="$PROJECT_DIR$/WebRoot/caseMain.jsp" />
+        <option value="$PROJECT_DIR$/src/com/smu/dao/impl/RequirementDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/dao/IRequirementStoreDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/dao/impl/RequirementStoreDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/dao/IRequirementDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/service/IRequirementService.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/service/IRequirementStoreService.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/service/impl/RequirementService.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/service/impl/RequirementStoreService.java" />
+        <option value="$PROJECT_DIR$/src/com/smu/action/ScoreAction.java" />
+        <option value="$PROJECT_DIR$/WebRoot/header.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/privateCenter.jsp" />
       </list>
     </option>
   </component>
@@ -262,9 +184,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
+    <option name="x" value="48" />
     <option name="y" value="23" />
-    <option name="width" value="1234" />
+    <option name="width" value="1232" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectView">
@@ -283,6 +205,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -319,235 +242,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebRoot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebRoot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebRoot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SMU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -561,11 +257,13 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="head&#9;FILE&#9;file:///Users/yuxi/Workspaces/MyEclipse Professional 2014/SMU/WebRoot/header.jsp" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/WebRoot/css" />
       <recent name="$PROJECT_DIR$/WebRoot/js" />
+      <recent name="$PROJECT_DIR$/WebRoot/image" />
+      <recent name="$PROJECT_DIR$/WebRoot/css" />
       <recent name="$PROJECT_DIR$/WebRoot/WEB-INF/lib" />
     </key>
   </component>
@@ -1165,12 +863,15 @@
       <workItem from="1483607048460" duration="1478000" />
       <workItem from="1483669638395" duration="33509000" />
       <workItem from="1483958023328" duration="2887000" />
-      <workItem from="1484095258289" duration="10426000" />
+      <workItem from="1484095258289" duration="16471000" />
+      <workItem from="1484361555966" duration="24398000" />
+      <workItem from="1484529208564" duration="26246000" />
+      <workItem from="1485757034755" duration="108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56590000" />
+    <option name="totallyTimeSpent" value="113387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,8 +883,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="23" width="1234" height="777" extended-state="6" />
-    <editor active="true" />
+    <frame x="48" y="23" width="1232" height="777" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1199,17 +900,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31497175" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24878444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24350649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1217,6 +917,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1236,236 +937,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/StationAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/case.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="54" column="79" lean-forward="false" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Station.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Station.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/StudentAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/caseMain.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="117" column="40" lean-forward="false" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/StudentAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="127" lean-forward="false" selection-start-line="43" selection-start-column="127" selection-end-line="43" selection-end-column="127" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Student.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/test.java" />
-    <entry file="file://$PROJECT_DIR$/WebRoot/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-658">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/service/IStudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/TestAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/IStudentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/impl/StationDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/impl/StudentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="41" column="122" lean-forward="false" selection-start-line="41" selection-start-column="122" selection-end-line="41" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/NewTest.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="160" column="4" lean-forward="true" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Test.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-643">
-          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Station.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Station.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/ITestDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="142" column="60" lean-forward="false" selection-start-line="142" selection-start-column="60" selection-end-line="142" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1065">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/Tests.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/StationAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/case.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="79" lean-forward="false" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1473,50 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="51" column="72" lean-forward="false" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/StudentAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/RequirementStoreAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/CaseAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="82" column="32" lean-forward="false" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2635#2644#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Requirement.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/impl/CaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1524,7 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1532,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,26 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#545#546#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/addRequire.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="125" column="7" lean-forward="false" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Requirement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1567,15 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="116" column="28" lean-forward="true" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1583,75 +983,382 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/RequirementAction.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="248" column="75" lean-forward="true" selection-start-line="248" selection-start-column="75" selection-end-line="248" selection-end-column="75" />
-          <folding />
+        <state relative-caret-position="615">
+          <caret line="41" column="76" lean-forward="false" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/action/CaseStoreAction.java">
+    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Case.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="77" column="58" lean-forward="false" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
-          <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1282#1283#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1365#1366#0" expanded="true" />
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1471#1472#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/RequirementStore.java">
+    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Requirement.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/smu/model/RequirementStore.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/js/bootstrap-select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1481284518000" expanded="true" signature="12244:12251" ph="×" />
-            <marker date="1481284518000" expanded="true" signature="13719:13725" ph="&amp;nbsp;" />
-          </folding>
+        <state relative-caret-position="1140">
+          <caret line="137" column="24" lean-forward="true" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/css/bootstrap-select.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="53" lean-forward="false" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="53" />
+        <state relative-caret-position="132">
+          <caret line="22" column="71" lean-forward="false" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/action/TestAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/action/StudentAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/util/Require.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/js/bootstrap-select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="1844" column="2" lean-forward="false" selection-start-line="1844" selection-start-column="2" selection-end-line="1844" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/js/bootstrap2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts2-dojo-plugin-2.2.1.jar!/META-INF/struts-dojo-tags.tld">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="79" column="4" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/NewTest.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="179" column="7" lean-forward="true" selection-start-line="179" selection-start-column="7" selection-end-line="179" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-SMU">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-SMU</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-SMU</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="58.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.smu.action">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.smu.action</OriginalElement>
+          <nodes>
+            <node x="" y="">com.smu.action.ClassAction</node>
+            <node x="" y="">com.smu.action.ScoreAction</node>
+            <node x="" y="">com.smu.action.TestAction</node>
+            <node x="" y="">com.smu.action.CaseStoreAction</node>
+            <node x="" y="">com.smu.action.UserAction</node>
+            <node x="" y="">com.smu.action.RequirementAction</node>
+            <node x="" y="">com.smu.action.ExcelAction</node>
+            <node x="" y="">com.smu.action.StationAction</node>
+            <node x="" y="">com.smu.action.RequirementStoreAction</node>
+            <node x="" y="">com.smu.action.CaseAction</node>
+            <node x="" y="">com.smu.action.StudentAction</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="196.0" y="163.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.smu.dao.impl.CaseDAO">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.smu.dao.impl.CaseDAO</OriginalElement>
+          <nodes>
+            <node x="" y="">com.smu.dao.ICaseDAO</node>
+            <node x="" y="">com.smu.dao.impl.CaseDAO</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="47.0" y="54.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.smu.service.IScoreService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.smu.service.IScoreService</OriginalElement>
+          <nodes>
+            <node x="" y="">com.smu.service.IScoreService</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="57.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.smu.service.impl.StationService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.smu.service.impl.StationService</OriginalElement>
+          <nodes>
+            <node x="" y="">com.smu.service.impl.StationService</node>
+            <node x="" y="">com.smu.service.IStationService</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="62.0" y="54.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Score.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/action/CaseStoreAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret line="77" column="58" lean-forward="false" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/action/RequirementAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="255" column="67" lean-forward="false" selection-start-line="255" selection-start-column="67" selection-end-line="255" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/addRequire.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="128" column="4" lean-forward="false" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/action/RequirementStoreAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/admin_header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-452">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="100" column="83" lean-forward="false" selection-start-line="100" selection-start-column="83" selection-end-line="100" selection-end-column="83" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/action/CaseAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="27" column="113" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/model/Requirement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/model/RequirementStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/model/RequirementStore.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/impl/CaseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/caseMain.jsp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="261" column="34" lean-forward="false" selection-start-line="261" selection-start-column="34" selection-end-line="261" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/IRequirementDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/IRequirementStoreDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/service/IRequirementService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/service/impl/RequirementService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/service/impl/RequirementStoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="37" column="66" lean-forward="false" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/impl/RequirementStoreDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/service/IRequirementStoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/action/ScoreAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="156" column="89" lean-forward="false" selection-start-line="156" selection-start-column="89" selection-end-line="156" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/smu/dao/impl/RequirementDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="41" column="52" lean-forward="true" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/privateCenter.jsp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="155" column="23" lean-forward="false" selection-start-line="155" selection-start-column="23" selection-end-line="155" selection-end-column="23" />
+          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding />
         </state>
       </provider>

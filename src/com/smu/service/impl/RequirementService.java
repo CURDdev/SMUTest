@@ -31,4 +31,7 @@ public boolean updateRequirement(Requirement r){
 public boolean deleteRequirement(int c_id){
 	return requirementDAO.deleteRequirement(c_id);
 };
+	public boolean updateErrors(int r_id,String errors){
+	return requirementDAO.updateErrors(r_id,errors);
+	}
 }
