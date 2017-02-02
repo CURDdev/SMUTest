@@ -1,22 +1,15 @@
 package com.smu.action;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.smu.model.*;
+import com.smu.service.*;
 import org.apache.struts2.ServletActionContext;
 
 import com.smu.dao.IStudentDAO;
-import com.smu.model.Case;
-import com.smu.model.Requirement;
-import com.smu.model.Score;
-import com.smu.model.Station;
-import com.smu.model.Student;
-import com.smu.service.ICaseService;
-import com.smu.service.IRequirementService;
-import com.smu.service.IScoreService;
-import com.smu.service.IStationService;
-import com.smu.service.IStudentService;
 import com.smu.util.Require;
 import com.smu.util.StudentScore;
 import com.opensymphony.xwork2.ActionContext;
@@ -27,12 +20,48 @@ public class ScoreAction extends ActionSupport {
 	private IStationService stationService ;
 	private ICaseService caseService;
 	private IRequirementService requirementService;
+	private ITestService iTestService;
 	private Score score;
 	private int stc_id;
 	private int c_id;
 	private String class_name;
 	private int test_id;
-	
+	private String[] newError;
+    private String RId;
+    private IRequirementStoreService requirementStoreService;
+	private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(ScoreAction.class);
+	public IRequirementStoreService getRequirementStoreService() {
+		return requirementStoreService;
+	}
+
+	public void setRequirementStoreService(IRequirementStoreService requirementStoreService) {
+		this.requirementStoreService = requirementStoreService;
+	}
+
+	public String getRId() {
+		return RId;
+	}
+
+	public void setRId(String RId) {
+		this.RId = RId;
+	}
+
+	public String[] getNewError() {
+		return newError;
+	}
+
+	public void setNewError(String[] newError) {
+		this.newError = newError;
+	}
+
+	public ITestService getiTestService() {
+		return iTestService;
+	}
+
+	public void setiTestService(ITestService iTestService) {
+		this.iTestService = iTestService;
+	}
+
 	public int getTest_id() {
 		return test_id;
 	}
@@ -93,28 +122,71 @@ public class ScoreAction extends ActionSupport {
 	public void setScore(Score score) {
 		this.score = score;
 	}
-	
 	public String addScore() throws Exception
 	{
+		score.setStatus("no");
 		scoreService.addScore(score);
+//		Requirement r = requirementService.getAllRequirements(c_id);
+
 		Case cas = new Case();
 		cas = caseService.getOneCase(c_id);
 		Requirement r = requirementService.getAllRequirements(cas.getCId());
+		RequirementStore rStore = requirementStoreService.getOneRequirementStore(r.getRStoreId());
+		String[] oldErrors = r.getErrors().split("/");
+		String[] oldStoreErrors = rStore.getErrors().split("/");
+		//将新产生的错误附加在就错误的后面
+		for(int j = 0;j<=newError.length-1;j++){
+			if(newError[j].equals("air")){
+				continue;
+			}
+			oldErrors[j] = oldErrors[j] + "," + newError[j].substring(4);
+			oldStoreErrors[j] = oldStoreErrors[j] + "," + newError[j].substring(4);
+		}
+		//通过 set 方法更新易犯错误
+		String nowError ="air";
+		String nowStoreError ="air";
+		for(int k = 0;k <= oldErrors.length-1;k++){
+			nowError = nowError + "/" + oldErrors[k];
+			nowStoreError = nowStoreError + "/" + oldStoreErrors[k];
+		}
+		LOGGER.warn(nowError);
+		LOGGER.warn(nowError.substring(4));
+		r.setErrors(nowError.substring(4));
+		rStore.setErrors(nowStoreError.substring(4));
+		requirementService.updateErrors(r.getRId(),nowError.substring(4));
+		requirementStoreService.updateStoreErrors(rStore.getRId(),nowError.substring(4));
 		int stId = cas.getStation().getStId();
-
+		Test ttt = new Test();
+		ttt = iTestService.getOneTest(score.getTId());
+		String gradeClassName = ttt.getClassName();
+		String[] className = gradeClassName.split(",");
+		List<Student> students = new ArrayList<Student>();
+		for(int m = 0;m<=className.length-1;m++) {
+			students.addAll(studentService.getStudentsByClass(className[m]));
+		}
+		Map map = new HashMap<>();
+		for(int i = 0;i<students.size();i++){
+			map.put(students.get(i).getSNo(), students.get(i).getSName()+students.get(i).getSNo());
+		}
 		String rcontent = r.getRContent();
 		String rscore = r.getRScore();
 		String name = r.getRName();
 		String[] contents = rcontent.split("/");
 		String[] scores = rscore.split("/");
-		String[] names = name.split("/"); 
+		String[] names = name.split("/");
+		String[] errors = r.getErrors().split("/");
 		List<Require> r_list = new ArrayList<Require>();
-		
 		for(int i = 1;i<= scores.length-1;i++){
 			Require require = new Require();
 			require.setContent(contents[i]);
 			require.setScore(scores[i]);
 			require.setName(names[i]);
+			String[] error = errors[i-1].split(",");
+			Map<String,String> errorsMap= new HashMap<String,String>();
+			for(int j = 0;j<= error.length-2;j++){
+				errorsMap.put(error[j+1],error[j+1]);
+			}
+			require.setMap(errorsMap);
 			r_list.add(require);
 		}
 		Map requestMap = (Map) ActionContext.getContext().get("request");
@@ -125,10 +197,13 @@ public class ScoreAction extends ActionSupport {
 		requestMap.put("RContent",contents[0]);
 		requestMap.put("RScore",scores[0]);
 		requestMap.put("case", cas);
+		requestMap.put("students",map);
+		requestMap.put("TId", score.getTId());
+		requestMap.put("RId",RId);
 		return SUCCESS;
 	}
 	public String browseScores() throws Exception{
-		Double score; 
+		Double score;
 		int[] score_nums = {30,40,20,50,80,70,40,30,10,5};
 		List<Student> students = studentService.getStudentsByClass(class_name);
 //		String[] s_no = new String[students.size()];

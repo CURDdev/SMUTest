@@ -97,6 +97,8 @@
 		<property name="stationService" ref="stationService"></property>
 		<property name="caseService" ref="caseService"></property>
 		<property name="requirementService" ref="requirementService"></property>
+			<property name="iTestService" ref="testService"></property>
+			<property name="requirementStoreService" ref="requirementStoreService"></property>
 		</bean>
 		
 		

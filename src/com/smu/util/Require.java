@@ -1,11 +1,22 @@
 package com.smu.util;
 
+import java.util.Map;
+
 public class Require {
 private String content;
 private String score;
 private String name;
+private Map<String,String> map;
 
-public String getName() {
+	public Map<String, String> getMap() {
+		return map;
+	}
+
+	public void setMap(Map<String, String> map) {
+		this.map = map;
+	}
+
+	public String getName() {
 	return name;
 }
 public void setName(String name) {

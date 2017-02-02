@@ -12,29 +12,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>My JSP 'caseMain.jsp' starting page</title>
     
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="css/metro.css">
-	<link rel="stylesheet" href="css/metro-icons.css">
-	<link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
-    <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
-    <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+	  <meta http-equiv="pragma" content="no-cache">
+	  <meta http-equiv="cache-control" content="no-cache">
+	  <meta http-equiv="expires" content="0">
+	  <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	  <meta http-equiv="description" content="This is my page">
+	  <link rel="stylesheet" type="text/css" href="css/metro.css">
+	  <link rel="stylesheet" href="css/metro-icons.css">
+	  <link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+      <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+      <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="css/bootstrap-select.css"/>
-<link rel="stylesheet" href="css/bootstrap.css">
-    <link href="css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
-    
-  
-    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
- 
-    <link href="css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
-  
-    <link href="css/mobiscroll.image.css" rel="stylesheet" type="text/css" />
-
-
-    <style type="text/css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link href="css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
+      <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+      <link href="css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
+      <link href="css/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+      <style type="text/css">
     body {
         padding: 1em;
         margin: 0;
@@ -59,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 	<script type="text/javascript" src="js/metro.min.js"></script>
       <script src="js/bootstrap.js"></script>
-      <script src="js/bootstrap-select.js"></script>
+
 	<script type="text/javascript">
 	
 	 function showDialog(id){
@@ -105,9 +99,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
     </script>
+
   </head>
 
   <body>
+
    <jsp:include page="header.jsp"></jsp:include>
    <div hidden="true">
         <label for="theme">Theme</label>
@@ -121,12 +117,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="showCases.action?stc_id=<s:property value="#request.stId"/>">更换案例</a>
    </center>
 
-<div data-role="dialog" id="dialog" class="padding20" data-close-button="true" data-type="alert">
-            <h1>提示信息</h1>
-            <p>
-                没有查询到该学号，请确认是否输入错误
-            </p>
-        </div>
+<%--<div data-role="dialog" id="dialog" class="padding20" data-close-button="true" data-type="alert">--%>
+            <%--<h1>提示信息</h1>--%>
+            <%--<p>--%>
+                <%--没有查询到该学号，请确认是否输入错误--%>
+            <%--</p>--%>
+        <%--</div>--%>
         <div data-role="dialog" id="dialog1" class="padding20" data-close-button="true" data-type="alert">
             <h1>提示信息</h1>
             <p>
@@ -186,7 +182,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <s:property value="#request.RScore"/>
   </h3>
   </th>
-  <th class="sortable-column">
+  <th class="sortable-column" width="10%">
   <h3>
   打分
   </h3>
@@ -195,7 +191,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
       <th class="sortable-column">
           <h3>
-              考生所犯错误
+              所犯错误
+          </h3>
+      </th>
+      <th class="sortable-column">
+          <h3>
+              添加新的错误
           </h3>
       </th>
   </tr>
@@ -214,25 +215,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <h4 id="<s:property value="#st.index"/>"><s:property value="#require.score"/></h4>
    </td>
    <td>
-   <div class="input-control text info">
-   <input type="number"  max="<s:property value="#require.score"/>" id="number<s:property value="#st.index"/>"/>
-   </div>
+   <%--<div class="input-control text info">--%>
+   <input type="number"  max="<s:property value="#require.score"/>" id="number<s:property value="#st.index"/>" width="5%" name="part"/>
+   <%--</div>--%>
    </td>
+       <td>
+           <s:select list="#request.map" id="select%{#st.index+1}" listKey="key" listValue="value" theme="simple" cssClass="selectpicker" headerKey="没有错误" headerValue="没有错误" name="error">
+
+           </s:select>
+       </td>
+       <td>
+       <div class="input-control text info">
+           <input type="text" id="error<s:property value="#st.index+1"/>"/>
+
+       </div>
+           <button type="button" class="button loading-pulse lighten primary" onclick="addError(this.id)" id="<s:property value="#st.index+1"/>">添加到选框</button>
+
+           <%--用于提交新添加的错误到数据库--%>
+           <input type="hidden" name="newError" id="hidden<s:property value="#st.index+1"/>" value="air"/>
+       </td>
    </tr>
    </s:iterator>
-
     </table>
-<button onclick="test()" type="button">dweded</button>
-    <script>
-       function test() {
-           alert($("#xxx").attr("max"));
-       }
-    </script>
    <input type="hidden" id="score" name="score.scScore">
    <input type="hidden" id="totalScore" name="score.scTotalScore">
    <input type="hidden" id="stId" name="score.station.stId" value="<s:property value="#request.stId"/>">
    <input type="hidden" id="CId" name="c_id" value="<s:property value="#request.CId"/>">
    <input type="hidden" id="TId" name="score.teacher.TId" value="<s:property value="#session.user.TId"/>">
+    <input type="hidden" id="studentError" name="score.errors">
+    <input type="hidden" value="<s:property value="#request.TId"/>" name="score.TId">
+    <input type="hidden" value="<s:property value="#request.RId"/>" name="RId">
    <center>
    <button class="button loading-pulse lighten primary" type="submit" >确认无误，提交</button>
    </center>
@@ -242,6 +254,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	var score = "air";
 	var totalScore = 0;
 	var flag = 1;
+	var error = "air";
+	$("select[name='error']").each(function () {
+        error = error + "/" + $(this).val();
+    })
+        error = error.substring(4,error.length);
+    $('#studentError').val(error);
 	$("input[name='part']").each(function(){
 	if($(this).val()==""){
 	 showDialog(dialog1);
@@ -255,6 +273,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	});
 	score = score.substring(4,score.length);
 	if(flag==1){
+	    console.log(score);
+	    console.log(totalScore);
 	$('#score').val(score);
 	$('#totalScore').val(totalScore);
 	return true;
@@ -268,16 +288,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="js/mobiscroll.core.js"></script>
     <script src="js/mobiscroll.scrollview.js"></script>
     <script src="js/mobiscroll.frame.js"></script>
-
     <script src="js/mobiscroll.frame.ios.js"></script>
-
     <script src="js/mobiscroll.scroller.js"></script>
-
-
-
     <script src="js/mobiscroll.i18n.zh.js"></script>
-
     <script>
+        var tab=document.getElementById("t");
+        for(var i = 1;i<=tab.rows.length-1;i++)
+        {
+            var a = document.getElementById("select"+i);
+            a.setAttribute("multiple", true);
+            a.setAttribute("data-done-button", true);
+        }
     (function ($) {
         var t = document.getElementById("t");
        var l = t.rows.length;
@@ -296,28 +317,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     wheels: [
                         [{
                             label: 'First wheel',
-//                        data: ['0', '1', '2', '3', '4', '5', '6', '7','8','9','10']
                             data: d
                         }
-
                         ]
                     ]
                 });
             }
         }
-
         var theme, display, lang;
-
         $('.settings').on('change', function () {
             theme = "ios";
             display = "center";
             lang = "zh";
-
             init();
         });
-
         $('#theme').trigger('change');
     })(mobiscroll.$);
     </script>
+   <script src="js/bootstrap-select.js"></script>
+   <script type="text/javascript">
+       function addError(id) {
+           var error = document.getElementById("error"+id);
+           var obj=document.getElementById("select"+id);
+           var hidden = document.getElementById("hidden"+id);
+           hidden.value = hidden.value + "," + error.value;
+           console.log(hidden.value);
+
+           obj.options.add(new Option(error.value,error.value));
+           error.value = "";
+           $('.selectpicker').selectpicker('render');
+           $('.selectpicker').selectpicker('refresh');
+       }
+   </script>
   </body>
 </html>

@@ -13,7 +13,7 @@ public class RequirementStore implements java.io.Serializable {
 	private String RName;
 	private String RContent;
 	private String RScore;
-
+    private String errors;
 	// Constructors
 
 	/** default constructor */
@@ -22,14 +22,23 @@ public class RequirementStore implements java.io.Serializable {
 
 	/** full constructor */
 	public RequirementStore(CaseStore caseStore, String RName, String RContent,
-			String RScore) {
+			String RScore,String errors) {
 		this.caseStore = caseStore;
 		this.RName = RName;
 		this.RContent = RContent;
 		this.RScore = RScore;
+		this.errors = errors;
 	}
 
 	// Property accessors
+
+	public String getErrors() {
+		return errors;
+	}
+
+	public void setErrors(String errors) {
+		this.errors = errors;
+	}
 
 	public Integer getRId() {
 		return this.RId;

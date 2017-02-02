@@ -72,7 +72,8 @@
       <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/javassist-3.7.ga.jar!/" />
       <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.transaction-3.1.1.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/freemarker-2.3.16.jar!/" />
-      <root url="jar://$USER_HOME$/Desktop/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Jars/fastjson-1.2.23 2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Jars/javax.servlet-5.1.12.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

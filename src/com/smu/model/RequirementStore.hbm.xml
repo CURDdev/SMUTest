@@ -22,5 +22,8 @@
         <property name="RScore" type="java.lang.String">
             <column name="r_score" not-null="true" />
         </property>
+        <property name="errors" type="java.lang.String">
+            <column name="errors" not-null="false" />
+        </property>
     </class>
 </hibernate-mapping>

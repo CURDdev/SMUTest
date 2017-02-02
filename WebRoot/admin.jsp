@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
@@ -20,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+    <%--<sx:head />--%>
   </head>
   
   <body>
@@ -31,7 +32,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </s:if>
   <s:if test="#session.user.Role!='admin'">
   <% response.sendRedirect("login.jsp");   %>
-  </s:if> 
+  </s:if>
+  <%--<div style="width:10%; float:left;">--%>
   <table class="table striped hovered cell-hovered border bordered">
   <tr>
   <td>
@@ -59,5 +61,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </td>
     </tr>
     </table>
+  <%--</div>--%>
+  <%--<sx:div cssStyle="width:90%; float:left;" id = "main">--%>
+  <%--</sx:div>--%>
+
   </body>
 </html>

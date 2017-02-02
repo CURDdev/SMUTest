@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="SMU:war exploded">
-    <output-path>$USER_HOME$/Desktop/apache-tomcat-7.0.70/webapps/SMU</output-path>
+    <output-path>$PROJECT_DIR$/../apache-tomcat-8.5.11/webapps/SMU</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

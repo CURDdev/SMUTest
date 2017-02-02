@@ -16,8 +16,8 @@ public class Requirement  implements java.io.Serializable {
      private String RName;
      private String RContent;
      private String RScore;
-
-
+     private int RStoreId;
+     private String errors;
     // Constructors
 
     /** default constructor */
@@ -26,15 +26,33 @@ public class Requirement  implements java.io.Serializable {
 
     
     /** full constructor */
-    public Requirement(Case cas, String RName, String RContent, String RScore) {
+    public Requirement(Case cas, String RName, String RContent, String RScore,int RStoreId,String errors) {
         this.cas = cas;
         this.RName = RName;
         this.RContent = RContent;
         this.RScore = RScore;
+        this.RStoreId = RStoreId;
+        this.errors = errors;
     }
 
    
     // Property accessors
+
+    public String getErrors() {
+        return errors;
+    }
+
+    public void setErrors(String errors) {
+        this.errors = errors;
+    }
+
+    public int getRStoreId() {
+        return RStoreId;
+    }
+
+    public void setRStoreId(int RStoreId) {
+        this.RStoreId = RStoreId;
+    }
 
     public Integer getRId() {
         return this.RId;

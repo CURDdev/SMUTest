@@ -252,6 +252,8 @@ public class RequirementAction extends ActionSupport{
     	        requirement.setRName(requirementStore.getRName());
     	        requirement.setRContent(requirementStore.getRContent());
     	        requirement.setRScore(requirementStore.getRScore());
+    	        requirement.setErrors(requirementStore.getErrors());
+    	        requirement.setRStoreId(requirementStore.getRId());
     	    	requirementService.addRequirement(requirement);
     	    	flag++;
     		}

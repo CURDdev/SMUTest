@@ -27,6 +27,16 @@ public class RequirementDAO implements IRequirementDAO {
 		session.close();
 		return requirement;
 	}
+	public boolean updateErrors(int r_id,String errors){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String hql="update Requirement as r set r.errors = '" +errors + "' where r.RId="+r_id;
+		Query queryupdate=session.createQuery(hql);
+		queryupdate.executeUpdate();
+		ts.commit();
+		session.close();
+		return true;
+	}
 	public boolean addRequirement(Requirement r){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
