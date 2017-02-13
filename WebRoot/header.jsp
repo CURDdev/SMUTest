@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <s:else>
              <li><a href="login.jsp">登录</a></li>
             </s:else>
-            <li><a href="privateCenter.jsp">个人中心</a></li>
+            <li><a href="privateCenter.action?TId=<s:property value="#session.user.TId"/>">个人中心</a></li>
             <li><a href="">帮助</a></li>
         </ul>
         </div>

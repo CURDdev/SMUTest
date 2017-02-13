@@ -38,7 +38,7 @@ public String checkUser() throws Exception
 	if(role.equals("guest"))	
 	{
 		session.put("user",user1);
-		
+		session.put("id",user1.getTId());
 	    return SUCCESS;
 	}
 	else if(role.equals("admin")){
@@ -61,6 +61,7 @@ public String logOut() throws Exception
 	Map session=(Map) ActionContext.getContext().getSession();
 	
 	session.remove("user");
+	session.remove("id");
 	return SUCCESS;		
 }
 

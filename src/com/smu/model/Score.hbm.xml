@@ -29,10 +29,13 @@
             <column name="test_id" not-null="true" />
         </property>
         <property name="errors" type="java.lang.String">
-            <column name="errors" not-null="false" />
+            <column name="errors" not-null="true" />
         </property>
         <property name="status" type="java.lang.String">
             <column name="status" not-null="true" />
+        </property>
+        <property name="RId" type="java.lang.Integer">
+            <column name="r_id" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

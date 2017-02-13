@@ -8,4 +8,9 @@ public interface IScoreDAO {
 public boolean addScore(Score score);
 public List getScore(String s_no,int st_id);
 public List getStationScore(String st_id);
+public List getUncommitedScoresByTId(String t_id);
+    /** 通过考试 ID 和教师 ID 查找还没有最终提交的学生成绩 */
+    public List getUncommitedScoreByTestIdAndTId(int testId,String t_id);
+    public Score getUncommitedScoreByScoreId(int scoreId);
+    public boolean commitScore(int scoreId);
 }

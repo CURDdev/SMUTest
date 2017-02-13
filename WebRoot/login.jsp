@@ -63,25 +63,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
     <div class="login-form padding20 block-shadow">
         <s:form action="checkUser.action" method="post" 	enctype="multipart/form-data" >
-            <h1 class="text-light">Login to service</h1>
+            <h1 class="text-light">登录到考试系统</h1>
             <hr class="thin"/>
             <br />
             <div class="input-control text full-size" data-role="input">
-                <label for="user_login">User email:</label>
+                <label for="user_login">用户名</label>
                 <input type="text" name="teacher.TId" id="user_login">
                 <button class="button helper-button clear"><span class="mif-cross"></span></button>
             </div>
             <br />
             <br />
             <div class="input-control password full-size" data-role="input">
-                <label for="user_password">User password:</label>
+                <label for="user_password">密码</label>
                 <input type="password" name="teacher.TPassword" id="user_password">
                 <button class="button helper-button reveal"><span class="mif-looks"></span></button>
             </div>
             <br />
             <br />
             <div class="form-actions">
-                <button type="submit" class="button primary">Login to...</button>
+                <button type="submit" class="button primary">登 录</button>
         
             </div>
         </s:form>

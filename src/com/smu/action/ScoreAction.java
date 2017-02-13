@@ -1,21 +1,14 @@
 package com.smu.action;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
 import com.smu.model.*;
 import com.smu.service.*;
-import org.apache.struts2.ServletActionContext;
-
-import com.smu.dao.IStudentDAO;
 import com.smu.util.Require;
 import com.smu.util.StudentScore;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 public class ScoreAction extends ActionSupport {
 	private IScoreService scoreService;
+	private String TId;
 	private IStudentService studentService;
 	private IStationService stationService ;
 	private ICaseService caseService;
@@ -25,48 +18,47 @@ public class ScoreAction extends ActionSupport {
 	private int stc_id;
 	private int c_id;
 	private String class_name;
-	private int test_id;
+	private int sss;
 	private String[] newError;
     private String RId;
     private IRequirementStoreService requirementStoreService;
 	private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(ScoreAction.class);
+	public int getSss() {
+		return sss;
+	}
+	public void setSss(int sss) {
+		LOGGER.warn("sdsdsdsdsd"+sss);
+		this.sss = sss;
+	}
+	public String getTId() {
+		return TId;
+	}
+	public void setTId(String TId) {
+		this.TId = TId;
+	}
 	public IRequirementStoreService getRequirementStoreService() {
 		return requirementStoreService;
 	}
-
 	public void setRequirementStoreService(IRequirementStoreService requirementStoreService) {
 		this.requirementStoreService = requirementStoreService;
 	}
-
 	public String getRId() {
 		return RId;
 	}
-
 	public void setRId(String RId) {
 		this.RId = RId;
 	}
-
 	public String[] getNewError() {
 		return newError;
 	}
-
 	public void setNewError(String[] newError) {
 		this.newError = newError;
 	}
-
 	public ITestService getiTestService() {
 		return iTestService;
 	}
-
 	public void setiTestService(ITestService iTestService) {
 		this.iTestService = iTestService;
-	}
-
-	public int getTest_id() {
-		return test_id;
-	}
-	public void setTest_id(int test_id) {
-		this.test_id = test_id;
 	}
 	public ICaseService getCaseService() {
 		return caseService;
@@ -122,6 +114,48 @@ public class ScoreAction extends ActionSupport {
 	public void setScore(Score score) {
 		this.score = score;
 	}
+	/** 通过成绩 id 获得一条还未提交的成绩*/
+	public String getOneCommitedScore() throws Exception{
+		 Score score= scoreService.getUncommitedScoreByScoreId(stc_id);
+
+	}
+	/** 获得一名老师还未最终提交的考试*/
+	public String UnCommitedTests() throws Exception{
+		Map session=(Map) ActionContext.getContext().getSession();
+		if(!session.get("id").equals(TId)){
+			return ERROR;
+		}
+        List<Score> scores = scoreService.getUncommitedScoresByTId(TId);
+		Set<Integer> uncommitedTestIds = new HashSet<Integer>();
+        for(int i = 0;i<=scores.size()-1;i++){
+        	uncommitedTestIds.add(scores.get(i).getTId());
+		}
+		List<Test> tests = new ArrayList<Test>();
+		for(Iterator<Integer> iterator = uncommitedTestIds.iterator();iterator.hasNext();){
+			Test test = new Test();
+			test = iTestService.getOneTest(iterator.next());
+			tests.add(test);
+		}
+		Map requestMap = (Map) ActionContext.getContext().get("request");
+		requestMap.put("tests",tests);
+		return SUCCESS;
+	}
+	/** 通过考试 ID 和教师 ID 查找还没有最终提交的学生成绩 */
+	public String getUncommitedScoreByTestIdAndTId() throws  Exception
+	{
+        LOGGER.warn(sss);
+		List<Score> scores = scoreService.getUncommitedScoreByTestIdAndTId(sss,TId);
+
+		for(int i = 0;i <= scores.size()-1;i++){
+			//将 ScScore 属性设置为该学生的名字
+			scores.get(i).setScScore(studentService.checkStudent(scores.get(i).getStudent().getSNo()).getSName());
+			LOGGER.warn(scores.get(i).getScScore());
+		}
+		Map requestMap = (Map) ActionContext.getContext().get("request");
+		requestMap.put("scores",scores);
+		return SUCCESS;
+	}
+	/** 提交成绩(未最终提交)*/
 	public String addScore() throws Exception
 	{
 		score.setStatus("no");
@@ -210,7 +244,7 @@ public class ScoreAction extends ActionSupport {
 //		for(int i=0;i<=students.size()-1;i++){
 //			s_no[i] = students.get(i).getSNo();
 //		}
-		List<Station> stations = stationService.gainAllStations(test_id);
+		List<Station> stations = stationService.gainAllStations(sss);
 		int[] st_id = new int[stations.size()];
 		for(int j = 0;j<=stations.size()-1;j++){
 			st_id[j] = stations.get(j).getStId();
@@ -364,5 +398,6 @@ public class ScoreAction extends ActionSupport {
 		requestMap.put("ave", ave);
 		return SUCCESS;
 	}
+
 }
 

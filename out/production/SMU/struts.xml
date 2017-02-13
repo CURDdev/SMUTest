@@ -55,6 +55,16 @@
 <result name="success">/caseMain.jsp</result>
 <interceptor-ref name="loginstack"></interceptor-ref>
 </action>
+
+    <action name="privateCenter" class="scoreAction" method="UnCommitedTests">
+        <result name="success">/privateCenter.jsp</result>
+        <result name="error">/login.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="getUncommitedScore" class="scoreAction" method="getUncommitedScoreByTestIdAndTId">
+        <result name="success">/AllUncommited.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
 <action name="adminShowOneCase" class="caseAction" method="showOneCase">
 <result name="success">/admin_caseMain.jsp</result>
 <interceptor-ref name="adminLoginstack"></interceptor-ref>
