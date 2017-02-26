@@ -19,6 +19,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<form action="commitScore.action" method="post">
 <table class="table striped hovered cell-hovered border bordered">
     <thead>
     <tr>
@@ -34,31 +35,15 @@
         <td><s:property value="#score.student.SNo"></s:property></td>
         <td><s:property value="#score.scScore"></s:property></td>
         <td><s:property value="#score.scTotalScore"></s:property></td>
-        <td><a href="#">修改</a></td>
+        <td><a href="getOneCommitedScore.action?stc_id=<s:property value="#score.scId"/>">修改</a><input type="hidden" name = "scId" value="<s:property value="#score.scId"/>"></td>
     </tr>
 </s:iterator>
     </tbody>
-    <script>
-        /** 最终提交一名*/
-        function commit() {
-            $.ajax({
-                //这里的需要Struts.xml的<action/>的name属性一致。
-                url:'checkStudent.action',
-                //提交类型
-                type:'POST',
-                //提交数据给Action传入数据
-                data:{'s_no':value},
-                //返回的数据类型
-                dataType:'json',
-                //成功是调用的方法
-                success:function(data){
-
-                },
-                error:function () {
-                    alert("错误")
-                }
-            });
-        }
-    </script>
+</table>
+    <input type="hidden" id="TId" name="TId" value="<s:property value="#session.user.TId"/>">
+    <center>
+        <button class="button loading-pulse lighten primary" type="submit" >确认无误，提交</button>
+    </center>
+</form>
 </body>
 </html>

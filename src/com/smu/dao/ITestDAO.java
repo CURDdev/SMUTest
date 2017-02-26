@@ -7,4 +7,5 @@ public interface ITestDAO {
 public List gainTests();
 public int addTest(Test t);
 public Test getOneTest(int t_id);
+public List getAllTests();
 }

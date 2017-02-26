@@ -28,4 +28,7 @@ public boolean deleteCase(int c_id){
 public int addCase(CaseStore c){
 	return caseStoreDAO.addCase(c);
 };
+	public boolean updateOneCaseStore(int CId,String CName,String CContent ){
+		return caseStoreDAO.updateOneCaseStore(CId,CName,CContent);
+	};
 }

@@ -1,11 +1,8 @@
 package com.smu.action;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.LogManager;
-
 import com.smu.model.*;
 import com.smu.service.IStudentService;
 import com.smu.service.ITestService;
@@ -16,7 +13,6 @@ import com.opensymphony.xwork2.util.logging.Logger;
 import com.smu.service.ICaseService;
 import com.smu.service.IRequirementService;
 import com.smu.util.Require;
-
 public class CaseAction extends ActionSupport {
    private ICaseService caseService;
    private IRequirementService requirementService;
@@ -92,26 +88,14 @@ public String showOneCase() throws Exception{
 	ttt = iTestService.getOneTest(t_id);
 	String gradeClassName = ttt.getClassName();
 	String[] className = gradeClassName.split(",");
-
-
-
-
 	List<Student> students = new ArrayList<Student>();
 	for(int m = 0;m<=className.length-1;m++) {
-
 	 students.addAll(studentService.getStudentsByClass(className[m]));
 	}
 	Map map = new HashMap<>();
 	for(int i = 0;i<students.size();i++){
 		map.put(students.get(i).getSNo(), students.get(i).getSName()+students.get(i).getSNo());
 	}
-
-
-
-
-
-
-
 	String rcontent = r.getRContent();
 	String rscore = r.getRScore();
 	String name = r.getRName();
@@ -120,7 +104,6 @@ public String showOneCase() throws Exception{
 	String[] names = name.split("/");
 	String[] errors = r.getErrors().split("/");
 	List<Require> r_list = new ArrayList<Require>();
-
 	for(int i = 1;i<= scores.length-1;i++){
 		Require require = new Require();
 		require.setContent(contents[i]);

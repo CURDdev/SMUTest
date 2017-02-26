@@ -216,7 +216,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </td>
    <td>
    <%--<div class="input-control text info">--%>
-   <input type="number"  max="<s:property value="#require.score"/>" id="number<s:property value="#st.index"/>" width="5%" name="part"/>
+   <input type="number"  max="<s:property value="#require.score"/>" id="number<s:property value="#st.index"/>" width="5%" name="part" onchange="calSum()"/>
    <%--</div>--%>
    </td>
        <td>
@@ -238,6 +238,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </s:iterator>
     </table>
    <input type="hidden" id="score" name="score.scScore">
+    <input type="hidden" id="score" name="score.CId" value="<s:property value="#request.CId"/>">
    <input type="hidden" id="totalScore" name="score.scTotalScore">
    <input type="hidden" id="stId" name="score.station.stId" value="<s:property value="#request.stId"/>">
    <input type="hidden" id="CId" name="c_id" value="<s:property value="#request.CId"/>">
@@ -246,10 +247,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <input type="hidden" value="<s:property value="#request.TId"/>" name="score.TId">
     <input type="hidden" value="<s:property value="#request.RId"/>" name="RId">
    <center>
+       <h3 style="color: #ff2d55">当前总分</h3>
+       <h3 id="sum">0</h3>
    <button class="button loading-pulse lighten primary" type="submit" >确认无误，提交</button>
    </center>
     </s:form>
     <script type="text/javascript">
+
+        function calSum() {
+            var studentSumScore = Number(0);
+            $("input[name='part']").each(function(){
+                if($(this).val()==""){
+                    studentSumScore = studentSumScore + Number(0);
+                }
+                else{
+                    studentSumScore = studentSumScore + Number($(this).val());
+                }
+            });
+            var sum = document.getElementById("sum");
+            sum.textContent = studentSumScore;
+        }
     function valid(){
 	var score = "air";
 	var totalScore = 0;

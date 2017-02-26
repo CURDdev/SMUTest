@@ -4,6 +4,7 @@ package com.smu.dao.impl;
 import java.io.Console;
 import java.util.List;
 
+import com.mysql.jdbc.DocsConnectionPropsHelper;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,9 +24,6 @@ private SessionFactory sessionFactory;
 public void setSessionFactory(SessionFactory sessionFactory) {
 	this.sessionFactory = sessionFactory;
 }
-	
-	
-	@Override
 	public boolean addScore(Score score) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
@@ -90,6 +88,18 @@ public void setSessionFactory(SessionFactory sessionFactory) {
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
 		String hql="update Score as s set s.status = 'yes' where s.scId="+scoreId;
+		Query queryupdate=session.createQuery(hql);
+		queryupdate.executeUpdate();
+		ts.commit();
+		session.close();
+		return true;
+	}
+	/** 修改一名学生还未提交的成绩*/
+	public boolean updateScore(int scoreId,String score,Double totalScore){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String hql="update Score as s set s.scScore = '"+ score +"',s.scTotalScore ="+ totalScore +" where s.scId="+scoreId+" and s.status = 'no'";
+		System.out.println(hql);
 		Query queryupdate=session.createQuery(hql);
 		queryupdate.executeUpdate();
 		ts.commit();

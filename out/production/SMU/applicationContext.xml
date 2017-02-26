@@ -176,6 +176,7 @@
 		</bean>
 		<bean id = "classAction" class="com.smu.action.ClassAction">
 		<property name="classService" ref="classService"></property>
+			<property name="testService" ref="testService"></property>
 		</bean>
 		
 		

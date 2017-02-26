@@ -109,4 +109,17 @@ public String addCaseStore() throws Exception{
 	requirementStoreService.addRequirement(requirementStore);
 	return SUCCESS;
 }
+/** 显示目前案例库中所有的案例*/
+public String showAllCases() throws Exception{
+	List cases = caseStoreService.getCases();
+	Map requestMap = (Map) ActionContext.getContext().get("request");
+	requestMap.put("cases",cases);
+	return SUCCESS;
+}
+/**修改题库中的一个案例*/
+public String updateOneCaseStore() throws Exception{
+	caseStoreService.updateOneCaseStore(caseStore.getCId(),caseStore.getCName(),caseStore.getCContent());
+	requirementStoreService.updateRequirementStore(requirementStore.getRId(),requirementStore.getRName(),requirementStore.getRContent(),requirementStore.getRScore());
+	return SUCCESS;
+}
 }

@@ -37,4 +37,7 @@ public boolean deleteRequirement(int c_id){
 	public boolean updateStoreErrors(int r_id,String errors){
 		return requirementStoreDAO.updateStoreErrors(r_id,errors);
 	}
+	public boolean updateRequirementStore(int RId,String RName,String RContent,String RScore){
+		return requirementStoreDAO.updateRequirementStore(RId,RName,RContent,RScore);
+	}
 }

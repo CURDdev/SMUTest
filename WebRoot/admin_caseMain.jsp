@@ -96,13 +96,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<center><h1>添加案例及要求</h1></center>
+<center><h1>修改案例及要求</h1></center>
 <s:form action="adminUpdateRequirement.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
 <center>
-<label>考试名称</label>
-<input type="text" value="<s:property value="#request.case.CName"/>" name="c.CName" id="cName"/>
-<label>所属站号</label>
-<input type="text" name="c.station.stId"  value="<s:property value="#request.stId"/>"   placeholder="请输入数字" id="stId"/>
+<%--<label>考试名称</label>--%>
+<%--<input type="text" value="<s:property value="#request.case.CName"/>" name="c.CName" id="cName"/>--%>
+<%--<label>所属站号</label>--%>
+<%--<input type="text" name="c.station.stId"  value="<s:property value="#request.stId"/>"   placeholder="请输入数字" id="stId"/>--%>
 <br>
 <h2>案例内容</h2>
 

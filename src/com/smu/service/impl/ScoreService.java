@@ -34,4 +34,7 @@ public class ScoreService implements IScoreService {
 	public boolean commitScore(int scoreId){
 		return  scoreDAO.commitScore(scoreId);
 	}
+	public boolean updateScore(int scoreId,String score,Double totalScore){
+		return scoreDAO.updateScore(scoreId,score,totalScore);
+	}
 }

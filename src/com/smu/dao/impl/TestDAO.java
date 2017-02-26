@@ -17,7 +17,6 @@ public class TestDAO implements ITestDAO {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	@Override
     public List gainTests(){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
@@ -56,4 +55,14 @@ public class TestDAO implements ITestDAO {
 		session.close();
 		return t;
    }
+   public List getAllTests(){
+	   Session session = sessionFactory.openSession();
+	   Transaction ts = session.beginTransaction();
+	   Query query = session.createQuery("from Test");
+	   List tests = query.list();
+	   ts.commit();
+	   session.close();
+	   return tests;
+   }
+
 }

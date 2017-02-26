@@ -24,7 +24,7 @@
     <tbody>
 <s:iterator value="#request.tests" id="test">
     <tr>
-        <td><a href="getUncommitedScore.action?TId=<s:property value="#session.user.TId"/>&sss=<s:property value="#test.testId"/>"><s:property value="#test.testName"></s:property></a></td>
+        <td><a href="getUncommitedScore.action?TId=<s:property value="#session.user.TId"/>&testId=<s:property value="#test.testId"/>"><s:property value="#test.testName"></s:property></a></td>
     </tr>
 </s:iterator>
     </tbody>

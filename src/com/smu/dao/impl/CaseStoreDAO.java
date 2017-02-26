@@ -71,5 +71,15 @@ public class CaseStoreDAO implements ICaseStoreDAO{
 		LOGGER.warn("8");
 		return id;
     }
+    public boolean updateOneCaseStore(int CId,String CName,String CContent){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String hql="update CaseStore as c set c.CName = '" +CName + "',c.CContent = '"+ CContent +"' where c.CId="+CId;
+		Query queryupdate=session.createQuery(hql);
+		queryupdate.executeUpdate();
+		ts.commit();
+		session.close();
+		return true;
+	}
 
 }

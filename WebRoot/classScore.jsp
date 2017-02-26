@@ -40,7 +40,7 @@ ul,li{list-style:none;}
 </head>
 
 <body>
-<jsp:include page="admin_header.jsp"></jsp:include>
+<%--<jsp:include page="admin_header.jsp"></jsp:include>--%>
 <center>
     <h1>班级成绩情况一览</h1>
     <s:form action="excel.action" method="post">

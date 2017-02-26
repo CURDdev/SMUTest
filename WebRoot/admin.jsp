@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <table class="table striped hovered cell-hovered border bordered">
   <tr>
   <td>
-    <a href="showClasses.jsp">查看班级成绩</a>
+    <a href="showTestsAndClasses.action">查看班级成绩</a>
     </td>
     </tr>
     <tr>
@@ -52,8 +52,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </tr>
      <tr>
     <td>
-    <a href="addRequire.jsp">添加站目信息</a>
+    <a href="addRequire.jsp">添加案例</a>
     </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="adminShowAllCases.action">修改案例</a>
+      </td>
     </tr>
     <tr>
     <td>

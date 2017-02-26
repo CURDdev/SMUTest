@@ -32,5 +32,8 @@ public Test getOneTest(int t_id){
 public int addTest(Test t){
 	return testDAO.addTest(t);
 };
+	public List getAllTests(){
+		return testDAO.getAllTests();
+	};
 }
 

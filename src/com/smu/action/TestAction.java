@@ -20,5 +20,6 @@ public class TestAction extends ActionSupport{
 		requestMap.put("tests", tests);
 		return SUCCESS;
 	}
-    
+
+
 }

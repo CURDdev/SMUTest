@@ -17,7 +17,7 @@ public class Score implements java.io.Serializable {
     private int TId;
     private String errors;
     private String status;
-    private int RId;
+    private int CId;
 	// Constructors
 
 	/** default constructor */
@@ -26,7 +26,7 @@ public class Score implements java.io.Serializable {
 
 	/** full constructor */
 	public Score(Teacher teacher, Station station, Student student,
-			String scScore, Double scTotalScore,int TId,String errors,String status,int RId) {
+			String scScore, Double scTotalScore,int TId,String errors,String status,int CId) {
 		this.teacher = teacher;
 		this.station = station;
 		this.student = student;
@@ -35,17 +35,18 @@ public class Score implements java.io.Serializable {
 		this.TId = TId;
 		this.errors = errors;
 		this.status = status;
-		this.RId = RId;
+		this.CId = CId;
 	}
 
 	// Property accessors
 
-	public int getRId() {
-		return RId;
+
+	public int getCId() {
+		return CId;
 	}
 
-	public void setRId(int RId) {
-		this.RId = RId;
+	public void setCId(int CId) {
+		this.CId = CId;
 	}
 
 	public int getTId() {

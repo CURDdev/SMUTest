@@ -2,10 +2,18 @@ package com.smu.action;
 import java.util.*;
 import com.smu.model.*;
 import com.smu.service.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import com.smu.dao.IStudentDAO;
 import com.smu.util.Require;
+import com.smu.util.RequireAndScore;
 import com.smu.util.StudentScore;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.log4j.Logger;
+
 public class ScoreAction extends ActionSupport {
 	private IScoreService scoreService;
 	private String TId;
@@ -18,106 +26,187 @@ public class ScoreAction extends ActionSupport {
 	private int stc_id;
 	private int c_id;
 	private String class_name;
-	private int sss;
+	private int testId;
 	private String[] newError;
+	private int[] scId;
     private String RId;
     private IRequirementStoreService requirementStoreService;
 	private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(ScoreAction.class);
-	public int getSss() {
-		return sss;
-	}
-	public void setSss(int sss) {
-		LOGGER.warn("sdsdsdsdsd"+sss);
-		this.sss = sss;
-	}
-	public String getTId() {
-		return TId;
-	}
-	public void setTId(String TId) {
-		this.TId = TId;
-	}
-	public IRequirementStoreService getRequirementStoreService() {
-		return requirementStoreService;
-	}
-	public void setRequirementStoreService(IRequirementStoreService requirementStoreService) {
-		this.requirementStoreService = requirementStoreService;
-	}
-	public String getRId() {
-		return RId;
-	}
-	public void setRId(String RId) {
-		this.RId = RId;
-	}
-	public String[] getNewError() {
-		return newError;
-	}
-	public void setNewError(String[] newError) {
-		this.newError = newError;
-	}
-	public ITestService getiTestService() {
-		return iTestService;
-	}
-	public void setiTestService(ITestService iTestService) {
-		this.iTestService = iTestService;
-	}
-	public ICaseService getCaseService() {
-		return caseService;
-	}
-	public void setCaseService(ICaseService caseService) {
-		this.caseService = caseService;
-	}
-	public IRequirementService getRequirementService() {
-		return requirementService;
-	}
-	public void setRequirementService(IRequirementService requirementService) {
-		this.requirementService = requirementService;
-	}
-	public String getClass_name() {
-		return class_name;
-	}
-	public void setClass_name(String class_name) {
-		this.class_name = class_name;
-	}
-	public IStudentService getStudentService() {
-		return studentService;
-	}
-	public void setStudentService(IStudentService studentService) {
-		this.studentService = studentService;
-	}
-	public IStationService getStationService() {
-		return stationService;
-	}
-	public void setStationService(IStationService stationService) {
-		this.stationService = stationService;
-	}
-	public int getC_id() {
-		return c_id;
-	}
-	public void setC_id(int c_id) {
-		this.c_id = c_id;
-	}
-	public int getStc_id() {
-		return stc_id;
-	}
-	public void setStc_id(int stc_id) {
-		this.stc_id = stc_id;
-	}
+
 	public IScoreService getScoreService() {
 		return scoreService;
 	}
+
 	public void setScoreService(IScoreService scoreService) {
 		this.scoreService = scoreService;
 	}
+
+	public String getTId() {
+		return TId;
+	}
+
+	public void setTId(String TId) {
+		this.TId = TId;
+	}
+
+	public IStudentService getStudentService() {
+		return studentService;
+	}
+
+	public void setStudentService(IStudentService studentService) {
+		this.studentService = studentService;
+	}
+
+	public IStationService getStationService() {
+		return stationService;
+	}
+
+	public void setStationService(IStationService stationService) {
+		this.stationService = stationService;
+	}
+
+	public ICaseService getCaseService() {
+		return caseService;
+	}
+
+	public void setCaseService(ICaseService caseService) {
+		this.caseService = caseService;
+	}
+
+	public IRequirementService getRequirementService() {
+		return requirementService;
+	}
+
+	public void setRequirementService(IRequirementService requirementService) {
+		this.requirementService = requirementService;
+	}
+
+	public ITestService getiTestService() {
+		return iTestService;
+	}
+
+	public void setiTestService(ITestService iTestService) {
+		this.iTestService = iTestService;
+	}
+
 	public Score getScore() {
 		return score;
 	}
+
 	public void setScore(Score score) {
 		this.score = score;
+	}
+
+	public int getStc_id() {
+		return stc_id;
+	}
+
+	public void setStc_id(int stc_id) {
+		this.stc_id = stc_id;
+	}
+
+	public int getC_id() {
+		return c_id;
+	}
+
+	public void setC_id(int c_id) {
+		this.c_id = c_id;
+	}
+
+	public String getClass_name() {
+		return class_name;
+	}
+
+	public void setClass_name(String class_name) {
+		this.class_name = class_name;
+	}
+
+
+	public int getTestId() {
+		return testId;
+	}
+
+	public void setTestId(int testId) {
+		this.testId = testId;
+	}
+
+	public String[] getNewError() {
+		return newError;
+	}
+
+	public void setNewError(String[] newError) {
+		this.newError = newError;
+	}
+
+	public String getRId() {
+		return RId;
+	}
+
+	public void setRId(String RId) {
+		this.RId = RId;
+	}
+
+	public IRequirementStoreService getRequirementStoreService() {
+		return requirementStoreService;
+	}
+
+	public void setRequirementStoreService(IRequirementStoreService requirementStoreService) {
+		this.requirementStoreService = requirementStoreService;
+	}
+
+	public int[] getScId() {
+		return scId;
+	}
+
+	public void setScId(int[] scId) {
+		this.scId = scId;
+	}
+
+	public static Logger getLOGGER() {
+		return LOGGER;
+	}
+	/**确认一条成绩*/
+	public String commitScore() throws  Exception{
+		for (int i = 0;i <= scId.length-1;i++) {
+			scoreService.commitScore(scId[i]);
+		}
+		UnCommitedTests();
+		return SUCCESS;
+	}
+    /** 修改一条还未最终提交的成绩*/
+    public String updateScore() throws  Exception{
+    	scoreService.updateScore(score.getScId(),score.getScScore(),score.getScTotalScore());
+		getUncommitedScoreByTestIdAndTId();
+    	return SUCCESS;
 	}
 	/** 通过成绩 id 获得一条还未提交的成绩*/
 	public String getOneCommitedScore() throws Exception{
 		 Score score= scoreService.getUncommitedScoreByScoreId(stc_id);
-
+		 Student student = studentService.checkStudent(score.getStudent().getSNo());
+		 Requirement r = requirementService.getAllRequirements(score.getCId());
+		 String[] names = r.getRName().split("/");
+		 String[] contents = r.getRContent().split("/");
+		 String[] maxScores = r.getRScore().split("/");
+		 String[] scores = score.getScScore().split(",");
+		 List<RequireAndScore> r_list = new ArrayList<RequireAndScore>();
+		 for(int i = 1;i<= scores.length;i++){
+			RequireAndScore require = new RequireAndScore();
+			require.setContent(contents[i]);
+			require.setScore(maxScores[i]);
+			require.setName(names[i]);
+			require.setUncommitedScore(scores[i-1]);
+			LOGGER.warn(scores[i-1]);
+			r_list.add(require);
+		 }
+		Map requestMap = (Map) ActionContext.getContext().get("request");
+		requestMap.put("student",student);
+		requestMap.put("RequireAndScore",r_list);
+		requestMap.put("RName",names[0]);
+		requestMap.put("RContent",contents[0]);
+		requestMap.put("RScore",scores[0]);
+		requestMap.put("scId",stc_id);
+		requestMap.put("testId",score.getTId());
+         return SUCCESS;
 	}
 	/** 获得一名老师还未最终提交的考试*/
 	public String UnCommitedTests() throws Exception{
@@ -143,8 +232,8 @@ public class ScoreAction extends ActionSupport {
 	/** 通过考试 ID 和教师 ID 查找还没有最终提交的学生成绩 */
 	public String getUncommitedScoreByTestIdAndTId() throws  Exception
 	{
-        LOGGER.warn(sss);
-		List<Score> scores = scoreService.getUncommitedScoreByTestIdAndTId(sss,TId);
+        LOGGER.warn(testId);
+		List<Score> scores = scoreService.getUncommitedScoreByTestIdAndTId(testId,TId);
 
 		for(int i = 0;i <= scores.size()-1;i++){
 			//将 ScScore 属性设置为该学生的名字
@@ -244,7 +333,7 @@ public class ScoreAction extends ActionSupport {
 //		for(int i=0;i<=students.size()-1;i++){
 //			s_no[i] = students.get(i).getSNo();
 //		}
-		List<Station> stations = stationService.gainAllStations(sss);
+		List<Station> stations = stationService.gainAllStations(testId);
 		int[] st_id = new int[stations.size()];
 		for(int j = 0;j<=stations.size()-1;j++){
 			st_id[j] = stations.get(j).getStId();

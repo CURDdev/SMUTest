@@ -15,7 +15,6 @@ public class RequirementStoreDAO implements IRequirementStoreDAO {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	@Override
     public RequirementStore getAllRequirements(int c_id){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();
@@ -27,6 +26,16 @@ public class RequirementStoreDAO implements IRequirementStoreDAO {
 		session.close();
 		return requirement;
 	}
+	public boolean updateRequirementStore(int RId,String RName,String RContent,String RScore){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String hql="update RequirementStore as r set r.RName = '" + RName + "',r.RContent = '"+ RContent+"',r.RScore = '"+ RScore +"' where r.RId="+RId;
+		Query queryupdate=session.createQuery(hql);
+		queryupdate.executeUpdate();
+		ts.commit();
+		session.close();
+		return true;
+	};
 	public boolean updateStoreErrors(int r_id,String errors){
 		Session session = sessionFactory.openSession();
 		Transaction ts = session.beginTransaction();

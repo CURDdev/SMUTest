@@ -35,6 +35,11 @@
 <result name="success">/Tests.jsp</result>
 <interceptor-ref name="loginstack"></interceptor-ref>
 </action>
+
+   <action name="showTestsAndClasses" class="classAction" method="showTestsAndClasses">
+       <result name="success">/showClasses.jsp</result>
+       <interceptor-ref name="adminLoginstack"></interceptor-ref>
+   </action>
 <action name="adminShowAllStations" class="stationAction" method="showAllStations">
 <result name="success">/admin_main.jsp</result>
 <interceptor-ref name="adminLoginstack"></interceptor-ref>
@@ -65,10 +70,27 @@
         <result name="success">/AllUncommited.jsp</result>
         <interceptor-ref name="loginstack"></interceptor-ref>
     </action>
-<action name="adminShowOneCase" class="caseAction" method="showOneCase">
+    <action name="getOneCommitedScore" class="scoreAction" method="getOneCommitedScore">
+        <result name="success">/oneUncommitedScore.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+
+    <action name="updateScore" class="scoreAction" method="updateScore">
+        <result name="success">/AllUncommited.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="commitScore" class="scoreAction" method="commitScore">
+        <result name="success">/privateCenter.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+<action name="adminShowOneCase" class="caseStoreAction" method="showOneCase">
 <result name="success">/admin_caseMain.jsp</result>
 <interceptor-ref name="adminLoginstack"></interceptor-ref>
 </action>
+    <action name="adminShowAllCases" class="caseStoreAction" method="showAllCases">
+        <result name="success">/admin_showAllCases.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
 <action name="browseAllRequirements" class="requirementAction" method="browseAllRequirements">
 <result name="success">/main.jsp</result>
 <interceptor-ref name="loginstack"></interceptor-ref>
