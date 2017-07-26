@@ -43,10 +43,9 @@ ul,li{list-style:none;}
 <%--<jsp:include page="admin_header.jsp"></jsp:include>--%>
 <center>
     <h1>班级成绩情况一览</h1>
-    <s:form action="excel.action" method="post">
-    <input type="hidden" value="<s:property value="classbfgfg"/>" name="filename">
-    <input type="hidden" value="<s:property value="#request.class_name"/>" name="class_name"> 
-    
+    <s:form action="SumScoreToExcel.action" method="post">
+    <input type="hidden" value="<s:property value="#request.testId"/>" name = "test_id">
+    <input type="hidden" value="<s:property value="#request.class_name"/>" name="class_name">
 	<input type="submit"  class="button loading-pulse lighten primary" value="点击导出Excel">
 	</s:form>
 	<br>

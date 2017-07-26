@@ -15,4 +15,5 @@ public List getStationScore(String st_id);
     public boolean commitScore(int scoreId);
     /** 修改一条还未最终提交的成绩*/
     public boolean updateScore(int scoreId,String score,Double totalScore);
+    public List getScoreBySNoAndCId(String s_no,int c_id);
 }

@@ -37,5 +37,8 @@
         <property name="CId" type="java.lang.Integer">
             <column name="c_id" not-null="true" />
         </property>
+        <property name="TName" type="java.lang.String">
+            <column name="t_name" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

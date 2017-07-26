@@ -64,5 +64,36 @@ public class TestDAO implements ITestDAO {
 	   session.close();
 	   return tests;
    }
-
+	public List getPreTests(){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		LOGGER.info(t);
+		Query query = session.createQuery("from Test as t where t.testEndTime < '"+t+"'");
+		List tests = query.list();
+		ts.commit();
+		session.close();
+		return tests;
+	}
+	public List getLaterTests(){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		LOGGER.info(t);
+		Query query = session.createQuery("from Test as t where t.testBeginTime > '"+t+"'");
+		List tests = query.list();
+		ts.commit();
+		session.close();
+		return tests;
+	}
+	public boolean deleteTests(int t_id){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String q = "delete Test as t where t.testId ="+t_id;
+		Query query = session.createQuery(q);
+		query.executeUpdate();
+		ts.commit();
+		session.close();
+		return true;
+	}
 }

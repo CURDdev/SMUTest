@@ -5,9 +5,7 @@ package com.smu.model;
  */
 
 public class Score implements java.io.Serializable {
-
 	// Fields
-
 	private Integer scId;
 	private Teacher teacher;
 	private Station station;
@@ -18,6 +16,7 @@ public class Score implements java.io.Serializable {
     private String errors;
     private String status;
     private int CId;
+    private String TName;
 	// Constructors
 
 	/** default constructor */
@@ -26,7 +25,7 @@ public class Score implements java.io.Serializable {
 
 	/** full constructor */
 	public Score(Teacher teacher, Station station, Student student,
-			String scScore, Double scTotalScore,int TId,String errors,String status,int CId) {
+			String scScore, Double scTotalScore,int TId,String errors,String status,int CId,String TName) {
 		this.teacher = teacher;
 		this.station = station;
 		this.student = student;
@@ -36,10 +35,19 @@ public class Score implements java.io.Serializable {
 		this.errors = errors;
 		this.status = status;
 		this.CId = CId;
+		this.TName = TName;
 	}
 
 	// Property accessors
 
+
+	public String getTName() {
+		return TName;
+	}
+
+	public void setTName(String TName) {
+		this.TName = TName;
+	}
 
 	public int getCId() {
 		return CId;

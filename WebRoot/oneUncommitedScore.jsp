@@ -100,11 +100,7 @@
     <select name="theme" id="theme" class="settings" >
     </select>
 </div>
-<center>
-    <h2>案例内容</h2>
-    <h4><s:property value="#request.case.CContent"/></h4>
-    <a href="showCases.action?stc_id=<s:property value="#request.stId"/>">更换案例</a>
-</center>
+
 <%--<div data-role="dialog" id="dialog" class="padding20" data-close-button="true" data-type="alert">--%>
 <%--<h1>提示信息</h1>--%>
 <%--<p>--%>
@@ -123,10 +119,8 @@
         dialog.open();
     }
 </script>
+<center> <h2>修改考生成绩 </h2></center>
 <s:form  action="updateScore.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
-    <br>
-    <br>
-    <br>
     <div class="col-lg-7 col-lg-offset-4  col-lg-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
         <label>学号:<s:property value="#request.student.SNo"></s:property></label>
         <span id="no"></span>

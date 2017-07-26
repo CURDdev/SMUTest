@@ -25,6 +25,7 @@
     <tr>
         <th>学号</th>
         <th>姓名</th>
+        <th>案例</th>
         <th>成绩</th>
         <th>操作</th>
     </tr>
@@ -34,6 +35,7 @@
     <tr>
         <td><s:property value="#score.student.SNo"></s:property></td>
         <td><s:property value="#score.scScore"></s:property></td>
+        <td><s:property value="#score.errors"></s:property> </td>
         <td><s:property value="#score.scTotalScore"></s:property></td>
         <td><a href="getOneCommitedScore.action?stc_id=<s:property value="#score.scId"/>">修改</a><input type="hidden" name = "scId" value="<s:property value="#score.scId"/>"></td>
     </tr>

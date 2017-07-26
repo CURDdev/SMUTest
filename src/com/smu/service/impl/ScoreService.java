@@ -37,4 +37,7 @@ public class ScoreService implements IScoreService {
 	public boolean updateScore(int scoreId,String score,Double totalScore){
 		return scoreDAO.updateScore(scoreId,score,totalScore);
 	}
+	public List getScoreBySNoAndCId(String s_no,int c_id){
+		return scoreDAO.getScoreBySNoAndCId(s_no,c_id);
+	}
 }

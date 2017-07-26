@@ -21,22 +21,87 @@ public SessionFactory getSessionFactory() {
 public void setSessionFactory(SessionFactory sessionFactory) {
 	this.sessionFactory = sessionFactory;
 }
-public Teacher checkUser(Teacher teacher){
-	Session session = sessionFactory.openSession();
-	Transaction ts = session.beginTransaction();
-	String q = "from Teacher as t where t.TId ="+"'"+teacher.getTId()+"' "+"and t.TPassword = "+"'"+teacher.getTPassword()+"'";
-	Query query = session.createQuery(q);
-    Teacher user1 = new Teacher();
-	List list = query.list();
-	ts.commit();
-	session.clear();
-	session.close();
-	if (list.size() != 0) {
-		user1 = (Teacher) list.get(0);
-		
-		return user1;
-	}
-	return null;
+	public Teacher checkUser(Teacher teacher){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String q = "from Teacher as t where t.TId ="+"'"+teacher.getTId()+"' "+"and t.TPassword = "+"'"+teacher.getTPassword()+"'";
+		Query query = session.createQuery(q);
+		Teacher user1 = new Teacher();
+		List list = query.list();
+		ts.commit();
+		session.clear();
+		session.close();
+		if (list.size() != 0) {
+			user1 = (Teacher) list.get(0);
 
-}
+			return user1;
+		}
+		return null;
+	}
+	public Teacher getTeacherByTId(String TId){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String q = "from Teacher as t where t.TId ="+"'"+TId+"'";
+		Query query = session.createQuery(q);
+		Teacher t = (Teacher) query.uniqueResult();
+		ts.commit();
+		session.close();
+		return t;
+	}
+	public List getAllTeachers(){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		Query query = session.createQuery("from Teacher");
+		List stations = query.list();
+		ts.commit();
+		session.close();
+		return stations;
+	}
+	public boolean addOneTeacher(Teacher t){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		session.save(t);
+		try {
+			session.flush();
+		} catch (Exception e) {
+			// TODO: handle exception
+			session.close();
+		}
+		session.clear();
+		ts.commit();
+		session.close();
+		return true;
+	}
+	public boolean deleteOneTeacher(String TId){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String q = "delete Teacher as t where t.TId = '"+TId+"'";
+		Query query = session.createQuery(q);
+		query.executeUpdate();
+		ts.commit();
+		session.close();
+		return true;
+	}
+	public boolean checkTeacherId(String TId){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		Query query = session.createQuery("from Teacher as t where t.TId = '"+TId+"'");
+		List teachers = query.list();
+		ts.commit();
+		session.close();
+		if(teachers.size() == 1){
+			return true;
+		}
+		return false;
+	}
+	public boolean updateOneTeacherName(String TId,String TName){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		String hql="update Teacher as t set t.TName = '" +TName + "' where t.TId='"+TId+"'";
+		Query queryupdate=session.createQuery(hql);
+		queryupdate.executeUpdate();
+		ts.commit();
+		session.close();
+		return true;
+	}
 }

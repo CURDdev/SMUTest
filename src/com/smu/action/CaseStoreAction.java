@@ -1,11 +1,10 @@
 package com.smu.action;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.LogManager;
 
+import com.smu.model.Class;
+import com.smu.service.IClassService;
 import org.apache.log4j.*;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -20,6 +19,7 @@ import com.smu.util.Require;
 public class CaseStoreAction extends ActionSupport {
    private ICaseStoreService caseStoreService;
    private IRequirementStoreService requirementStoreService;
+   private IClassService classService;
    private int c_id;
    private CaseStore caseStore;
    private RequirementStore requirementStore;
@@ -30,6 +30,14 @@ public IRequirementStoreService getRequirementService() {
 public void setRequirementStoreService(IRequirementStoreService requirementService) {
 	this.requirementStoreService = requirementService;
 }
+
+	public IClassService getClassService() {
+		return classService;
+	}
+
+	public void setClassService(IClassService classService) {
+		this.classService = classService;
+	}
 
 	public RequirementStore getRequirementStore() {
 		return requirementStore;
@@ -69,6 +77,49 @@ public String showCases() throws Exception{
 	}
 	Map requestMap = (Map) ActionContext.getContext().get("request");
 	LOGGER.info(cases.toString());
+	List<Class> classes = classService.getAllClasses();
+	Set<Integer> grade = new HashSet<Integer>();
+	Set<String> className = new HashSet<String>();
+
+
+	for(int i = 0;i<=classes.size()-1;i++){
+		grade.add(Integer.parseInt(classes.get(i).getClassName().substring(0,4)));
+		className.add(classes.get(i).getClassName().substring(4));
+	}
+	int n = grade.size();
+	Integer[] a = new Integer[n];
+
+	Map<String,String> grades = new HashMap<String, String>();
+	Map<String,String> classNames = new HashMap<String, String>();
+	int m = 0;
+	for(Iterator<Integer> iterator = grade.iterator();iterator.hasNext();){
+//		String k = iterator.next().toString();
+//		grades.put(k,k);
+		a[m] = iterator.next();
+		m++;
+	}
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - 1; j++) {
+			if (a[j] > a[j + 1]) {
+				int temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+		}
+	}
+	for(int i = 0;i<=n-1;i++){
+		grades.put(a[i].toString(),a[i].toString());
+	}
+	for(Iterator<String> iterator = className.iterator();iterator.hasNext();){
+		String k = iterator.next().toString();
+		classNames.put(k,k);
+	}
+//	for(int j = 0;j<=grade.size()-1;j++){
+//		grades.put(grade[j],classes.get(j).getClassName().substring(0,4));
+//		classNames.put(classes.get(j).getClassName().substring(4),classes.get(j).getClassName().substring(4));
+//	}
+	requestMap.put("grades",grades);
+	requestMap.put("classNames",classNames);
 	requestMap.put("cases", map);
 	return SUCCESS;
 }
@@ -76,8 +127,7 @@ public String showOneCase() throws Exception{
 	CaseStore cas = new CaseStore();
 	cas = caseStoreService.getOneCase(c_id);
 	RequirementStore r = requirementStoreService.getAllRequirements(c_id);
-	
-
+	int RId = r.getRId();
 	String rcontent = r.getRContent();
 	String rscore = r.getRScore();
 	String name = r.getRName();
@@ -95,6 +145,7 @@ public String showOneCase() throws Exception{
 	}
 	Map requestMap = (Map) ActionContext.getContext().get("request");
 	requestMap.put("CId", c_id);
+	requestMap.put("RId",RId);
 	requestMap.put("require", r_list);
 	requestMap.put("RName",names[0]);
 	requestMap.put("RContent",contents[0]);
@@ -119,7 +170,12 @@ public String showAllCases() throws Exception{
 /**修改题库中的一个案例*/
 public String updateOneCaseStore() throws Exception{
 	caseStoreService.updateOneCaseStore(caseStore.getCId(),caseStore.getCName(),caseStore.getCContent());
-	requirementStoreService.updateRequirementStore(requirementStore.getRId(),requirementStore.getRName(),requirementStore.getRContent(),requirementStore.getRScore());
+	requirementStoreService.updateRequirementStore(requirementStore.getRId(),requirementStore.getRName(),requirementStore.getRContent(),requirementStore.getRScore(),requirementStore.getErrors());
+	return SUCCESS;
+}
+public String deleteOneCase() throws Exception{
+	caseStoreService.deleteCase(c_id);
+	String result = "ok";
 	return SUCCESS;
 }
 }

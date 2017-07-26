@@ -35,5 +35,14 @@ public int addTest(Test t){
 	public List getAllTests(){
 		return testDAO.getAllTests();
 	};
+	public List getPreTests(){
+		return testDAO.getPreTests();
+	};
+	public List getLaterTests(){
+		return testDAO.getLaterTests();
+	}
+	public boolean deleteTests(int t_id){
+		return testDAO.deleteTests(t_id);
+	};
 }
 

@@ -28,8 +28,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
            
   <body>
- 
-  	<jsp:include page="admin_header.jsp"></jsp:include>
 <s:action name="adminShowAllStations"></s:action>
   <table class="table striped hovered cell-hovered border bordered">
   <thead>
@@ -49,9 +47,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <td>
    <center><h4>
    
-   <a href="adminshowCases.action?stc_id=<s:property value="#station.stId"/>"><s:property value="#station.stName"/></a>
+   <a href="adminshowCases.action?stc_id=<s:property value="#station.stationId"/>&t_id=<s:property value="#request.t_id"/>"><s:property value="#station.stationName"/></a>
    
    </h4>
+       <s:generator separator="," val="#station.stationCases">
+           <s:iterator>
+               <s:property></s:property>
+           </s:iterator>
+       </s:generator>
    </center>
    </td>
    </tr>

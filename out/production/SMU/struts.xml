@@ -4,7 +4,7 @@
 <package name="loginpac" extends="struts-default" namespace="/">
  <action name="checkUser"        class="userAction" method="checkUser">
 <result name="success">/index.jsp</result>
-<result name="login">/admin.jsp</result>
+<result name="login">/adminMainPage.jsp</result>
 <result name="error">/relogin.jsp</result>   
 <interceptor-ref name="defaultStack"></interceptor-ref>     
 </action>
@@ -27,39 +27,46 @@
    
    <result name="primaryError">/error.jsp</result>
 </global-results>
-<action name="showAllStations" class="stationAction" method="showAllStations">
-<result name="success">/menu.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
-</action>
-<action name="showTests" class="testAction" method="showTests">
-<result name="success">/Tests.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
-</action>
-
+    <action name="showAllStations" class="stationAction" method="showAllStations">
+        <result name="success">/menu.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="showTests" class="testAction" method="showTests">
+        <result name="success">/Tests.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="adminShowTests" class="testAction" method="showTests">
+        <result name="success">/admin_tests.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="getAllTeachers" class="userAction" method="getAllTeachers">
+        <result name ="success">/ManageTeachers.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
    <action name="showTestsAndClasses" class="classAction" method="showTestsAndClasses">
        <result name="success">/showClasses.jsp</result>
        <interceptor-ref name="adminLoginstack"></interceptor-ref>
    </action>
-<action name="adminShowAllStations" class="stationAction" method="showAllStations">
-<result name="success">/admin_main.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action>
-<action name="adminShowAllStations1" class="stationAction" method="showAllStations">
-<result name="success">/admin_stationMain.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action>
-<action name="showCases" class="caseAction" method="showCases">
-<result name="success">/case.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
-</action>
-<action name="adminshowCases" class="caseAction" method="showCases">
-<result name="success">/admin_case.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action>
-<action name="showOneCase" class="caseAction" method="showOneCase">
-<result name="success">/caseMain.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
-</action>
+    <action name="adminShowAllStations" class="stationAction" method="showAllStations">
+        <result name="success">/admin_showStations.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="adminShowAllStations1" class="stationAction" method="showAllStations">
+        <result name="success">/admin_stationMain.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="showCases" class="caseAction" method="showCases">
+        <result name="success">/case.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="adminshowCases" class="caseAction" method="showCases">
+        <result name="success">/admin_case.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="showOneCase" class="caseAction" method="showOneCase">
+        <result name="success">/caseMain.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
 
     <action name="privateCenter" class="scoreAction" method="UnCommitedTests">
         <result name="success">/privateCenter.jsp</result>
@@ -74,7 +81,6 @@
         <result name="success">/oneUncommitedScore.jsp</result>
         <interceptor-ref name="loginstack"></interceptor-ref>
     </action>
-
     <action name="updateScore" class="scoreAction" method="updateScore">
         <result name="success">/AllUncommited.jsp</result>
         <interceptor-ref name="loginstack"></interceptor-ref>
@@ -83,69 +89,86 @@
         <result name="success">/privateCenter.jsp</result>
         <interceptor-ref name="loginstack"></interceptor-ref>
     </action>
-<action name="adminShowOneCase" class="caseStoreAction" method="showOneCase">
-<result name="success">/admin_caseMain.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action>
+    <action name="getPreTests" class="testAction" method="getPreTests">
+        <result name="success">/admin_preTests.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="getLaterTests" class="testAction" method="getLaterTests">
+        <result name="success">/admin_laterTests.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="adminShowOneCase" class="caseStoreAction" method="showOneCase">
+        <result name="success">/admin_caseMain.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="adminShowOneTestCase" class="caseAction" method="showOneCase">
+        <result name="success">/admin_testCaseMain.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
     <action name="adminShowAllCases" class="caseStoreAction" method="showAllCases">
         <result name="success">/admin_showAllCases.jsp</result>
         <interceptor-ref name="adminLoginstack"></interceptor-ref>
     </action>
-<action name="browseAllRequirements" class="requirementAction" method="browseAllRequirements">
-<result name="success">/main.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
-</action>
-<action name="addScore" class="scoreAction" method="addScore">
-<result name="success" type="redirect">/browseAllRequirements.action?stc_id=${stc_id}</result>
-<result name="error">/main.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
-</action>
- <action name="addScore1" class="scoreAction" method="addScore">
-<result name="success">/caseMain.jsp</result>
-<interceptor-ref name="loginstack"></interceptor-ref>
-</action>
-<action name="addRequirement" class="requirementAction" method="addRequirement">
-<result name="success">/addRequire.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action>
-<action name="addTest" class="requirementAction" method="addTest">
-<result name="success">/admin.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action>
-<action name="logOut" class="userAction" method="logOut">
-<interceptor-ref name="defaultStack"></interceptor-ref>       
-<result name="success">/login.jsp</result>
-</action> 
-<action name="adminUpdateRequirement" class="requirementAction" method="updateRequirement">
-<interceptor-ref name="defaultStack"></interceptor-ref>       
-<result name="success">/admin_main.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action> 
-<action name="browseScores" class="scoreAction" method="browseScores">
-<interceptor-ref name="defaultStack"></interceptor-ref>       
-<result name="success">/classScore.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref>
-</action>
-<action name="showClasses" class="classAction" method="showClasses">
-<result name="success">/showClasses.jsp</result>
-</action>
-<action name="StationScores" class="scoreAction" method="browseStationScores">
-<interceptor-ref name="defaultStack"></interceptor-ref>   
-<result name="success">/stationScore.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref> 
-</action>
-<action name="beginNewTest" class="caseStoreAction" method="showCases">
-<interceptor-ref name="defaultStack"></interceptor-ref>   
-<result name="success">/NewTest.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref> 
-</action>
-<action name="previewCase" class="caseStoreAction" method="showOneCase">
-<interceptor-ref name="defaultStack"></interceptor-ref>   
-<result name="success">/PreviewCase.jsp</result>
-<interceptor-ref name="adminLoginstack"></interceptor-ref> 
-</action>
-
-
+    <action name="browseAllRequirements" class="requirementAction" method="browseAllRequirements">
+        <result name="success">/main.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="addScore" class="scoreAction" method="addScore">
+        <result name="success" type="redirect">/browseAllRequirements.action?stc_id=${stc_id}</result>
+        <result name="error">/main.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="addScore1" class="scoreAction" method="addScore">
+        <result name="success">/addScoreSuccess.jsp</result>
+        <interceptor-ref name="loginstack"></interceptor-ref>
+    </action>
+    <action name="addRequirement" class="requirementAction" method="addRequirement">
+        <result name="success">/addRequire.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="addTest" class="requirementAction" method="addTest">
+        <result name="success">/success.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="logOut" class="userAction" method="logOut">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success">/login.jsp</result>
+    </action>
+    <action name="adminUpdateRequirement" class="caseStoreAction" method="updateOneCaseStore">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success">/success.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="browseAllCaseScores" class="scoreAction" method="browseAllCaseScores">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success">/classAllCaseScore.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="browseScores" class="scoreAction" method="browseScores">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success">/classScore.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="showClasses" class="classAction" method="showClasses">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success">/showClasses.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="StationScores" class="scoreAction" method="browseStationScores">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success">/stationScore.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="beginNewTest" class="caseStoreAction" method="showCases">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success">/NewTest.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
+    <action name="previewCase" class="caseStoreAction" method="showOneCase">
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success">/PreviewCase.jsp</result>
+        <interceptor-ref name="adminLoginstack"></interceptor-ref>
+    </action>
     <action name="addCaseStore" class="caseStoreAction" method="addCaseStore">
         <interceptor-ref name="defaultStack"></interceptor-ref>
         <result name="success">/addRequire.jsp</result>
@@ -153,28 +176,90 @@
     </action>
 </package>
 <package name="ajax_json" extends="json-default">
-<action name="checkStudent" class="studentAction">
-      <result  type="json" name="success">
-          <param name="root">result</param>
-      </result>
-     
-</action>     
+    <action name="addOneTeacher" class="userAction" method="addOneTeacher">
+        <result name="success" type="json">
+            <param name="root">result</param>
+        </result>
+    </action>
+    <action name="deleteOneTeacher" class="userAction" method="deleteOneTeacher">
+        <result name="success" type="json">
+            <param name="root">result</param>
+        </result>
+    </action>
+    <action name="checkTeacherId" class="userAction" method="checkTeacherId">
+        <result name="success" type="json">
+            <param name="root">result</param>
+        </result>
+    </action>
+    <action name="getOneTestClasses" class="testAction" method="getOneTestClasses">
+        <result name="success" type="json">
+            <param name="root">result</param>
+        </result>
+    </action>
+    <action name="updateOneTeacherName" class="userAction" method="updateOneTeacherName">
+        <result name="success" type="json">
+            <param name="root">result</param>
+        </result>
+    </action>
+    <action name="checkStudent" class="studentAction">
+          <result  type="json" name="success">
+              <param name="root">result</param>
+          </result>
+    </action>
+    <action name="deleteOneCase" class="caseStoreAction" method="deleteOneCase">
+        <result type="json" name="success">
+            <param name="root">result</param>
+        </result>
+    </action>
+    <action name="AllScoreToExcel" class="excelAction" method="getAllcasesScoreExcel">
+        <result name="excel" type="stream">
+            <param name="contentType"> application/vnd.ms-excel
+            </param>
+            <param name="inputName">excelStream</param>
+            <param name="contentDisposition">
+                filename="AllCasesScore.xls"
+            </param>
+            <param name="bufferSize">1024</param>
+        </result>
+    </action>
+    <action name="getParticularScoresExcel" class="excelAction" method="getParticularScoresExcel">
+        <result name="excel" type="stream">
+            <param name="contentType"> application/vnd.ms-excel
+            </param>
+            <param name="inputName">excelStream</param>
+            <param name="contentDisposition">
+                filename="ScoresByRows.xls"
+            </param>
+            <param name="bufferSize">1024</param>
+        </result>
+    </action>
+    <action name="SumScoreToExcel" class="excelAction" method="getSumScoreExcel">
+        <result name="excel" type="stream">
+            <param name="contentType"> application/vnd.ms-excel
+            </param>
+            <param name="inputName">excelStream</param>
+            <param name="contentDisposition">
+                filename="SumScore.xls"
+            </param>
+            <param name="bufferSize">1024</param>
+        </result>
+    </action>
 </package>
 
-    <constant name="struts.action.extension" value="action" />
-	<constant name="struts.devMode" value="true" />
-	<package name="platform-default" extends="struts-default" namespace="/" >
-		<action name="excel" class="excelAction">
-			<result name="excel" type="stream">
-				<param name="contentType"> application/vnd.ms-excel
-				</param>
-				<param name="inputName">excelStream</param>
-				<param name="contentDisposition">
-					filename="score.xls"
-				</param>
-				<param name="bufferSize">1024</param>
-			</result>
-		</action>
-	</package>
+    <!--<constant name="struts.action.extension" value="action" />-->
+	<!--<constant name="struts.devMode" value="true" />-->
+	<!--<package name="platform-default" extends="struts-default" namespace="/" >-->
+		<!--<action name="excel" class="excelAction">-->
+			<!--<result name="excel" type="stream">-->
+				<!--<param name="contentType"> application/vnd.ms-excel-->
+				<!--</param>-->
+				<!--<param name="inputName">excelStream</param>-->
+				<!--<param name="contentDisposition">-->
+					<!--filename="score.xls"-->
+				<!--</param>-->
+				<!--<param name="bufferSize">1024</param>-->
+			<!--</result>-->
+		<!--</action>-->
+	<!--</package>-->
 
 </struts>    

@@ -14,4 +14,5 @@ public List getUncommitedScoresByTId(String t_id);
     public Score getUncommitedScoreByScoreId(int scoreId);
     public boolean commitScore(int scoreId);
     public boolean updateScore(int scoreId,String score,Double totalScore);
+    public List getScoreBySNoAndCId(String s_no,int c_id);
 }

@@ -48,11 +48,24 @@ public class ClassAction extends ActionSupport {
 			testNames.put(tests.get(j).getTestId(),tests.get(j).getTestName());
 		}
 		for (int i = 0;i<=classes.size()-1;i++){
-			grades.put(classes.get(i).getClassName().substring(0,5),classes.get(i).getClassName().substring(0,5));
-			classNames.put(classes.get(i).getClassName().substring(5),classes.get(i).getClassName().substring(5));
+			grades.put(classes.get(i).getClassName().substring(0,4),classes.get(i).getClassName().substring(0,4));
+			classNames.put(classes.get(i).getClassName().substring(4),classes.get(i).getClassName().substring(4));
 		}
 
 		requestMap.put("testNames", testNames);
+		requestMap.put("grades",grades);
+		requestMap.put("classNames",classNames);
+		return SUCCESS;
+	}
+	public String getAllClasses() throws Exception{
+		List<Class> classes = classService.getAllClasses();
+		Map requestMap = (Map)ActionContext.getContext().get("request");
+		Map<String,String> grades = new HashMap<String, String>();
+		Map<String,String> classNames = new HashMap<String, String>();
+		for(int j = 0;j<=classes.size()-1;j++){
+			grades.put(classes.get(j).getClassName().substring(0,4),classes.get(j).getClassName().substring(0,4));
+			classNames.put(classes.get(j).getClassName().substring(4),classes.get(j).getClassName().substring(4));
+		}
 		requestMap.put("grades",grades);
 		requestMap.put("classNames",classNames);
 		return SUCCESS;

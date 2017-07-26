@@ -28,34 +28,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
            
   <body>
- 
-  	<jsp:include page="header.jsp"></jsp:include>
-
-  <table class="table striped hovered cell-hovered border bordered">
-  <thead>
-  <tr>
- <th>
-  <center>
-  <h3>
-  请选择您负责的站目
-  </h3>
-  </center>
-  </th>
-  
-  </tr>
-  </thead>
-   <s:iterator value="#request.stations" id="station">
-   <tr>
-   <td>
-   <center><h4>
-   
-   <a href="showCases.action?stc_id=<s:property value="#station.stId"/>&t_id=<s:property value="#request.t_id"/>"><s:property value="#station.stName"/></a>
-   
-   </h4>
-   </center>
-   </td>
-   </tr>
-   </s:iterator>
-   </table>
+    <jsp:include page="header.jsp"></jsp:include>
+    <table class="table striped hovered cell-hovered border bordered">
+        <thead>
+           <tr>
+                <th>
+                     <center>
+                      <h3>请选择您负责的站目</h3>
+                     </center>
+                </th>
+           </tr>
+        </thead>
+        <tbody>
+            <s:iterator value="#request.stations" id="station">
+               <tr>
+                   <td>
+                       <center><h4>
+                       <a href="showCases.action?stc_id=<s:property value="#station.stationId"/>&t_id=<s:property value="#request.t_id"/>"><s:property value="#station.stationName"/></a>
+                       </h4>
+                           <s:generator separator="," val="#station.stationCases">
+                               <s:iterator>
+                                   <s:property></s:property>
+                               </s:iterator>
+                           </s:generator>
+                       </center>
+                   </td>
+               </tr>
+           </s:iterator>
+        </tbody>
+    </table>
   </body>
 </html>

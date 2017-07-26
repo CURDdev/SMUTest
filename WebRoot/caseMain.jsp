@@ -19,15 +19,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <meta http-equiv="description" content="This is my page">
 	  <link rel="stylesheet" type="text/css" href="css/metro.css">
 	  <link rel="stylesheet" href="css/metro-icons.css">
-	  <link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
-      <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
-      <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+	  <%--<link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />--%>
+      <%--<link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />--%>
+      <%--<link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />--%>
       <link rel="stylesheet" href="css/bootstrap-select.css"/>
       <link rel="stylesheet" href="css/bootstrap.css">
-      <link href="css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
-      <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
-      <link href="css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
-      <link href="css/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+      <%--<link href="css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />--%>
+      <%--<link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />--%>
+      <%--<link href="css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />--%>
+      <%--<link href="css/mobiscroll.image.css" rel="stylesheet" type="text/css" />--%>
+      <%--<script src="js/pace.js"></script>--%>
+      <link rel="stylesheet" type="text/css" href="css/dataurl.css">
       <style type="text/css">
     body {
         padding: 1em;
@@ -114,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <center>
    <h2>案例内容</h2>
     <h4><s:property value="#request.case.CContent"/></h4>
-    <a href="showCases.action?stc_id=<s:property value="#request.stId"/>">更换案例</a>
+    <a href="showAllStations.action?test_id=<s:property value="#request.TId"/>">更换案例</a>
    </center>
 
 <%--<div data-role="dialog" id="dialog" class="padding20" data-close-button="true" data-type="alert">--%>
@@ -129,10 +131,48 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 有评分项未输入
             </p>
         </div>
+   <div data-role="dialog" id="dialog2" class="padding20" data-close-button="true" data-type="alert">
+       <h1>请选择分数</h1>
+       <div id = "choose"></div>
+   </div>
+   <div data-role="dialog" id="dialog3" class="padding20" data-close-button="true" data-type="alert">
+       <h1>请输入备注</h1>
+       <div class="input-control text info">
+           <input  id="inputError" type="text" style="color:#FF0000;">
+       </div>
+       <input id="hiddenError" type="hidden">
+       <button type="button" onclick="setNewError()" class="button loading-pulse lighten primary">提交到备注</button>
+   </div>
 <script>
+    function ceshi(id) {
+        id = id.substr(6);
+        var d = document.getElementById("choose");
+        d.innerHTML = "";
+        var dataSource = document.getElementById("number"+id);
+        var maxScore = Number(dataSource.getAttribute("max"));
+        for(var i = 0;i<=maxScore;i++) {
+            var b = document.createElement('button');
+            b.className = "button primary";
+            b.textContent = i.toString();
+            b.onclick = function () {
+                d.innerHTML = "";
+                dataSource.value = Number(this.textContent)
+                var dialog = $("#dialog2").data('dialog');
+                dialog.close();
+                calSum();
+            }
+            d.appendChild(b);
+        }
+        var dialog = $("#dialog2").data('dialog');
+        dialog.open();
+    }
     function showDialog(id){
         var dialog = $(id).data('dialog');
         dialog.open();
+    }
+    function dialogClose() {
+        var dialog = $("#dialog2").data('dialog');
+        dialog.close();
     }
 </script>
 <s:form  action="addScore1.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
@@ -142,7 +182,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <%--<input type="text"  class="input" id="student" onblur="check()" name="score.student.SNo"/>--%>
 
     <div class="col-lg-4 col-lg-offset-4  col-lg-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-     <s:select id="basic" cssClass="selectpicker show-tick form-control" data-live-search="true" list="#request.students" listKey="key" listValue="value" theme="simple" name="score.student.SNo" onchange="check(this.value)"/>
+     <s:select id="basic" cssClass="selectpicker show-tick form-control" data-live-search="true" list="#request.students" listKey="key" listValue="value" theme="simple" name="score.student.SNo" onchange="check(this.value)" headerKey="请选择考生" headerValue="请选择考生" />
     </div>
 
 
@@ -191,7 +231,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
       <th class="sortable-column">
           <h3>
-              所犯错误
+              备注
           </h3>
       </th>
       <th class="sortable-column">
@@ -206,17 +246,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <s:iterator value="#request.require" id="require" status="st">
    <tr>
    <td>
-   <s:property value="#require.name"/>
+        <h3><s:property value="#require.name"/></h3>
    </td>
    <td>
-   <s:property value="#require.content"/>
+        <h3><s:property value="#require.content"/></h3>
    </td>
    <td>
    <h4 id="<s:property value="#st.index"/>"><s:property value="#require.score"/></h4>
    </td>
    <td>
    <%--<div class="input-control text info">--%>
-   <input type="number"  max="<s:property value="#require.score"/>" id="number<s:property value="#st.index"/>" width="5%" name="part" onchange="calSum()"/>
+       <div class="input-control text">
+            <input type="number" disabled max="<s:property value="#require.score"/>" id="number<s:property value="#st.index"/>" width="5%" name="part" onchange="calSum()" style="color: #FF0000"/>
+       </div>
+       <button type="button" class="button success" onclick="ceshi(this.id)" id="button<s:property value="#st.index"/>">打  分</button>
    <%--</div>--%>
    </td>
        <td>
@@ -225,11 +268,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
            </s:select>
        </td>
        <td>
-       <div class="input-control text info">
-           <input type="text" id="error<s:property value="#st.index+1"/>"/>
-
-       </div>
-           <button type="button" class="button loading-pulse lighten primary" onclick="addError(this.id)" id="<s:property value="#st.index+1"/>">添加到选框</button>
+       <%--<div class="input-control text info">--%>
+           <%--<input type="text" id="error<s:property value="#st.index+1"/>"/>--%>
+       <%--</div>--%>
+           <button type="button" class="button warning" onclick="addError(this.id)" id="<s:property value="#st.index+1"/>">添加到选框</button>
 
            <%--用于提交新添加的错误到数据库--%>
            <input type="hidden" name="newError" id="hidden<s:property value="#st.index+1"/>" value="air"/>
@@ -268,11 +310,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             sum.textContent = studentSumScore;
         }
     function valid(){
+            if(document.getElementById("basic").value == "请选择考生")
+            {
+                alert("请先选择考生");
+                return false;
+
+            }
 	var score = "air";
 	var totalScore = 0;
 	var flag = 1;
 	var error = "air";
 	$("select[name='error']").each(function () {
+	    if($(this).val() == ""){
+            $(this).val("没有错误");
+        }
         error = error + "/" + $(this).val();
     })
         error = error.substring(4,error.length);
@@ -301,13 +352,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	}
 	}
 	</script>
-	<script src="js/mobiscroll.dom.js"></script>
-    <script src="js/mobiscroll.core.js"></script>
-    <script src="js/mobiscroll.scrollview.js"></script>
-    <script src="js/mobiscroll.frame.js"></script>
-    <script src="js/mobiscroll.frame.ios.js"></script>
-    <script src="js/mobiscroll.scroller.js"></script>
-    <script src="js/mobiscroll.i18n.zh.js"></script>
+	<%--<script src="js/mobiscroll.dom.js"></script>--%>
+    <%--<script src="js/mobiscroll.core.js"></script>--%>
+    <%--<script src="js/mobiscroll.scrollview.js"></script>--%>
+    <%--<script src="js/mobiscroll.frame.js"></script>--%>
+    <%--<script src="js/mobiscroll.frame.ios.js"></script>--%>
+    <%--<script src="js/mobiscroll.scroller.js"></script>--%>
+    <%--<script src="js/mobiscroll.i18n.zh.js"></script>--%>
     <script>
         var tab=document.getElementById("t");
         for(var i = 1;i<=tab.rows.length-1;i++)
@@ -316,54 +367,64 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             a.setAttribute("multiple", true);
             a.setAttribute("data-done-button", true);
         }
-    (function ($) {
-        var t = document.getElementById("t");
-       var l = t.rows.length;
-        function init() {
-            for(var j = 0;j<=l-2;j++) {
-                var maxNum = Number($("#number"+j).attr("max"));
-                var d = new Array;
-                for (var i = 0; i <= maxNum; i++) {
-                    d.push(i);
-                }
-                console.log(maxNum);
-                mobiscroll.scroller("#number"+j, {
-                    theme: theme,
-                    display: display,
-                    lang: lang,
-                    wheels: [
-                        [{
-                            label: 'First wheel',
-                            data: d
-                        }
-                        ]
-                    ]
-                });
-            }
-        }
-        var theme, display, lang;
-        $('.settings').on('change', function () {
-            theme = "ios";
-            display = "center";
-            lang = "zh";
-            init();
-        });
-        $('#theme').trigger('change');
-    })(mobiscroll.$);
+//    (function ($) {
+//        var t = document.getElementById("t");
+//       var l = t.rows.length;
+//        function init() {
+//            for(var j = 0;j<=l-2;j++) {
+//                var maxNum = Number($("#number"+j).attr("max"));
+//                var d = new Array;
+//                for (var i = 0; i <= maxNum; i++) {
+//                    d.push(i);
+//                }
+//                console.log(maxNum);
+//                mobiscroll.scroller("#number"+j, {
+//                    theme: theme,
+//                    display: display,
+//                    lang: lang,
+//                    wheels: [
+//                        [{
+//                            label: 'First wheel',
+//                            data: d
+//                        }
+//                        ]
+//                    ]
+//                });
+//            }
+//        }
+//        var theme, display, lang;
+//        $('.settings').on('change', function () {
+//            theme = "ios";
+//            display = "center";
+//            lang = "zh";
+//            init();
+//        });
+//        $('#theme').trigger('change');
+//    })(mobiscroll.$);
     </script>
    <script src="js/bootstrap-select.js"></script>
    <script type="text/javascript">
        function addError(id) {
-           var error = document.getElementById("error"+id);
+//           var error = document.getElementById("error"+id);
            var obj=document.getElementById("select"+id);
-           var hidden = document.getElementById("hidden"+id);
-           hidden.value = hidden.value + "," + error.value;
-           console.log(hidden.value);
-
-           obj.options.add(new Option(error.value,error.value));
-           error.value = "";
+//           var hidden = document.getElementById("hidden"+id);
+//           hidden.value = hidden.value + "," + error.value;
+           var dialog = $("#dialog3").data('dialog');
+           dialog.open();
+           var hiddenError = document.getElementById("hiddenError");
+           hiddenError.value = id;
+       }
+       function setNewError() {
+           var d = document.getElementById("inputError");
+           var hiddenId = document.getElementById("hiddenError").value;
+           var hidden = document.getElementById("hidden"+hiddenId);
+           hidden.value = hidden.value + "," + d.value;
+           var obj=document.getElementById("select"+hiddenId);
+           obj.options.add(new Option(d.value,d.value));
            $('.selectpicker').selectpicker('render');
            $('.selectpicker').selectpicker('refresh');
+           var dialog = $("#dialog3").data('dialog');
+           dialog.close();
        }
    </script>
   </body>

@@ -28,7 +28,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             for(var i=0;i < colsNum; i++)
             {
                 tab.rows[rownum].insertCell(i);//插入列
-                tab.rows[rownum].cells[i].innerHTML="<input type='text' name='"+i+"'/>";;
+                if(i == 2){
+                    tab.rows[rownum].cells[i].innerHTML="<input type='text' name='"+i+"' onchange=\"calSum()\"/>";
+                }
+                else {
+                    tab.rows[rownum].cells[i].innerHTML = "<input type='text' name='" + i + "'/>";
+                }
             }
         }
         
@@ -91,17 +96,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             errorString = errorString + "/" + "air";
         }
     $("#part3").val(errorString);
+        var sum = document.getElementById("sum");
+        if(Number(sum.textContent)!=100){
+            alert("总分必须为100");
+            return false;
+        }
+        var title = document.getElementById("cName");
+        if(title.value==""){
+            alert("案例名称不能为空");
+            return false;
+        }
 	return true;
 	}
+	function calSum() {
+            var studentSumScore = Number(0);
+//            var scores = document.getElementsByName("2");
+//            for(i = 0;i<=scores.length-1;i++){
+//                if(i == 0){
+//                    studentSumScore = studentSumScore + Number(0);
+//                }
+//                if(scores[i].value == ""){
+//                    studentSumScore = studentSumScore + Number(0);
+//                }
+//                else{
+//                    studentSumScore = studentSumScore + Number($(this).val());
+//                }
+//            }
+            $("input[name='2']").each(function(i,item){
+                if(i == 0){
+                    studentSumScore = studentSumScore + Number(0);
+                    return true;
+                }
+                if($(this).val()==""){
+                    studentSumScore = studentSumScore + Number(0);
+                }
+                else{
+                    studentSumScore = studentSumScore + Number($(this).val());
+                }
+            });
+            var sum = document.getElementById("sum");
+            sum.textContent = studentSumScore;
+    }
     </script>
 </head>
 
 
 
 <body>
-<jsp:include page="admin_header.jsp"></jsp:include>
 <center><h1>添加案例及要求</h1></center>
-<form action="addCaseStore.action" method="post" 	enctype="multipart/form-data" onsubmit="return valid()">
+<form action="addCaseStore.action" method="post" enctype="multipart/form-data" onsubmit="return valid()">
 <center>
 <label>案例名称</label>
 <input type="text" name="caseStore.CName" id="cName"/>
@@ -130,5 +173,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <center><button type="submit">确认无误，提交</button></center>
 </form>
+<center>
+<h3 style="color: #ff2d55">当前总分</h3>
+<h3 id="sum">0</h3>
+</center>
 </body>
 </html>

@@ -28,8 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
            
   <body>
- 
-  	<jsp:include page="admin_header.jsp"></jsp:include>
+
 <s:action name="adminShowAllStations1"></s:action>
   <table class="table striped hovered cell-hovered border bordered">
   <thead>

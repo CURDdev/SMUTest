@@ -14,6 +14,13 @@
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="123456"></property>
+		<property name="maxActive" value="10" />
+		<property name="maxIdle" value="60000" />
+		<property name="maxWait" value="60000" />
+		<property name="defaultAutoCommit" value="true" />
+		<property name="defaultReadOnly" value="false" />
+		<property name="testOnBorrow" value="true"/>
+		<property name="validationQuery" value="select 1"/>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -53,6 +60,7 @@
 		</bean>
 		<bean id = "stationAction" class="com.smu.action.StationAction">
 		<property name="stationService" ref="stationService"></property>
+			<property name="caseService" ref="caseService"></property>
 		</bean>
 		<bean id="testDAO" class="com.smu.dao.impl.TestDAO">
 		<property name="sessionFactory">
@@ -99,6 +107,8 @@
 		<property name="requirementService" ref="requirementService"></property>
 			<property name="iTestService" ref="testService"></property>
 			<property name="requirementStoreService" ref="requirementStoreService"></property>
+			<property name="classService" ref="classService"></property>
+			<property name="userService" ref="userService"></property>
 		</bean>
 		
 		
@@ -155,6 +165,7 @@
 		<bean id = "caseStoreAction" class="com.smu.action.CaseStoreAction">
 		<property name="caseStoreService" ref="caseStoreService"></property>
 		<property name="requirementStoreService" ref="requirementStoreService"></property>
+			<property name="classService" ref="classService"></property>
 		</bean>
 		<bean id="requirementStoreDAO" class="com.smu.dao.impl.RequirementStoreDAO">
 		<property name="sessionFactory">
@@ -189,6 +200,9 @@
 		<property name="studentService" ref="studentService"></property>
 		<property name="stationService" ref="stationService"></property>
 		<property name="caseService" ref="caseService"></property>
+			<property name="classService" ref="classService"></property>
+			<property name="userService" ref="userService"></property>
+			<property name="iTestService" ref="testService"></property>
 		</bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">

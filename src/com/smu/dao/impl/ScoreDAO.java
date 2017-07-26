@@ -94,6 +94,16 @@ public void setSessionFactory(SessionFactory sessionFactory) {
 		session.close();
 		return true;
 	}
+	/** 根据学号和案例编号获取成绩 */
+	public List getScoreBySNoAndCId(String s_no,int c_id){
+		Session session = sessionFactory.openSession();
+		Transaction ts = session.beginTransaction();
+		Query query = session.createQuery("from Score as s where s.CId ='"+c_id+"' and s.student.SNo='"+s_no+"'");
+		List scores = query.list();
+		ts.commit();
+		session.close();
+		return scores;
+	}
 	/** 修改一名学生还未提交的成绩*/
 	public boolean updateScore(int scoreId,String score,Double totalScore){
 		Session session = sessionFactory.openSession();

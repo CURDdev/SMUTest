@@ -139,7 +139,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </s:form>
     <script type="text/javascript">
     function valid(){
-
 	var score = "air";
 	var totalScore = 0;
 	var flag = 1;
