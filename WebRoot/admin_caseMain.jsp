@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             for(var i=0;i < colsNum; i++)
             {
                 tab.rows[rownum].insertCell(i);//插入列
-                tab.rows[rownum].cells[i].innerHTML="<input type='text' name='"+i+"'/>";;
+                tab.rows[rownum].cells[i].innerHTML="<input type='text' name='p"+i+"'/>";
             }
         }
         
@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            content.value = "none";
 	        }
 	        //part0
-	        $("input[name='0']").each(function(){
+	        $("input[name='p0']").each(function(){
 	            if($(this).val()==""){
 	                part0 = part0+"/" + " ";
 	            }
@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        });
 	        part0 = part0.substring(4,part0.length);
 	        //part1
-	        $("input[name='1']").each(function(){
+	        $("input[name='p1']").each(function(){
 	            if($(this).val()==""){
 	                part1 = part1+"/" + " ";
 	            }
@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        part1 = part1.substring(4,part1.length);
 	
 	
-	        $("input[name='2']").each(function(){
+	        $("input[name='p2']").each(function(){
 	            if($(this).val()==""){
 	                part2 = part2+"/" + " ";
 	            }
@@ -118,21 +118,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <th class="sortable-column">
    <center>
   <h3>
-  <input name="0" value="<s:property value="#request.RName"/>">
+  <input name="p0" value="<s:property value="#request.RName"/>">
   </h3>
   </center>
   </th>
   <th class="sortable-column">
    <center>
   <h3>
-  <input name="1" value="<s:property value="#request.RContent"/>">
+  <input name="p1" value="<s:property value="#request.RContent"/>">
   </h3>
   </center>
   </th>
   
  <th class="sortable-column">
   <h3>
-  <input name="2" value="<s:property value="#request.RScore"/>">
+  <input name="p2" value="<s:property value="#request.RScore"/>">
   </h3>
   </th>
   </tr>
@@ -141,13 +141,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <s:iterator value="#request.require" id="require" status="st">
    <tr>
    <td>
-    <input name="0" value="<s:property value="#require.name"/>">
+    <input name="p0" value="<s:property value="#require.name"/>">
    </td>
    <td>
-    <input name="1" value="<s:property value="#require.content"/>">
+    <input name="p1" value="<s:property value="#require.content"/>">
    </td>
    <td>
-    <input name="2" value="<s:property value="#require.score"/>">
+    <input name="p2" value="<s:property value="#require.score"/>">
    </td>
    </tr>
    </s:iterator>

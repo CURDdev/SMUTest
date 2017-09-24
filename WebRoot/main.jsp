@@ -9,57 +9,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
     <title>My JSP 'main.jsp' starting page</title>
-    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-<link rel="stylesheet" type="text/css" href="css/metro.css">
+    <link rel="stylesheet" type="text/css" href="css/metro.css">
 	<link rel="stylesheet" href="css/metro-icons.css">
-<link rel="stylesheet" href="css/metro-responsive.css">
-<link rel="stylesheet" href="css/metro-schemes.css">
+    <link rel="stylesheet" href="css/metro-responsive.css">
+    <link rel="stylesheet" href="css/metro-schemes.css">
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 	<script type="text/javascript" src="js/metro.min.js"></script>
 	<script type="text/javascript">
-	
-	 function showDialog(id){
-            var dialog = $("#"+id).data('dialog');
-            if (!dialog.element.data('opened')) {
-                dialog.open();
-            } else {
-                dialog.close();
-            }
+         function showDialog(id){
+                var dialog = $("#"+id).data('dialog');
+                if (!dialog.element.data('opened')) {
+                    dialog.open();
+                } else {
+                    dialog.close();
+                }
+         }
+        function check(){
+            var no = $("#student").val();
+            $.ajax({
+            //这里的需要Struts.xml的<action/>的name属性一致。
+            url:'checkStudent.action',
+           //提交类型
+            type:'POST',
+           //提交数据给Action传入数据
+            data:{'s_no':no},
+           //返回的数据类型
+            dataType:'json',
+           //成功是调用的方法
+            success:function(data){
+           //获取Action返回的数据用  data.Action中的属性名 获取
+              if(data =="false")
+              {
+              showDialog(dialog);
+              }
+              }
+         });
         }
-        
-	function check(){
-	var no = $("#student").val();
-	
-	$.ajax({ 
-        //这里的需要Struts.xml的<action/>的name属性一致。
-       url:'checkStudent.action',
-       //提交类型
-       type:'POST', 
-       //提交数据给Action传入数据 
-       data:{'s_no':no}, 
-       //返回的数据类型
-       dataType:'json', 
-       //成功是调用的方法
-       success:function(data){ 
-       //获取Action返回的数据用  data.Action中的属性名 获取
-          if(data =="false")
-          {
-          showDialog(dialog);
-          }
-          }  
-     });
-	
-	}</script>
+    </script>
   </head>
   
   <body>

@@ -10,14 +10,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="css/metro.css">
 	<link rel="stylesheet" href="css/metro-icons.css">
-<link rel="stylesheet" href="css/metro-responsive.css">
-<link rel="stylesheet" href="css/metro-schemes.css">
+    <link rel="stylesheet" href="css/metro-responsive.css">
+    <link rel="stylesheet" href="css/metro-schemes.css">
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 	<script type="text/javascript" src="js/metro.min.js"></script>
-	
     <script language="javascript" type="text/javascript">
         //动态添加行与列
-
         function addHtml( )
         {
             var tab=document.getElementById("viewTabs"); //获得表格
@@ -36,7 +34,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 }
             }
         }
-        
         function deleteHtml( )
         {
             var tab=document.getElementById("viewTabs"); //获得表格
@@ -45,98 +42,84 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             var rownum=num-1;
             tab.deleteRow(rownum);
         }
-        
-        
-    function valid(){
-	var part0 = "air";
-	var part1 = "air";
-	var part2 = "air";
-	var content = document.getElementById("content");
-	if(content.value == ""){
-	content.value = "none";
-	}
-	//part0
-	$("input[name='0']").each(function(){
-	if($(this).val()==""){
-	part0 = part0+"/" + " ";
-	}
-	else{
-	part0 = part0+"/" + $(this).val();
-	}
-	});
-	part0 = part0.substring(4,part0.length);
-	//part1
-	$("input[name='1']").each(function(){
-	if($(this).val()==""){
-	part1 = part1+"/" + " ";
-	}
-	else{
-	part1 = part1+"/" + $(this).val();
-	}
-	});
-	part1 = part1.substring(4,part1.length);
-	
-	
-	$("input[name='2']").each(function(){
-	if($(this).val()==""){
-	part2 = part2+"/" + " ";
-	}
-	else{
-	part2 = part2+"/" + $(this).val();
-	}
-	});
-	part2 = part2.substring(4,part2.length);
-	$('#part0').val(part0);
-	$('#part1').val(part1);
-	$('#part2').val(part2);
-        var tab=document.getElementById("viewTabs"); //获得表格
-        var num = tab.rows.length;
-        var errorString = "air";
-        for(var n = 1;n<=num-2;n++){
-            errorString = errorString + "/" + "air";
+        function valid(){
+        var part0 = "air";
+        var part1 = "air";
+        var part2 = "air";
+        var content = document.getElementById("content");
+        if(content.value == ""){
+        content.value = "none";
         }
-    $("#part3").val(errorString);
-        var sum = document.getElementById("sum");
-        if(Number(sum.textContent)!=100){
-            alert("总分必须为100");
-            return false;
+        //part0
+        $("input[name='0']").each(function(){
+        if($(this).val()==""){
+        part0 = part0+"/" + " ";
         }
-        var title = document.getElementById("cName");
-        if(title.value==""){
-            alert("案例名称不能为空");
-            return false;
+        else{
+        part0 = part0+"/" + $(this).val();
         }
-	return true;
-	}
-	function calSum() {
-            var studentSumScore = Number(0);
-//            var scores = document.getElementsByName("2");
-//            for(i = 0;i<=scores.length-1;i++){
-//                if(i == 0){
-//                    studentSumScore = studentSumScore + Number(0);
-//                }
-//                if(scores[i].value == ""){
-//                    studentSumScore = studentSumScore + Number(0);
-//                }
-//                else{
-//                    studentSumScore = studentSumScore + Number($(this).val());
-//                }
-//            }
-            $("input[name='2']").each(function(i,item){
-                if(i == 0){
-                    studentSumScore = studentSumScore + Number(0);
-                    return true;
-                }
-                if($(this).val()==""){
-                    studentSumScore = studentSumScore + Number(0);
-                }
-                else{
-                    studentSumScore = studentSumScore + Number($(this).val());
-                }
-            });
+        });
+        part0 = part0.substring(4,part0.length);
+        //part1
+        $("input[name='1']").each(function(){
+        if($(this).val()==""){
+        part1 = part1+"/" + " ";
+        }
+        else{
+        part1 = part1+"/" + $(this).val();
+        }
+        });
+        part1 = part1.substring(4,part1.length);
+
+
+        $("input[name='2']").each(function(){
+        if($(this).val()==""){
+        part2 = part2+"/" + " ";
+        }
+        else{
+        part2 = part2+"/" + $(this).val();
+        }
+        });
+        part2 = part2.substring(4,part2.length);
+        $('#part0').val(part0);
+        $('#part1').val(part1);
+        $('#part2').val(part2);
+            var tab=document.getElementById("viewTabs"); //获得表格
+            var num = tab.rows.length;
+            var errorString = "air";
+            for(var n = 1;n<=num-2;n++){
+                errorString = errorString + "/" + "air";
+            }
+        $("#part3").val(errorString);
             var sum = document.getElementById("sum");
-            sum.textContent = studentSumScore;
-    }
+            if(Number(sum.textContent)!=100){
+                alert("总分必须为100");
+                return false;
+            }
+            var title = document.getElementById("cName");
+            if(title.value==""){
+                alert("案例名称不能为空");
+                return false;
+            }
+        return true;
+        }
+        function calSum() {
+                var studentSumScore = Number(0);
+                $("input[name='2']").each(function(i,item){
+                    if(i == 0){
+                        studentSumScore = studentSumScore + Number(0);
+                        return true;
+                    }
+                    if($(this).val()==""){
+                        studentSumScore = studentSumScore + Number(0);
+                    }
+                    else{
+                        studentSumScore = studentSumScore + Number($(this).val());
+                    }
+                });
+                var sum = document.getElementById("sum");
+                sum.textContent = studentSumScore;
+        }
     </script>
 </head>
 

@@ -10,7 +10,6 @@
 <html>
 <head>
     <title>Title</title>
-
 </head>
 <body onload="Load('showOneCase.action')">
     <h1>提交成功，一秒后跳转到考试界面</h1>
